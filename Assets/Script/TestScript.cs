@@ -10,7 +10,7 @@ public class TestScript : MonoBehaviour
     [SerializeField] private TextTyper orign;
     [SerializeField] private Transform parents;
     [SerializeField] private DTScrollView _scrollView;
-    [SerializeField] private GameObject[] _scrollViewItem;
+    [SerializeField] private GameObject _scrollViewItem;
     [TextArea(3, 100)]
     [SerializeField] private string test;
     // Update is called once per frame
@@ -22,12 +22,16 @@ public class TestScript : MonoBehaviour
             testTextTyper[i].TypeText(test);
         }
 
-        _scrollView.InitScrollView(_scrollViewItem, OnUpdateScrollView);
+        _scrollView.InitScrollView(OnUpdateScrollView, _scrollViewItem);
         _scrollView.MakeList(10);
     }
 
-    void OnUpdateScrollView(int index)
+    GameObject OnUpdateScrollView(int index)
     {
+        var item = _scrollView.GetItem(index);
+        var typer = item.transform.Find("Text").GetComponent<TextTyper>();
         
+        typer.TypeText(test);
+        return item;
     }
 }

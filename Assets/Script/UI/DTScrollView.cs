@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace Script.UI
 {
-    public class DTScrollView : ScrollView
+    public class DTScrollView : ScrollRect
     {
-        private List<GameObject> _cloneitem;
+        private List<GameObject> _cloneUseitem;
         private GameObject[] _itemObject;
         private Action<int> _onUpdateScroll;
-        void InitScrollView(GameObject[] scrollItems, Action<int> onUpdateEvent)
+        public void InitScrollView(GameObject[] scrollItems, Action<int> onUpdateEvent)
         {
             _itemObject ??= new GameObject[] {};
             _itemObject = scrollItems;
@@ -19,23 +19,19 @@ namespace Script.UI
         }
         public void MakeList(int count)
         {
+            _cloneUseitem ??= new List<GameObject>();
             for (int i = 0; i < count; ++i)
             {
-                _cloneitem.Add(Object.Instantiate(_itemObject[i], this.contentContainer.transform as Transform));
+                _cloneUseitem.Add(Object.Instantiate(_itemObject[0], content.transform));
                 _onUpdateScroll?.Invoke(i);
             }
         }
-        public void MoveToIndex(int index)
-        {   
-        }
         public void RefreshAll()
         {
-            for (int i = 0; i < _cloneitem.Count; ++i)
+            for (int i = 0; i < _cloneUseitem.Count; ++i)
             {
                 _onUpdateScroll?.Invoke(i);
             }
         }
     }
-    
-    
 }

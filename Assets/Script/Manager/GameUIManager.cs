@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameUIManager : MonoBehaviour
+namespace Script.Manager
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameUIManager : Singleton<GameUIManager>
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 }

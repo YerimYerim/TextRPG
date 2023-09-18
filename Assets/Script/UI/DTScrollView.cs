@@ -12,6 +12,7 @@ namespace Script.UI
         private List<GameObject> _cloneUseitem;
         private UpdateScrollViewDelegate _onUpdateScrollView;
         private GameObject _scrollItem;
+        private List<GameObject> _scrollItems;
         public delegate GameObject UpdateScrollViewDelegate(int index);
 
         public void InitScrollView(UpdateScrollViewDelegate onUpdateEvent, GameObject scrollItem)
@@ -59,5 +60,16 @@ namespace Script.UI
             }
             return _cloneUseitem[i];
         }
+        
+        // public GameObject GetItem(int i, Type type)
+        // {
+        //     _cloneUseitem ??= new List<GameObject>();
+        //     var items = _scrollItems.FindAll(_ => _.GetComponent(type));
+        //     if (_cloneUseitem.Count <= i)
+        //     {
+        //         _cloneUseitem.Add(Instantiate( _scrollItem, content.transform));
+        //     }
+        //     return _cloneUseitem[i];
+        // }
     }
 }

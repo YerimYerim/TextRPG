@@ -1,8 +1,6 @@
 using Script.UI;
 using UnityEditor;
-using UnityEditor.Rendering;
 using UnityEditor.UI;
-using UnityEngine;
 
 namespace Editor
 {

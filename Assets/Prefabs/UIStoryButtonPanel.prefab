@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 3969187959570267660}
   - component: {fileID: 6885313760911875306}
   - component: {fileID: 3049217814057645354}
+  - component: {fileID: 1018343788019371891}
   m_Layer: 5
   m_Name: UIStoryButtonPanel
   m_TagString: Untagged
@@ -978,3 +979,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!114 &1018343788019371891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844152333182469038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145fc7c417bdfe645a03639229fda9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Script.Manager;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStoryImagePanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image _image;
+    
+    public void SetImage()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _image.sprite = GameResourceManager.Instance.GetImage("SampleSprite");
     }
 }

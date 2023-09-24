@@ -1,5 +1,4 @@
 using Script.DataClass;
-using Script.Manager;
 using UnityEngine;
 
 namespace Script.UI.Story
@@ -13,11 +12,21 @@ namespace Script.UI.Story
             if (index < _ChoiceButton.Length)
             {
                 _ChoiceButton[index].button.onClick.RemoveAllListeners();
+                _ChoiceButton[index].text.text = scenarioDataBase.data;
             }
         }
 
-        public void SetUI()
+        public void SetButtonPanel(ScenarioDataBase[] scenarioDataBase)
         {
+            foreach (var buttons in _ChoiceButton)
+            {
+                buttons.gameObject.SetActive(false);
+            }
+
+            for (int i = 0; i < scenarioDataBase.Length; ++i)
+            {
+                SetButton(scenarioDataBase[i], i);
+            }
         }
     }
 }

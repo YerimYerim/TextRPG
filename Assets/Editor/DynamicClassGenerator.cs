@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using Unity.Plastic.Newtonsoft.Json;
-using Unity.VisualScripting.YamlDotNet.Serialization;
-using UnityEngine;
 
 namespace Editor
 {
@@ -12,7 +9,7 @@ namespace Editor
     using ExcelDataReader;
     public static class DynamicClassGenerator
     {
-        public static void ReadExcelFile(string filePath)
+        public static void ConvertExcelToJson(string filePath, string fileName)
         {
             using var stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
             var reader = ExcelReaderFactory.CreateReader(stream);
@@ -65,33 +62,11 @@ namespace Editor
                 
                 json = json.Replace("\"[", "[");
                 json = json.Replace("]\"", "]");
+                
                 // JSON 데이터를 파일에 쓰기
-                string Path = "Assets/Resource/ExcelData/test.json";
-                File.WriteAllText(Path, json);
+                string path =  $"Assets/Resource/Json/{fileName}.json";
+                File.WriteAllText(path, json);
             }
-        }
-
-        public static void ConvertingExcelToYaml(string excelFilePath)
-        {
-            using var stream = File.Open(excelFilePath, FileMode.Open, FileAccess.Read);
-            using var reader = ExcelReaderFactory.CreateReader(stream);
-            var dataSet = reader.AsDataSet(new ExcelDataSetConfiguration
-            {
-                ConfigureDataTable = _ => new ExcelDataTableConfiguration
-                {
-                    UseHeaderRow = true // 엑셀 파일의 첫 번째 행을 열 헤더로 사용
-                }
-            });
-            var dataTable = dataSet.Tables[0]; // 첫 번째 워크시트
-
-            // DataTable을 YAML 문자열로 변환
-            var serializer = new SerializerBuilder().Build();
-            string yamlData = serializer.Serialize(dataTable);
-
-            // YAML 데이터를 파일에 저장
-            File.WriteAllText("Assets/Resource/ExcelData", yamlData);
-
-            Debug.Log("YAML data saved to: " + " Assets/Resource/ExcelData");
         }
     }
 }

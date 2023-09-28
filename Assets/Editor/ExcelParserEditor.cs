@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using Codice.CM.Client.Differences;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,36 +9,58 @@ namespace Editor
 {
     public class ExcelParserEditor : EditorWindow
     {
-        [MenuItem("DTTool/Excel2Yaml %;")]
+        static List<string> _filePaths = new List<string>();
+        private Vector2 _scrollPosition = Vector2.zero;
+        private int _scrollItemIndex = 0;
+        [MenuItem("DTTool/Excel2json %;")]
         static void Open()
         {
             var window = GetWindow<ExcelParserEditor>();
-            window.titleContent.text = "excel2Yaml";
-            window.titleContent.tooltip = @"excel 파일로 c# class 및 yaml 만들어줌 by 예림";
+            window.titleContent.text = "excel2json";
+            window.titleContent.tooltip = @"excel 파일로 json 만들어줌 by 예림";
+            _filePaths.Clear();
+            _filePaths = GetfileName();
         }
-
         private void OnGUI()
         {
-            GUILayout.TextField("Excel 경로를 입력해주세요");
-            
-            if (GUILayout.Button("C# Class 로 바꾸기"))
+            GUILayout.Label("Assets/Resource/ExcelData/ 에 파일이 있어야 합니다!\n 바로 추출되지 않을때 ctrl + r 눌러주세요" );
+            GUILayout.Space(10f);
+            if (GUILayout.Button("모든 excel file가져오기"))
             {
-                DynamicClassGenerator.ReadExcelFile("Assets/Resource/ExcelData/Team_newbie_sample.xlsx");
-                Debug.Log("class 생성 되었습니다?");
-            };            
+                _filePaths.Clear();
+                _filePaths = GetfileName();
+            }
             
-            GUILayout.TextField("yaml 를 저장할 경로를 입력해주세요");
+            _scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
+            _scrollItemIndex = GUILayout.SelectionGrid(_scrollItemIndex, _filePaths.ToArray(), 1);
+            GUILayout.EndScrollView();
             
-            if (GUILayout.Button("yaml 로 파일 바꾸기"))
+            
+            GUILayout.BeginHorizontal();
+            var fileName = GUILayout.TextField(_filePaths?[_scrollItemIndex]?? String.Empty);
+            if (GUILayout.Button("json으로 바꾸기") == true)
             {
-                DynamicClassGenerator.ConvertingExcelToYaml("Assets/Resource/ExcelData/Team_newbie_sample.xlsx");
-                Debug.Log("yaml생성 되었습니다");
+                string path = $"Assets/Resource/ExcelData/{fileName}.xlsx";
+                
+                DynamicClassGenerator.ConvertExcelToJson(path, fileName);
+                Debug.Log($"{fileName} json 으로 변경 되었습니다.");
             };
+            GUILayout.EndHorizontal();;
         }
 
-        private void ConvertingExcel()
+        private static  List<string> GetfileName()
         {
+            string assetPath = "Assets";
             
+            string[] xlsxFiles = Directory.GetFiles(assetPath, "*.xlsx", SearchOption.AllDirectories);
+                
+            for (int i = 0; i < xlsxFiles.Length; ++i)
+            {
+                var path = Path.GetFileNameWithoutExtension(xlsxFiles[i]);;
+                _filePaths.Add(path);
+            }
+
+            return _filePaths;
         }
     }
 }

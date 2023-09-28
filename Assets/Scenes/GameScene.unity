@@ -135,18 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &275259710 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1606166509996593480, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2007082412}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145fc7c417bdfe645a03639229fda9ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &275259711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6103138833962426163, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
@@ -474,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollRect: {fileID: 0}
   _imagePanel: {fileID: 2007082421}
-  _buttonsPanel: {fileID: 275259710}
+  _buttonsPanel: {fileID: 0}
   _textPanel: {fileID: 2007082420}
 --- !u!1001 &2007082412
 PrefabInstance:
@@ -502,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 1084437964937255553, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 212
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1084437964937255553, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
@@ -732,7 +720,7 @@ PrefabInstance:
     - target: {fileID: 7663886098842050471, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 212
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7663886098842050471, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
@@ -807,10 +795,6 @@ PrefabInstance:
         type: 3}
       insertIndex: 2
       addedObject: {fileID: 2007082420}
-    - targetCorrespondingSourceObject: {fileID: 7062861697950529266, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2007082419}
   m_SourcePrefab: {fileID: 100100000, guid: dfd0d5b113c9dfb48b1cb9b60637a891, type: 3}
 --- !u!224 &2007082413 stripped
 RectTransform:
@@ -818,36 +802,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2007082412}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2007082414 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6358075714161562949, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2007082412}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2007082415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7062861697950529266, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2007082412}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2007082416 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5290774524632941091, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2007082412}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007082415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 141421e2f6f99544598bcdefe945def4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2007082417 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1969027575997330888, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
@@ -860,20 +814,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2007082412}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2007082419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007082415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4fe61b0bc2a344eaf438efc5986a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2007082416}
-  text: {fileID: 2007082414}
 --- !u!114 &2007082420
 MonoBehaviour:
   m_ObjectHideFlags: 0

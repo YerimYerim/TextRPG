@@ -9,6 +9,7 @@ namespace Script.DataClass
         Image,
         Choice,
         ItemGet,
+        Status,
     }
 
     public enum OccurCondition
@@ -30,10 +31,11 @@ namespace Script.DataClass
         {
             return templateType switch
             {
-                TemplateType.Text => "텍스트",
-                TemplateType.Image => "이미지",
-                TemplateType.Choice => "선택지",
-                TemplateType.ItemGet => "아이템획득",
+                TemplateType.Text => "text",
+                TemplateType.Image => "img",
+                TemplateType.Choice => "button",
+                TemplateType.ItemGet => "get_item",
+                TemplateType.Status => "status",
                 _ => String.Empty,
             };
         }
@@ -42,11 +44,12 @@ namespace Script.DataClass
         {
             return str switch
             {
-                "텍스트"    => TemplateType.Choice,
-                "이미지"    => TemplateType.Image,
-                "선택지"    => TemplateType.Choice,
-                "아이템획득" => TemplateType.ItemGet,
-                _ => throw new ArgumentOutOfRangeException(nameof(str), str, null)
+                "text"    => TemplateType.Text,
+                "img"    => TemplateType.Image,
+                "button"    => TemplateType.Choice,
+                "get_item" => TemplateType.ItemGet,
+                "status" => TemplateType.ItemGet,
+                _ => TemplateType.Choice,
             };
         }
     }

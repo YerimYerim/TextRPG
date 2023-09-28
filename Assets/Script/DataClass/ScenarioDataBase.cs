@@ -8,7 +8,6 @@ namespace Script.DataClass
     {
         public int? plot_id { get; set; }
         public string type { get; set; }
-        [DefaultValue("")]
         public string output_txt { get; set; }
         public string relate_value { get; set; }
         public string relate_type { get; set; }

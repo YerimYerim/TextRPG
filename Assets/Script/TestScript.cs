@@ -27,12 +27,12 @@ public class TestScript : MonoBehaviour
         // _scrollView.MakeList(10);
     }
 
-    GameObject OnUpdateScrollView(int index)
-    {
-        var item = _scrollView.GetItem(index);
-        var typer = item.transform.Find("Text").GetComponent<TextTyper>();
-        
-        typer.TypeText(test);
-        return item;
-    }
+    // GameObject OnUpdateScrollView(int index)
+    // {
+    //     //var item = _scrollView.GetItem(index);
+    //     // var typer = item.transform.Find("Text").GetComponent<TextTyper>();
+    //     //
+    //     // typer.TypeText(test);
+    //     // return item;
+    // }
 }

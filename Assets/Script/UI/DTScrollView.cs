@@ -8,29 +8,49 @@ namespace Script.UI
     {
         private List<GameObject> _cloneUseitem;
         private UpdateScrollViewDelegate _onUpdateScrollView;
-        private GameObject _scrollItem;
+        private GameObject[] _scrollItem;
         private List<GameObject> _scrollItems;   
         public delegate GameObject UpdateScrollViewDelegate(int index);
 
         public void InitScrollView(UpdateScrollViewDelegate onUpdateEvent, GameObject scrollItem)
         {
+            _scrollItem = new GameObject[1]; 
+            _scrollItem[0] = scrollItem;
+            
+            _cloneUseitem ??= new List<GameObject>();
+            _onUpdateScrollView = onUpdateEvent;
+        }
+        
+        public void InitScrollView(UpdateScrollViewDelegate onUpdateEvent, params GameObject[] scrollItem)
+        {
+            _scrollItem = new GameObject[scrollItem.Length];
             _scrollItem = scrollItem;
             _cloneUseitem ??= new List<GameObject>();
             _onUpdateScrollView = onUpdateEvent;
         }
+        
         public void MakeList(int count)
         {
             ClearAll();
+            for (int i = 0; i < _scrollItem.Length; ++i)
+            {
+                _scrollItem[i].SetActive(true);
+            }
             for (int i = 0; i < count; ++i)
             {
-                if (_cloneUseitem.Count <= i)
+                //if (_cloneUseitem.Count <= i)
                 {
-                    _cloneUseitem.Add(Instantiate( _onUpdateScrollView?.Invoke(i), content.transform));
+                    //_cloneUseitem.Add(Instantiate( _onUpdateScrollView?.Invoke(i), content.transform));
+                    Instantiate(_onUpdateScrollView?.Invoke(i));
                 }
-                else
-                {
-                    _cloneUseitem[i] = _onUpdateScrollView?.Invoke(i);
-                }
+                // else
+                // {
+                //     _cloneUseitem[i] = _onUpdateScrollView?.Invoke(i);
+                // }
+            }
+            for (int i = 0; i < _scrollItem.Length; ++i)
+            {
+                _scrollItem[i].SetActive(false);
             }
         }
         public void RefreshAll()
@@ -48,14 +68,11 @@ namespace Script.UI
             }
         }
 
-        public GameObject GetItem(int i)
+        public GameObject GetItem(int i, GameObject gameObject)
         {
             _cloneUseitem ??= new List<GameObject>();
-            if (_cloneUseitem.Count <= i)
-            {
-                _cloneUseitem.Add(Instantiate( _scrollItem, content.transform));
-            }
-            return _cloneUseitem[i];
+            _cloneUseitem.Add(Instantiate( gameObject, content.transform));
+            return _cloneUseitem[^1];
         }
         
         // public GameObject GetItem(int i, Type type)

@@ -7,8 +7,8 @@ public class UIStoryImagePanel : MonoBehaviour
 {
     [SerializeField] private Image _image;
     
-    public void SetImage()
+    public void SetImage(string imgName)
     {
-        _image.sprite = GameResourceManager.Instance.GetImage("SampleSprite");
+        _image.sprite = GameResourceManager.Instance.GetImage(imgName);
     }
 }

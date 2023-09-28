@@ -11,7 +11,7 @@ namespace Script.DataClass
         ItemGet,
     }
 
-    public enum ExposureCondition
+    public enum OccurCondition
     {
         PowerOver,
         ClearID,
@@ -38,7 +38,7 @@ namespace Script.DataClass
             };
         }
 
-        public static TemplateType to_enum(this string str)
+        public static TemplateType to_TemplateType_enum(this string str)
         {
             return str switch
             {

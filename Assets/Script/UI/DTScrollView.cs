@@ -1,9 +1,6 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 namespace Script.UI
 {
@@ -12,7 +9,7 @@ namespace Script.UI
         private List<GameObject> _cloneUseitem;
         private UpdateScrollViewDelegate _onUpdateScrollView;
         private GameObject _scrollItem;
-        private List<GameObject> _scrollItems;
+        private List<GameObject> _scrollItems;   
         public delegate GameObject UpdateScrollViewDelegate(int index);
 
         public void InitScrollView(UpdateScrollViewDelegate onUpdateEvent, GameObject scrollItem)

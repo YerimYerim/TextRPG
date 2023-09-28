@@ -1,6 +1,6 @@
 namespace Script.DataClass
 {
-    public class ScenarioDataEvent : ScenarioDataBase
+    public class ScenarioDataEvent : ScenarioData
     {
 
     }

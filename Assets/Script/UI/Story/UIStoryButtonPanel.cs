@@ -7,16 +7,16 @@ namespace Script.UI.Story
     {
         [SerializeField] private UIStoryButton[] _ChoiceButton;
 
-        private void SetButton(ScenarioDataBase scenarioDataBase, int index)
+        private void SetButton(ScenarioData scenarioDataBase, int index)
         {
             if (index < _ChoiceButton.Length)
             {
                 _ChoiceButton[index].button.onClick.RemoveAllListeners();
-                _ChoiceButton[index].text.text = scenarioDataBase.data;
+                _ChoiceButton[index].text.text = scenarioDataBase.output_txt;
             }
         }
 
-        public void SetButtonPanel(ScenarioDataBase[] scenarioDataBase)
+        public void SetButtonPanel(ScenarioData[] scenarioDataBase)
         {
             foreach (var buttons in _ChoiceButton)
             {

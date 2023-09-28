@@ -1,4 +1,5 @@
 using System.IO;
+using Script.DataClass;
 using UnityEngine;
 
 namespace Script.Manager
@@ -10,6 +11,5 @@ namespace Script.Manager
             var image = Resources.Load<Sprite>($"Sprites/{imageName}");
             return image;
         }
-        
     }
 }

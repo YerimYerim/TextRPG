@@ -5,14 +5,14 @@ namespace Script.Manager
 {
     public class GameScenarioManager : Singleton<GameScenarioManager>
     {
-        private Queue<ScenarioDataBase> ScenarioQueue;
+        private Queue<ScenarioData> ScenarioQueue;
 
         public GameScenarioManager()
         {
-            ScenarioQueue = new Queue<ScenarioDataBase>();
+            ScenarioQueue = new Queue<ScenarioData>();
         }
 
-        public void EnqueueScenarioData(ScenarioDataBase scenarioDataBase)
+        public void EnqueueScenarioData(ScenarioData scenarioDataBase)
         {
             ScenarioQueue.Enqueue(scenarioDataBase);
         }

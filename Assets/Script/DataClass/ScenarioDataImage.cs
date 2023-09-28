@@ -1,6 +1,6 @@
 namespace Script.DataClass
 {
-    public class ScenarioDataImage : ScenarioDataBase
+    public class ScenarioDataImage : ScenarioData
     {
     }
 }

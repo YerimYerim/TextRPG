@@ -16,14 +16,15 @@ public class TestScript : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        for (int i = 0; i < 1; ++i)
-        {
-            testTextTyper[i] = orign;
-            testTextTyper[i].TypeText(test);
-        }
-
-        _scrollView.InitScrollView(OnUpdateScrollView, _scrollViewItem);
-        _scrollView.MakeList(10);
+        GameDataManager.Instance.LoadScenarioData(0,1);
+        // for (int i = 0; i < 1; ++i)
+        // {
+        //     testTextTyper[i] = orign;
+        //     testTextTyper[i].TypeText(test);
+        // }
+        //
+        // _scrollView.InitScrollView(OnUpdateScrollView, _scrollViewItem);
+        // _scrollView.MakeList(10);
     }
 
     GameObject OnUpdateScrollView(int index)

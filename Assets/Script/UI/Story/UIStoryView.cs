@@ -23,7 +23,7 @@ public class UIStoryView : MonoBehaviour
     
     private void SetUI()
     {
-        
+        _scrollRect.MakeList(10);
     }
     
     GameObject OnUpdateScrollView(int index)

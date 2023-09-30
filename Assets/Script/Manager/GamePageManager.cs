@@ -8,7 +8,7 @@ namespace Script.Manager
 {
     public class GamePageManager : Singleton<GamePageManager>
     {
-        private Queue<ScenarioData> _curPageData;
+        private Queue<ScenarioData> _curPageData = new();
         private readonly HashSet<int> _pastReadPageID = new();
         private int curPageDataIndex = 0;
         private int curPageDataID = 0;
@@ -44,7 +44,7 @@ namespace Script.Manager
                 EnqueueCurPageData(nextPageID);
                 return returnData;
             }
-            return _curPageData.Dequeue();
+            return returnData;
         }
 
         public int GetNextPageID(ScenarioData scenarioData)
@@ -61,7 +61,7 @@ namespace Script.Manager
         {
             if (prob.Length != probResult.Length)
             {
-                return 0;
+                return probResult[0];
             }
 
             int sumProb = prob.Sum();

@@ -38,15 +38,7 @@ namespace Script.UI
             }
             for (int i = 0; i < count; ++i)
             {
-                //if (_cloneUseitem.Count <= i)
-                {
-                    //_cloneUseitem.Add(Instantiate( _onUpdateScrollView?.Invoke(i), content.transform));
-                    Instantiate(_onUpdateScrollView?.Invoke(i));
-                }
-                // else
-                // {
-                //     _cloneUseitem[i] = _onUpdateScrollView?.Invoke(i);
-                // }
+                _onUpdateScrollView?.Invoke(i);
             }
             for (int i = 0; i < _scrollItem.Length; ++i)
             {
@@ -68,11 +60,12 @@ namespace Script.UI
             }
         }
 
-        public GameObject GetItem(int i, GameObject gameObject)
+        public GameObject GetItem(GameObject gameObject)
         {
             _cloneUseitem ??= new List<GameObject>();
-            _cloneUseitem.Add(Instantiate( gameObject, content.transform));
-            return _cloneUseitem[^1];
+            var cloneItem = Instantiate(gameObject, content.transform);
+            _cloneUseitem.Add(cloneItem);
+            return cloneItem;
         }
         
         // public GameObject GetItem(int i, Type type)

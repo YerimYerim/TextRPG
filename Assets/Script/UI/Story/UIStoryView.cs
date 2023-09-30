@@ -13,50 +13,52 @@ public class UIStoryView : MonoBehaviour
     [SerializeField] private UIStoryImagePanel _imagePanel;
     [SerializeField] private UIStoryButtonPanel _buttonsPanel;
     [SerializeField] private UIStroyTextPanel _textPanel;
-
+    private int count = 0;
     private void Awake()
     {
         GameDataManager.Instance.LoadData();
         _scrollRect.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject );
-        _scrollRect.MakeList(19);
+        var scenarioData = GamePageManager.Instance.GetScenarioData(0);
+        GamePageManager.Instance.EnqueueCurPageData(scenarioData.page_id ?? 0);
+        _scrollRect.MakeList( GamePageManager.Instance.QueueCount);
     }
     
     private void SetUI()
     {
-
+        _scrollRect.MakeList(GamePageManager.Instance.QueueCount);
     }
     
     GameObject OnUpdateScrollView(int index)
     {
-        var scenarioData = GamePageManager.Instance.GetScenarioData(index);
+        var scenarioData = GamePageManager.Instance.DequeueCurPageData();
         var typeEnum = scenarioData.type.to_TemplateType_enum();
 
         switch (typeEnum)
         {
             case TemplateType.Text:
             {
-                var item = _scrollRect.GetItem(index, _textPanel.GameObject());
+                var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
                 textPanel.SetText(scenarioData.output_txt);
                 return item;
             }
             case TemplateType.Image:
             {
-                var item = _scrollRect.GetItem(index, _imagePanel.GameObject());
+                var item = _scrollRect.GetItem( _imagePanel.GameObject());
                 var imgPanel = item.GetComponent<UIStoryImagePanel>();
                 imgPanel.SetImage(scenarioData.relate_value);
                 return item;
             }
             case TemplateType.Choice:
             {
-                var item = _scrollRect.GetItem(index, _buttonsPanel.GameObject());
+                var item = _scrollRect.GetItem( _buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
                 buttonPanel.SetButton(scenarioData, OnClickButtonAction);
                 return item;
             }
             case TemplateType.ItemGet:
             {
-                var item = _scrollRect.GetItem(index, _textPanel.GameObject());
+                var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
                 textPanel.SetText(scenarioData.output_txt);
                 return item;
@@ -64,7 +66,6 @@ public class UIStoryView : MonoBehaviour
         }
 
         return null;
-
     }
 
     /// <summary>
@@ -78,5 +79,6 @@ public class UIStoryView : MonoBehaviour
     void OnClickButtonAction()
     {
         OnEventClear();
+        SetUI();
     }
 }

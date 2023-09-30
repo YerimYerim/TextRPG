@@ -10,16 +10,12 @@ namespace Script.Manager
     {
         private Queue<ScenarioData> _curPageData = new();
         private readonly HashSet<int> _pastReadPageID = new();
-        private int curPageDataIndex = 0;
-        private int curPageDataID = 0;
         public int QueueCount => _curPageData.Count;
 
         public ScenarioData GetScenarioData(int index)
         {
             if (index < GameDataManager.Instance._pageData.Count)
             {
-                curPageDataIndex = index;
-                curPageDataID = GameDataManager.Instance._pageData[index].page_id ?? 0;
                 return GameDataManager.Instance._pageData[index];
             }
             return null;
@@ -38,13 +34,13 @@ namespace Script.Manager
         public ScenarioData DequeueCurPageData()
         {
             var returnData = _curPageData.Dequeue();
-            if (_curPageData.Count <= 1)
-            {
-                var nextPageID = GetNextPageID(returnData);
-                EnqueueCurPageData(nextPageID);
-                return returnData;
-            }
             return returnData;
+        }
+
+        public void NextDataEnqueue(ScenarioData returnData)
+        {
+            var nextPageID = GetNextPageID(returnData);
+            EnqueueCurPageData(nextPageID);
         }
 
         public int GetNextPageID(ScenarioData scenarioData)
@@ -54,7 +50,7 @@ namespace Script.Manager
                 return RandProb(scenarioData.result_prob, scenarioData.result_value);
             }
 
-            return GetScenarioData(curPageDataIndex + 1).page_id ?? 0;
+            return 0;
         }
 
         private int RandProb(int[] prob, int[] probResult)
@@ -71,16 +67,16 @@ namespace Script.Manager
             {
                 if(index >= 1)
                 {
-                    if (prob[index - 1] < result && result <= prob[index])
+                    if (prob[index - 1] < result && result <= (prob[index - 1] + prob[index]))
                     {
-                        break;
+                        return probResult[index];
                     }
                 }
                 else
                 {
                     if (result <= prob[index])
                     {
-                        break;
+                        return probResult[index];
                     }
                 }
             }

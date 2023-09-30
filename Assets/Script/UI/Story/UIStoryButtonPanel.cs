@@ -1,5 +1,6 @@
 using System;
 using Script.DataClass;
+using Script.Manager;
 using UnityEngine;
 
 namespace Script.UI.Story
@@ -19,6 +20,7 @@ namespace Script.UI.Story
 
         private void OnClickButton(ScenarioData scenarioDataBase)
         {
+            GamePageManager.Instance.NextDataEnqueue(scenarioDataBase);
             _onClickAction?.Invoke();
         }
     }

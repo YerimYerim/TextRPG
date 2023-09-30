@@ -41,10 +41,14 @@ namespace Editor
                                 var item = table.Rows[i].ItemArray[j];
                                 if (item != null)
                                 {
+                                    if (table.Rows[0].ItemArray[j].ToString().StartsWith("#"))
+                                    {
+                                        continue;
+                                    }
+                                    
                                     if (table.Rows[0].ItemArray[j] != null &&
                                         !string.IsNullOrWhiteSpace(table.Rows[0].ItemArray[j].ToString()))
                                     {
-
                                         if (table.Rows[2].ItemArray[j].ToString().Contains("[]"))
                                         {
                                             rowData.Add(table.Rows[0].ItemArray[j].ToString(), "[" + item + "]");

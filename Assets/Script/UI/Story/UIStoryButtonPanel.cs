@@ -1,3 +1,4 @@
+using System;
 using Script.DataClass;
 using UnityEngine;
 
@@ -6,24 +7,19 @@ namespace Script.UI.Story
     public class UIStoryButtonPanel : MonoBehaviour
     {
         [SerializeField] private UIStoryButton _ChoiceButton;
-
-        public void SetButton(ScenarioData scenarioDataBase)
+        private Action _onClickAction;
+        public void SetButton(ScenarioData scenarioDataBase, Action onClickAction)
         {
             _ChoiceButton.button.onClick.RemoveAllListeners();
+            _onClickAction = onClickAction;
+            
+            _ChoiceButton.button.onClick.AddListener(()=>OnClickButton(scenarioDataBase));
             _ChoiceButton.text.text = scenarioDataBase.output_txt;
         }
 
-        public void SetButtonPanel(ScenarioData[] scenarioDataBase)
+        private void OnClickButton(ScenarioData scenarioDataBase)
         {
-            // foreach (var buttons in _ChoiceButton)
-            // {
-            //     buttons.gameObject.SetActive(false);
-            // }
-            //
-            // for (int i = 0; i < scenarioDataBase.Length; ++i)
-            // {
-            //     SetButton(scenarioDataBase[i], i);
-            // }
+            _onClickAction?.Invoke();
         }
     }
 }

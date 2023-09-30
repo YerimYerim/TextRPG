@@ -16,7 +16,7 @@ public class TestScript : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        GameDataManager.Instance.LoadScenarioData(0,1);
+        //GameDataManager.Instance.LoadScenarioData(0,1);
         // for (int i = 0; i < 1; ++i)
         // {
         //     testTextTyper[i] = orign;

@@ -5,51 +5,29 @@ using Script.DataClass;
 
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
-    private readonly string[] _pageDatajsonFileName = {"page"};
-    private readonly List<ScenarioData> _scenarioDatas = new();
-    private readonly Queue<ScenarioData> _curPageData = new();
-    private HashSet<int> _pastReadPageID = new(); 
-    public void LoadScenarioData(int start, int end)
-    {
-        _scenarioDatas.Clear();
-        for(int i = 0; i< end; ++i)
-        {
-            string jsonContent = File.ReadAllText($"Assets/Resource/Json/{_pageDatajsonFileName[start]}.json");
-            List<ScenarioData> scenarioDataList = JsonConvert.DeserializeObject<List<ScenarioData>>(jsonContent);
+    private readonly string[] _pageJsonFileNames = {"page"};
+    internal List<ScenarioData> _pageData = new();
 
-            if (scenarioDataList != null)
+    public void LoadData()
+    {
+        _pageData = ReadJsonFiles<ScenarioData>(_pageJsonFileNames[0]);
+    }
+
+    private static List<T> ReadJsonFiles<T>(string fileName)
+    {
+        List<T> dataList = new List<T>();
+        string filePath = $"Assets/Resource/Json/{fileName}.json";
+
+        if (File.Exists(filePath))
+        {
+            string jsonContent = File.ReadAllText(filePath);
+            List<T> data = JsonConvert.DeserializeObject<List<T>>(jsonContent);
+
+            if (data != null)
             {
-                _scenarioDatas.AddRange(scenarioDataList);
+                dataList.AddRange(data);
             }
         }
-    }
-
-    /// <summary>
-    /// data 가져옴
-    /// </summary>
-    /// <param name="index"></param>
-    /// <returns></returns>
-    public ScenarioData GetScenarioData(int index)
-    {
-        if (index < _scenarioDatas.Count)
-        {
-            return _scenarioDatas[index];
-        }
-        return null;
-    }
-
-    public void EnqueueCurPageData(int pageID)
-    {
-        _pastReadPageID.Add(pageID);
-        var scenarioData = _scenarioDatas.FindAll(_=>_.page_id == pageID);
-        foreach (var data in scenarioData)
-        {
-            _curPageData.Enqueue(data);
-        }
-    }
-
-    public ScenarioData DequeueCurPageData()
-    {
-        return _curPageData.Dequeue();
+        return dataList;
     }
 }

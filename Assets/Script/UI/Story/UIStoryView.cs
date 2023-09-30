@@ -1,5 +1,6 @@
 using System;
 using Script.DataClass;
+using Script.Manager;
 using Script.UI;
 using Script.UI.Story;
 using Unity.VisualScripting;
@@ -15,22 +16,19 @@ public class UIStoryView : MonoBehaviour
 
     private void Awake()
     {
-        GameDataManager.Instance.LoadScenarioData(0,1);
-
+        GameDataManager.Instance.LoadData();
         _scrollRect.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject );
-        _scrollRect.MakeList(10);
+        _scrollRect.MakeList(19);
     }
     
     private void SetUI()
     {
-        _scrollRect.MakeList(10);
+
     }
     
     GameObject OnUpdateScrollView(int index)
     {
-        var scenarioData = GameDataManager.Instance.GetScenarioData(index);
-
-
+        var scenarioData = GamePageManager.Instance.GetScenarioData(index);
         var typeEnum = scenarioData.type.to_TemplateType_enum();
 
         switch (typeEnum)
@@ -53,7 +51,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem(index, _buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(scenarioData);
+                buttonPanel.SetButton(scenarioData, OnClickButtonAction);
                 return item;
             }
             case TemplateType.ItemGet:
@@ -74,6 +72,11 @@ public class UIStoryView : MonoBehaviour
     /// </summary>
     void OnEventClear()
     {
-        
+        _scrollRect.ClearAll();
+    }
+
+    void OnClickButtonAction()
+    {
+        OnEventClear();
     }
 }

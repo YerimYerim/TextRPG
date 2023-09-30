@@ -27,7 +27,10 @@ namespace Script.Manager
             var scenarioData = GameDataManager.Instance._pageData.FindAll(_=>_.page_id == pageID);
             foreach (var data in scenarioData)
             {
-                _curPageData.Enqueue(data);
+                if(RandProbSingle(data.occur_prob ?? 100) == true)
+                {
+                    _curPageData.Enqueue(data);
+                }
             }
         }
 
@@ -82,6 +85,17 @@ namespace Script.Manager
             }
             return index;
         }
-        
+
+        private bool RandProbSingle(int successProb)
+        {
+            int sumProb = 100;
+            var result = Random.Range(0, sumProb);
+
+            if (result <= successProb)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

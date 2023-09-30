@@ -25,14 +25,17 @@ public class UIStoryView : MonoBehaviour
     
     private void SetUI()
     {
-        _scrollRect.MakeList(GamePageManager.Instance.QueueCount);
+        _scrollRect.AddList(GamePageManager.Instance.QueueCount);
     }
     
     GameObject OnUpdateScrollView(int index)
     {
         var scenarioData = GamePageManager.Instance.DequeueCurPageData();
         var typeEnum = scenarioData.type.to_TemplateType_enum();
-
+        if (scenarioData.is_renew_page == true)
+        {
+            _scrollRect.ClearAll();
+        }
         switch (typeEnum)
         {
             case TemplateType.Text:
@@ -51,9 +54,9 @@ public class UIStoryView : MonoBehaviour
             }
             case TemplateType.Choice:
             {
-                var item = _scrollRect.GetItem( _buttonsPanel.GameObject());
+                var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(scenarioData, OnClickButtonAction);
+                buttonPanel.SetButton(scenarioData, ()=>OnClickButtonAction(scenarioData));
                 return item;
             }
             case TemplateType.ItemGet:
@@ -74,11 +77,18 @@ public class UIStoryView : MonoBehaviour
     void OnEventClear()
     {
         _scrollRect.ClearAll();
+        _scrollRect.MakeList(GamePageManager.Instance.QueueCount);
     }
-
-    void OnClickButtonAction()
+    
+    void OnClickButtonAction(ScenarioData scenarioData)
     {
-        OnEventClear();
-        SetUI();
+        if (scenarioData.is_renew_page == true)
+        {
+            OnEventClear();
+        }
+        else
+        {
+            SetUI();
+        }
     }
 }

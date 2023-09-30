@@ -45,6 +45,22 @@ namespace Script.UI
                 _scrollItem[i].SetActive(false);
             }
         }
+
+        public void AddList(int count)
+        {
+            for (int i = 0; i < _scrollItem.Length; ++i)
+            {
+                _scrollItem[i].SetActive(true);
+            }
+            for (int i = 0; i < count; ++i)
+            {
+                _onUpdateScrollView?.Invoke(i);
+            }
+            for (int i = 0; i < _scrollItem.Length; ++i)
+            {
+                _scrollItem[i].SetActive(false);
+            }
+        }
         public void RefreshAll()
         {
             for (int i = 0; i < _cloneUseitem.Count; ++i)

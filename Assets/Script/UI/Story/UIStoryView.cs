@@ -13,7 +13,7 @@ public class UIStoryView : MonoBehaviour
     [SerializeField] private UIStoryImagePanel _imagePanel;
     [SerializeField] private UIStoryButtonPanel _buttonsPanel;
     [SerializeField] private UIStroyTextPanel _textPanel;
-    private int count = 0;
+    
     private void Awake()
     {
         GameDataManager.Instance.LoadData();
@@ -71,6 +71,15 @@ public class UIStoryView : MonoBehaviour
         return null;
     }
 
+    void OnDeleteButtons()
+    {
+        var buttonItems = _scrollRect.GetItemsByComponent<UIStoryButtonPanel>();
+        foreach (var button in buttonItems)
+        {
+            button.SetActive(false);
+        }
+    }
+    
     /// <summary>
     /// is_renew_page  == true 일 경우 발동될 이벤트.
     /// </summary>
@@ -82,6 +91,7 @@ public class UIStoryView : MonoBehaviour
     
     void OnClickButtonAction(ScenarioData scenarioData)
     {
+        OnDeleteButtons();
         if (scenarioData.is_renew_page == true)
         {
             OnEventClear();

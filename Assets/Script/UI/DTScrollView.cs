@@ -84,6 +84,10 @@ namespace Script.UI
             return cloneItem;
         }
         
+        public List<GameObject> GetItemsByComponent<T>()
+        {
+            return _cloneUseitem.FindAll(_ => _.GetComponent<T>() != null);
+        }
         // public GameObject GetItem(int i, Type type)
         // {
         //     _cloneUseitem ??= new List<GameObject>();

@@ -6,7 +6,7 @@ namespace Script.DataClass
     [Serializable]
     public class ScenarioData
     {
-        public int? plot_id { get; set; }
+        public int? page_id { get; set; }
         public string type { get; set; }
         public string output_txt { get; set; }
         public string relate_value { get; set; }

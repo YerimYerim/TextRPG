@@ -5,33 +5,29 @@ using Script.DataClass;
 
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
-    private string[] jsonFileName = {"Team_newbie_sample 1"};
-    
-    
-    private List<ScenarioData> _scenarioDatas = new List<ScenarioData>();
-    public void LoadScenarioData(int start, int end)
-    {
-        _scenarioDatas.Clear();
-        for(int i = 0; i< end; ++i)
-        {
-            string jsonContent = File.ReadAllText($"Assets/Resource/Json/{jsonFileName[start]}.json");
-            List<ScenarioData> scenarioDataList = JsonConvert.DeserializeObject<List<ScenarioData>>(jsonContent);
+    private readonly string[] _pageJsonFileNames = {"page"};
+    internal List<ScenarioData> _pageData = new();
 
-            _scenarioDatas.AddRange(scenarioDataList);
-        }
+    public void LoadData()
+    {
+        _pageData = ReadJsonFiles<ScenarioData>(_pageJsonFileNames[0]);
     }
 
-    /// <summary>
-    /// data 가져옴
-    /// </summary>
-    /// <param name="index"></param>
-    /// <returns></returns>
-    public ScenarioData GetScenarioData(int index)
+    private static List<T> ReadJsonFiles<T>(string fileName)
     {
-        if (index < _scenarioDatas.Count)
+        List<T> dataList = new List<T>();
+        string filePath = $"Assets/Resource/Json/{fileName}.json";
+
+        if (File.Exists(filePath))
         {
-            return _scenarioDatas[index];
+            string jsonContent = File.ReadAllText(filePath);
+            List<T> data = JsonConvert.DeserializeObject<List<T>>(jsonContent);
+
+            if (data != null)
+            {
+                dataList.AddRange(data);
+            }
         }
-        return null;
+        return dataList;
     }
 }

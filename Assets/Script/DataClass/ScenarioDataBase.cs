@@ -11,7 +11,7 @@ namespace Script.DataClass
         public string output_txt { get; set; }
         public string relate_value { get; set; }
         public string relate_type { get; set; }
-        public string occure_condition { get; set; }
+        public string occur_condition { get; set; }
         public int? occur_value { get; set; }
         public int? occur_prob { get; set; }
         

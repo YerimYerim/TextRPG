@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Script.DataClass;
-using UnityEngine;
+using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
 
 namespace Script.Manager
@@ -23,8 +25,8 @@ namespace Script.Manager
 
         public void EnqueueCurPageData(int pageID)
         {
+            var scenarioData = GameDataManager.Instance._pageData.FindAll(_=>_.page_id == pageID && IsOccur(_));
             _pastReadPageID.Add(pageID);
-            var scenarioData = GameDataManager.Instance._pageData.FindAll(_=>_.page_id == pageID);
             foreach (var data in scenarioData)
             {
                 if(RandProbSingle(data.occur_prob ?? 100) == true)
@@ -96,6 +98,40 @@ namespace Script.Manager
                 return true;
             }
             return false;
+        }
+        /// <summary>
+        /// 조건을 체크후 봤으면 안보이도록 한다. 
+        /// </summary>
+        /// <param name="scenarioData"></param>
+        /// <returns></returns>
+        private bool IsOccur(ScenarioData scenarioData)
+        {
+            var occurCondition = scenarioData.occur_condition.to_OccurCondition_enum();
+            var occurValue = scenarioData.occur_value;
+            switch (occurCondition)
+            {
+                case OccurCondition.OCCUR_CONDITION_OWN_ITEM:
+                    break;
+                case OccurCondition.OCCUR_CONDITION_STATUS_HIGH:
+                    break;
+                case OccurCondition.OCCUR_CONDITION_STATUS_LOW:
+                    break;
+                case OccurCondition.OCCUR_CONDITION_PAGE_VIEWED:
+                    break;
+                default:
+                    break;
+            }
+            
+            var isCanNextMove = true;
+            for (int i = 0; i < scenarioData.result_value.Length; ++i)
+            {
+                if (_pastReadPageID.Contains(scenarioData.result_value[i]) == true)
+                {
+                    isCanNextMove = false;
+                    break;
+                };
+            }
+            return _pastReadPageID.Contains(scenarioData.page_id?? 0) == false && isCanNextMove;
         }
     }
 }

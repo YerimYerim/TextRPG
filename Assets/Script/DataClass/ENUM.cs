@@ -14,9 +14,10 @@ namespace Script.DataClass
 
     public enum OccurCondition
     {
-        PowerOver,
-        ClearID,
-        ItemOwn,
+        OCCUR_CONDITION_OWN_ITEM,           //특정 아이템 보유 시 발생
+        OCCUR_CONDITION_STATUS_HIGH,        //특정 스탯이 특정값 이상인 경우 발생
+        OCCUR_CONDITION_STATUS_LOW,         //특정 스탯이 특정값 이하인 경우 발생
+        OCCUR_CONDITION_PAGE_VIEWED,        //특정 페이지를 열람했을 때 발생
     }
 
     public enum SuccessCondition
@@ -50,6 +51,18 @@ namespace Script.DataClass
                 "get_item" => TemplateType.ItemGet,
                 "status" => TemplateType.ItemGet,
                 _ => TemplateType.Choice,
+            };
+        }
+        
+        public static OccurCondition to_OccurCondition_enum(this string str)
+        {
+            return str switch
+            {
+                "own_item" => OccurCondition.OCCUR_CONDITION_OWN_ITEM,
+                "status_high" => OccurCondition.OCCUR_CONDITION_STATUS_HIGH,
+                "status_low" => OccurCondition.OCCUR_CONDITION_STATUS_LOW,
+                "page_viewed" => OccurCondition.OCCUR_CONDITION_PAGE_VIEWED,
+                _ => OccurCondition.OCCUR_CONDITION_PAGE_VIEWED,
             };
         }
     }

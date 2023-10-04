@@ -1,7 +1,4 @@
-using System.Linq;
 using Script.UI;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TestScript : MonoBehaviour

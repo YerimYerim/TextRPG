@@ -70,10 +70,12 @@ namespace Script.UI
         }
         public void ClearAll()
         {
-            foreach (var item in _cloneUseitem)
+            for (var i = 0; i < _cloneUseitem.Count; i++)
             {
+                var item = _cloneUseitem[i];
                 DestroyImmediate(item);
             }
+            _cloneUseitem.Clear();
         }
 
         public GameObject GetItem(GameObject gameObject)

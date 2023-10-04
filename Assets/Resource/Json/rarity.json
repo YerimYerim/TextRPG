@@ -1,0 +1,26 @@
+[
+  {
+    "rarity_id": 1,
+    "rarity_string": "일반",
+    "rarity_rsc": "img_rarity_bg_1",
+    "rarity_color": "#FFFFFF"
+  },
+  {
+    "rarity_id": 2,
+    "rarity_string": "희귀",
+    "rarity_rsc": "img_rarity_bg_2",
+    "rarity_color": "#66CCFF"
+  },
+  {
+    "rarity_id": 3,
+    "rarity_string": "에픽",
+    "rarity_rsc": "img_rarity_bg_3",
+    "rarity_color": "#9933FF"
+  },
+  {
+    "rarity_id": 4,
+    "rarity_string": "전설",
+    "rarity_rsc": "img_rarity_bg_4",
+    "rarity_color": "#FFCC00"
+  }
+]

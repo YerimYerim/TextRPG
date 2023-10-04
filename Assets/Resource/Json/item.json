@@ -1,0 +1,16 @@
+[
+  {
+    "item_id": 10001,
+    "item_type": "normal",
+    "rarity_id": 1,
+    "item_rsc": "img_egg",
+    "item_name": "달걀",
+    "item_desc": "맛있는 달걀이다. 먹으면 체력이 10 회복된다.",
+    "is_reset_able": true,
+    "stack_amount": 100,
+    "is_ui_show": true,
+    "function_type": "change_status",
+    "function_value_1": [1],
+    "function_value_2": [10]
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "group_name": "page_type",
+    "enum_name": "text",
+    "source_enum_name": "PAGE_TYPE_TEXT",
+    "enum_value": 0
+  },
+  {
+    "group_name": "page_type",
+    "enum_name": "img",
+    "source_enum_name": "PAGE_TYPE_IMG",
+    "enum_value": 1
+  },
+  {
+    "group_name": "page_type",
+    "enum_name": "button",
+    "source_enum_name": "PAGE_TYPE_BUTTON",
+    "enum_value": 2
+  },
+  {
+    "group_name": "page_type",
+    "enum_name": "get_item",
+    "source_enum_name": "PAGE_TYPE_GET_ITEM",
+    "enum_value": 3
+  },
+  {
+    "group_name": "page_type",
+    "enum_name": "status",
+    "source_enum_name": "PAGE_TYPE_STATUS",
+    "enum_value": 4
+  },
+  {
+    "group_name": "occur_condition",
+    "enum_name": "own_item",
+    "source_enum_name": "OCCUR_CONDITION_OWN_ITEM",
+    "enum_value": 0
+  },
+  {
+    "group_name": "occur_condition",
+    "enum_name": "status_high",
+    "source_enum_name": "OCCUR_CONDITION_STATUS_HIGH",
+    "enum_value": 1
+  },
+  {
+    "group_name": "occur_condition",
+    "enum_name": "status_low",
+    "source_enum_name": "OCCUR_CONDITION_STATUS_LOW",
+    "enum_value": 2
+  },
+  {
+    "group_name": "occur_condition",
+    "enum_name": "page_viewed",
+    "source_enum_name": "OCCUR_CONDITION_PAGE_VIEWED",
+    "enum_value": 3
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "normal",
+    "source_enum_name": "ITEM_TYPE_NORMAL",
+    "enum_value": 0
+  },
+  {
+    "group_name": "item_function_type",
+    "enum_name": "chage_status",
+    "source_enum_name": "ITEM_FUNCTION_TYPE_CHAGE_STATUS",
+    "enum_value": 0
+  },
+  {
+    "group_name": "item_function_type",
+    "enum_name": "move_page",
+    "source_enum_name": "ITEM_FUNCTION_TYPE_MOVE_PAGE",
+    "enum_value": 1
+  },
+  {
+    "group_name": "status_function_type",
+    "enum_name": "max_stat",
+    "source_enum_name": "STATUS_FUNCTION_TYPE_MAX_STAT",
+    "enum_value": 0
+  }
+]

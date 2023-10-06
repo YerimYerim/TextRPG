@@ -7,15 +7,15 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
     private readonly string[] _pageJsonFileNames = { "page", "status", "item", "rarity" };
     internal List<ScenarioData> _pageData = new();
-    internal List<Script.DataClass.StatusTableData> _statusData = new();
-    internal List<Script.DataClass.ItemTableData> _itemData = new();
-    internal List<Script.DataClass.RarityTableData> _rarityData = new();
+    internal List<StatusTableData> _statusData = new();
+    internal List<ItemTableData> _itemData = new();
+    internal List<RarityTableData> _rarityData = new();
     public void LoadData()
     {
         _pageData = ReadJsonFiles<ScenarioData>(_pageJsonFileNames[0]);
-        _statusData = ReadJsonFiles<Script.DataClass.StatusTableData>(_pageJsonFileNames[1]);
-        _itemData = ReadJsonFiles<Script.DataClass.ItemTableData>(_pageJsonFileNames[2]);
-        _rarityData = ReadJsonFiles<Script.DataClass.RarityTableData>(_pageJsonFileNames[3]);
+        _statusData = ReadJsonFiles<StatusTableData>(_pageJsonFileNames[1]);
+        _itemData = ReadJsonFiles<ItemTableData>(_pageJsonFileNames[2]);
+        _rarityData = ReadJsonFiles<RarityTableData>(_pageJsonFileNames[3]);
     }
 
     private static List<T> ReadJsonFiles<T>(string fileName)

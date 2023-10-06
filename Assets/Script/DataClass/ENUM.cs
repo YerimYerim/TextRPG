@@ -25,7 +25,12 @@ namespace Script.DataClass
         Power,
         MpMax,
     }
-    
+
+    public enum STATUS_FUNCTION_TYPE
+    {
+        STATUS_FUNCTION_TYPE_MAX_STAT,
+
+    }
     public static class EnumExtensions
     {
         public static string to_String(this TemplateType templateType)
@@ -49,7 +54,7 @@ namespace Script.DataClass
                 "img"    => TemplateType.Image,
                 "button"    => TemplateType.Choice,
                 "get_item" => TemplateType.ItemGet,
-                "status" => TemplateType.ItemGet,
+                "status" => TemplateType.Status,
                 _ => TemplateType.Choice,
             };
         }
@@ -63,6 +68,23 @@ namespace Script.DataClass
                 "status_low" => OccurCondition.OCCUR_CONDITION_STATUS_LOW,
                 "page_viewed" => OccurCondition.OCCUR_CONDITION_PAGE_VIEWED,
                 _ => OccurCondition.OCCUR_CONDITION_PAGE_VIEWED,
+            };
+        }
+        
+        public static string to_string(this STATUS_FUNCTION_TYPE statusFunction)
+        {
+            return statusFunction switch
+            {
+                STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT => "max_stat",
+                _ => string.Empty
+            };
+        }
+        public static STATUS_FUNCTION_TYPE to_Status_function_type_enum(this string str)
+        {
+            return str switch
+            {
+                "max_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
+                _ =>  STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
             };
         }
     }

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using Script.DataClass;
 
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {

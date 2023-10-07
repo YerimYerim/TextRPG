@@ -19,6 +19,11 @@ namespace Script.DataClass
         OCCUR_CONDITION_STATUS_LOW,         //특정 스탯이 특정값 이하인 경우 발생
         OCCUR_CONDITION_PAGE_VIEWED,        //특정 페이지를 열람했을 때 발생
     }
+    public enum ITEM_FUNCTION_TYPE
+    {
+        ITEM_FUNCTION_TYPE_CHAGE_STATUS,
+        ITEM_FUNCTION_TYPE_MOVE_PAGE,
+    }
 
     public enum SuccessCondition
     {
@@ -85,6 +90,16 @@ namespace Script.DataClass
             {
                 "max_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
                 _ =>  STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
+            };
+        }
+        
+        public static ITEM_FUNCTION_TYPE to_Item_function_type_enum(this string str)
+        {
+            return str switch
+            {
+                "chage_status" => ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
+                "move_page" =>  ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_MOVE_PAGE,
+                _=> ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
             };
         }
     }

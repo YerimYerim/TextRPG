@@ -63,6 +63,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
+                //GameItemManager.Instance.GetItem(scenarioData.result_value[0], scenarioData.result_value[1]);
                 textPanel.SetText(scenarioData.output_txt);
                 return item;
             }

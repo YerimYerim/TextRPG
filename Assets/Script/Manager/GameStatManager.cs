@@ -6,14 +6,14 @@ using Script.Manager;
 
 public class GameStatManager : Singleton<GameStatManager>
 {
-    private Dictionary<StatusTableData, int> status = new();
+    private Dictionary<int, int> status = new();
 
     public void AddStat(int statusID, int addValue)
     {
         var statusTableData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusID);
         if (statusTableData != null)
         {
-            if ( status.ContainsKey(statusTableData))
+            if ( status.ContainsKey(statusID))
             {
                 var functionType = statusTableData.function_type.to_Status_function_type_enum();
                 if (functionType == STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT)
@@ -21,33 +21,35 @@ public class GameStatManager : Singleton<GameStatManager>
                     var statusMaxData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusTableData.function_value[0]);
                     if (statusMaxData != null)
                     {
-                        status[statusTableData] = Math.Min(status[statusTableData] + addValue, statusMaxData.stack_amount);
+                        status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
                     }
                 }
                 else
                 {
-                    status[statusTableData] += addValue;
+                    status[statusID] += addValue;
                 }
             }
             else
             {
-                status.Add(statusTableData, addValue);
+                status.Add(statusID, addValue);
             }
         }
     }
 
-    public (StatusTableData statusTableData, int value) GetStat(int statusID)
+    public int GetStat(int statusID)
     {
-        var statusTableData = GameDataManager.Instance._statusData.Find(_ => _.status_id == statusID);
-        
-        if (status.TryGetValue(statusTableData, out var statusValue))
+        if (status.TryGetValue(statusID, out var statusValue))
         {
-            return (statusTableData, statusValue);
+            return statusValue;
         }
         else
         {
-            status.Add(statusTableData, 0);
-            return (statusTableData, 0);
+            status.Add(statusID, 0);
+            return 0;
         }
+    }
+    public StatusTableData GetStatusData(int statusID)
+    {
+        return GameDataManager.Instance._statusData.Find(_ => _.status_id == statusID);
     }
 }

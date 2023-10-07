@@ -73,11 +73,12 @@ public class UIStoryView : MonoBehaviour
                 
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                var statValue = Math.Abs(stat.value);
+                var statValue = Math.Abs(stat);
+                var statusData = GameStatManager.Instance.GetStatusData(scenarioData.result_value[0]);
                 
                 // ?? 예림 : string 대응시 변경 해야할 부분 
-                var doString = stat.value < 0 ? "소모" : "획득";
-                var str = string.Format(scenarioData.output_txt, stat.statusTableData.status_name, statValue, doString);
+                var doString = stat < 0 ? "소모" : "획득";
+                var str = string.Format(scenarioData.output_txt, statusData.status_name, statValue, doString);
                 
                 textPanel.SetText(str);
                 return item;

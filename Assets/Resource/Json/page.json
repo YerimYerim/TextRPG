@@ -67,7 +67,7 @@
     "occur_condition": null,
     "occur_value": [],
     "occur_prob": 40,
-    "result_value": [100001],
+    "result_value": [100001, 1],
     "result_prob": [],
     "is_renew_page": null
   },
@@ -79,7 +79,7 @@
     "occur_condition": null,
     "occur_value": [],
     "occur_prob": 40,
-    "result_value": [100002],
+    "result_value": [100002, 1],
     "result_prob": [],
     "is_renew_page": null
   },

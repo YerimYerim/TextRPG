@@ -123,42 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &206867975 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1969027575997330888, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2145139039}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &206867982
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206867975}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!1 &219039861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7122266999298694549, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2145139039}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &219039868
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219039861}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &639332721
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,24 +363,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1396743366 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2575056955654900701, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-    type: 3}
-  m_PrefabInstance: {fileID: 2145139039}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1396743371
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1396743366}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1541083254
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,16 +530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _canvas
       value: 
-      objectReference: {fileID: 219039868}
+      objectReference: {fileID: 0}
     - target: {fileID: 2916517764879090209, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982035248128947553, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      propertyPath: _tweenTime
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3291876007166907204, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
@@ -640,11 +581,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5946351752249587114, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      propertyPath: _canvas
-      value: 
-      objectReference: {fileID: 206867982}
     - target: {fileID: 6103138833962426163, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
       propertyPath: m_Name
@@ -844,7 +780,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _canvas
       value: 
-      objectReference: {fileID: 1396743371}
+      objectReference: {fileID: 0}
     - target: {fileID: 8036579186947574224, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -878,19 +814,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2575056955654900701, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1396743371}
-    - targetCorrespondingSourceObject: {fileID: 1969027575997330888, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 206867982}
-    - targetCorrespondingSourceObject: {fileID: 7122266999298694549, guid: dfd0d5b113c9dfb48b1cb9b60637a891,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 219039868}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfd0d5b113c9dfb48b1cb9b60637a891, type: 3}
 --- !u!224 &2145139040 stripped
 RectTransform:

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5448963183263969240}
   - component: {fileID: 1438443060708696058}
   - component: {fileID: 1212100008639352036}
+  - component: {fileID: 467374781256211488}
   m_Layer: 5
   m_Name: UIStoryTextPanel
   m_TagString: Untagged
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textTyper: {fileID: 4868645982757491895}
+  _canvas: {fileID: 467374781256211488}
 --- !u!114 &5448963183263969240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +124,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!225 &467374781256211488
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852716340716401231}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1109686016442805908
 GameObject:
   m_ObjectHideFlags: 0

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2117027996607049341}
   - component: {fileID: 5843383290428289483}
   - component: {fileID: 3753258467048972873}
+  - component: {fileID: 6182829697521375093}
   m_Layer: 5
   m_Name: UIStoryImagePanel
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 424322318111710566}
+  _canvas: {fileID: 6182829697521375093}
 --- !u!222 &5843383290428289483
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -165,3 +167,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &6182829697521375093
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815087902505451872}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

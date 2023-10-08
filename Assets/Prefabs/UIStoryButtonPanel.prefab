@@ -296,8 +296,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 434.5, y: 0}
-  m_SizeDelta: {x: 863, y: 0}
+  m_AnchoredPosition: {x: 380, y: 0}
+  m_SizeDelta: {x: 754, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3402281169676705149
 CanvasRenderer:
@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 1018343788019371891}
   - component: {fileID: 7417467126025966865}
   - component: {fileID: 9209516558813403781}
+  - component: {fileID: 7081917571921675550}
   m_Layer: 5
   m_Name: UIStoryButtonPanel
   m_TagString: Untagged
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ChoiceButton: {fileID: 9185418762757704096}
+  _canvas: {fileID: 7081917571921675550}
 --- !u!114 &7417467126025966865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,3 +581,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!225 &7081917571921675550
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844152333182469038}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

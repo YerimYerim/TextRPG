@@ -51,7 +51,7 @@ namespace Editor
                                     {
                                         if (table.Rows[2].ItemArray[j].ToString().Contains("[]"))
                                         {
-                                            rowData.Add(table.Rows[0].ItemArray[j].ToString(), "[" + item + "]");
+                                            rowData.Add(table.Rows[0].ItemArray[j].ToString(), "[[[" + item + "]]]");
                                             continue;
                                         }
 
@@ -80,8 +80,8 @@ namespace Editor
                     Formatting = Formatting.Indented,
                 });
                 
-                json = json.Replace("\"[", "[");
-                json = json.Replace("]\"", "]");
+                json = json.Replace("\"[[[", "[");
+                json = json.Replace("]]]\"", "]");
                 
                 // JSON 데이터를 파일에 쓰기
                 string path =  $"Assets/Resource/Json/{fileName}.json";

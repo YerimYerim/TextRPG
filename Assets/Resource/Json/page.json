@@ -86,7 +86,7 @@
   {
     "page_id": 102,
     "type": "status",
-    "output_txt": "{0}이 {1} {2}했습니다.",
+    "output_txt": "체력이 20 증가했습니다.",
     "relate_value": null,
     "occur_condition": null,
     "occur_value": [],

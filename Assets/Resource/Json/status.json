@@ -5,9 +5,9 @@
     "status_rsc": "icon_hp",
     "status_name": "체력",
     "status_desc": "체력이다. 모두 소모되면 사망한다.",
-    "is_ui_show": true,
+    "is_reset_able": true,
     "stack_amount": -1,
-    "ui_show": true,
+    "is_ui_show": true,
     "function_type": "max_stat",
     "function_value": [1]
   },
@@ -17,9 +17,9 @@
     "status_rsc": "icon_max_hp",
     "status_name": "최대 체력",
     "status_desc": "최대 보유할 수 있는 체력값이다.",
-    "is_ui_show": true,
+    "is_reset_able": true,
     "stack_amount": 5000,
-    "ui_show": true,
+    "is_ui_show": true,
     "function_type": null,
     "function_value": []
   }

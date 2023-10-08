@@ -496,11 +496,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2916517764879090209}
     m_Modifications:
-    - target: {fileID: 1018343788019371891, guid: 48fc61d2c25722b488b3a2c163ee5479,
-        type: 3}
-      propertyPath: _canvas
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8228158315766464924, guid: 48fc61d2c25722b488b3a2c163ee5479,
         type: 3}
       propertyPath: m_Pivot.x
@@ -601,6 +596,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8641413284721448939, guid: 48fc61d2c25722b488b3a2c163ee5479,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 754
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641413284721448939, guid: 48fc61d2c25722b488b3a2c163ee5479,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 380
+      objectReference: {fileID: 0}
     - target: {fileID: 8844152333182469038, guid: 48fc61d2c25722b488b3a2c163ee5479,
         type: 3}
       propertyPath: m_Name
@@ -637,11 +642,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2916517764879090209}
     m_Modifications:
-    - target: {fileID: 2117027996607049341, guid: 5483de69ecccc32408d823ab3c597ff3,
-        type: 3}
-      propertyPath: _canvas
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5815087902505451872, guid: 5483de69ecccc32408d823ab3c597ff3,
         type: 3}
       propertyPath: m_Name

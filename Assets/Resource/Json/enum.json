@@ -30,6 +30,12 @@
     "enum_value": 4
   },
   {
+    "group_name": "page_type",
+    "enum_name": "recursive_group",
+    "source_enum_name": "PAGE_TYPE_RECURSIVE_GROUP",
+    "enum_value": 5
+  },
+  {
     "group_name": "occur_condition",
     "enum_name": "own_item",
     "source_enum_name": "OCCUR_CONDITION_OWN_ITEM",
@@ -52,6 +58,12 @@
     "enum_name": "page_viewed",
     "source_enum_name": "OCCUR_CONDITION_PAGE_VIEWED",
     "enum_value": 3
+  },
+  {
+    "group_name": "occur_condition",
+    "enum_name": "not_enough_own_item",
+    "source_enum_name": "OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM",
+    "enum_value": 4
   },
   {
     "group_name": "item_type",

@@ -10,9 +10,11 @@ public class ScenarioData
     public int[] occur_value { get; set; }
     public int? occur_prob { get; set; }
     public int[] result_value { get; set; }
+    public int? result_count { get; set; }
     public int[] result_prob { get; set; }
     public bool? is_renew_page { get; set; }
 }
+
 public partial class RarityTableData
 {
     public int rarity_id { get; set; }

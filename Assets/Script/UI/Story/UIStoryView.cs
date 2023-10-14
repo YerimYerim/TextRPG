@@ -6,6 +6,8 @@ using Script.UI;
 using Script.UI.Story;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class UIStoryView : MonoBehaviour
 {
@@ -14,6 +16,11 @@ public class UIStoryView : MonoBehaviour
     [SerializeField] private UIStoryButtonPanel _buttonsPanel;
     [SerializeField] private UIStroyTextPanel _textPanel;
     [SerializeField] private float _tweenTime;
+    [SerializeField] private DTButton _indicator;
+    [SerializeField] private float indicatorOffset;
+    [SerializeField] private float scrollFinishOffset;
+    
+    ScenarioData _scenarioData;
     private List<LTDescr> leantweenList = new List<LTDescr>();
     private void Awake()
     {
@@ -22,8 +29,33 @@ public class UIStoryView : MonoBehaviour
         var scenarioData = GamePageManager.Instance.GetScenarioData(0);
         GamePageManager.Instance.EnqueueCurPageData(scenarioData.page_id ?? 0);
         _scrollRect.MakeList( GamePageManager.Instance.QueueCount);
+        _indicator.onClick.AddListener(OnClickIndicator);
     }
-    
+
+    private void OnClickIndicator()
+    {
+        _scrollRect.MoveScrollEndVertical();
+        _indicator.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        _scrollRect.onValueChanged.AddListener(OnUpdateScrollEvent);
+    }
+
+    private void OnUpdateScrollEvent(Vector2 value)
+    { 
+        var isFinishScroll = _scrollRect.IsFinishScroll(scrollFinishOffset);
+        if (isFinishScroll)
+        {
+            _indicator.gameObject.SetActive(false);
+        }
+        else
+        {
+            _indicator.gameObject.SetActive(_scrollRect.IsOverViewportVertical(indicatorOffset));
+        }
+    }
+
     private void SetUI()
     {
         _scrollRect.AddList(GamePageManager.Instance.QueueCount);
@@ -31,9 +63,10 @@ public class UIStoryView : MonoBehaviour
     
     GameObject OnUpdateScrollView(int index)
     {
-        var scenarioData = GamePageManager.Instance.DequeueCurPageData();
-        var typeEnum = scenarioData.type.to_TemplateType_enum();
-        if (scenarioData.is_renew_page == true)
+        _indicator.gameObject.SetActive(_scrollRect.IsOverViewportVertical(indicatorOffset));
+        _scenarioData = GamePageManager.Instance.DequeueCurPageData();
+        var typeEnum = _scenarioData.type.to_TemplateType_enum();
+        if (_scenarioData.is_renew_page == true)
         {
             _scrollRect.ClearAll();
         }
@@ -43,7 +76,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                textPanel.SetText(scenarioData.output_txt);
+                textPanel.SetText(_scenarioData.output_txt);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
@@ -51,7 +84,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _imagePanel.GameObject());
                 var imgPanel = item.GetComponent<UIStoryImagePanel>();
-                imgPanel.SetImage(scenarioData.relate_value);
+                imgPanel.SetImage(_scenarioData.relate_value);
                 leantweenList.Add(LeanTween.alphaCanvas( imgPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
@@ -59,7 +92,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(scenarioData, ()=>OnClickButtonAction(scenarioData));
+                buttonPanel.SetButton(_scenarioData, ()=>OnClickButtonAction(_scenarioData));
                 leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
@@ -67,24 +100,24 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                GameItemManager.Instance.GetItem(scenarioData.result_value[0], scenarioData.result_value[1]);
-                textPanel.SetText(scenarioData.output_txt);
+                GameItemManager.Instance.GetItem(_scenarioData.result_value[0], _scenarioData.result_value[1]);
+                textPanel.SetText(_scenarioData.output_txt);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_STATUS:
             {
-                GameStatManager.Instance.AddStat(scenarioData.result_value[0], scenarioData.result_value[1]);
-                var stat = GameStatManager.Instance.GetStat(scenarioData.result_value[0]);
+                GameStatManager.Instance.AddStat(_scenarioData.result_value[0], _scenarioData.result_value[1]);
+                var stat = GameStatManager.Instance.GetStat(_scenarioData.result_value[0]);
                 
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
                 var statValue = Math.Abs(stat);
-                var statusData = GameStatManager.Instance.GetStatusData(scenarioData.result_value[0]);
+                var statusData = GameStatManager.Instance.GetStatusData(_scenarioData.result_value[0]);
                 
                 // ?? 예림 : string 대응시 변경 해야할 부분 
                 var doString = stat < 0 ? "소모" : "획득";
-                var str = string.Format(scenarioData.output_txt, statusData.status_name, statValue, doString);
+                var str = string.Format(_scenarioData.output_txt, statusData.status_name, statValue, doString);
                 
                 textPanel.SetText(str);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
@@ -94,8 +127,8 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                textPanel.SetText(scenarioData.output_txt);
-                GamePageManager.Instance.NextDataEnqueue(scenarioData);
+                textPanel.SetText(_scenarioData.output_txt);
+                GamePageManager.Instance.NextDataEnqueue(_scenarioData);
                 SetUI();
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item; 

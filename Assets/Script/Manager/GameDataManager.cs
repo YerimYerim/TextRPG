@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine;
 
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
@@ -20,18 +21,14 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
     private static List<T> ReadJsonFiles<T>(string fileName)
     {
         List<T> dataList = new List<T>();
-        string filePath = $"Assets/Resource/Json/{fileName}.json";
+        var jsonData = Resources.Load<TextAsset>($"Json/{fileName}");
+        List<T> data = JsonConvert.DeserializeObject<List<T>>(jsonData.text);
 
-        if (File.Exists(filePath))
+        if (data != null)
         {
-            string jsonContent = File.ReadAllText(filePath);
-            List<T> data = JsonConvert.DeserializeObject<List<T>>(jsonContent);
-
-            if (data != null)
-            {
-                dataList.AddRange(data);
-            }
+            dataList.AddRange(data);
         }
+
         return dataList;
     }
 }

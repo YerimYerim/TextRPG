@@ -84,7 +84,7 @@ namespace Editor
                 json = json.Replace("]]]\"", "]");
                 
                 // JSON 데이터를 파일에 쓰기
-                string path =  $"Assets/Resource/Json/{fileName}.json";
+                string path =  $"Assets/Resources/Json/{fileName}.json";
                 File.WriteAllText(path, json);
             }
         }

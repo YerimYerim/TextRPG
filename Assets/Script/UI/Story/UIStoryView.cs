@@ -6,7 +6,6 @@ using Script.UI;
 using Script.UI.Story;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIStoryView : MonoBehaviour
 {
@@ -40,7 +39,7 @@ public class UIStoryView : MonoBehaviour
         }
         switch (typeEnum)
         {
-            case TemplateType.Text:
+            case PAGE_TYPE.PAGE_TYPE_TEXT:
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
@@ -48,7 +47,7 @@ public class UIStoryView : MonoBehaviour
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
-            case TemplateType.Image:
+            case PAGE_TYPE.PAGE_TYPE_IMG:
             {
                 var item = _scrollRect.GetItem( _imagePanel.GameObject());
                 var imgPanel = item.GetComponent<UIStoryImagePanel>();
@@ -56,7 +55,7 @@ public class UIStoryView : MonoBehaviour
                 leantweenList.Add(LeanTween.alphaCanvas( imgPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
-            case TemplateType.Choice:
+            case PAGE_TYPE.PAGE_TYPE_BUTTON:
             {
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
@@ -64,16 +63,16 @@ public class UIStoryView : MonoBehaviour
                 leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
-            case TemplateType.ItemGet:
+            case PAGE_TYPE.PAGE_TYPE_GET_ITEM:
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                //GameItemManager.Instance.GetItem(scenarioData.result_value[0], scenarioData.result_value[1]);
+                GameItemManager.Instance.GetItem(scenarioData.result_value[0], scenarioData.result_value[1]);
                 textPanel.SetText(scenarioData.output_txt);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
-            case TemplateType.Status:
+            case PAGE_TYPE.PAGE_TYPE_STATUS:
             {
                 GameStatManager.Instance.AddStat(scenarioData.result_value[0], scenarioData.result_value[1]);
                 var stat = GameStatManager.Instance.GetStat(scenarioData.result_value[0]);
@@ -90,6 +89,16 @@ public class UIStoryView : MonoBehaviour
                 textPanel.SetText(str);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
+            }
+            case PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP:
+            {
+                var item = _scrollRect.GetItem( _textPanel.GameObject());
+                var textPanel = item.GetComponent<UIStroyTextPanel>();
+                textPanel.SetText(scenarioData.output_txt);
+                GamePageManager.Instance.NextDataEnqueue(scenarioData);
+                SetUI();
+                leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                return item; 
             }
         }
 

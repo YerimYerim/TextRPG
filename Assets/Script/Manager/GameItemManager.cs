@@ -35,12 +35,6 @@ public class GameItemManager : Singleton<GameItemManager>
         }
     }
 
-    // ?? 예림 : 논의 필요
-    private void MovePage(int id)
-    {
-        GamePageManager.Instance.EnqueueCurPageData(id);
-    }
-
     private void ChangeStat(int statID, int addStatValue)
     {
         GameStatManager.Instance.AddStat(statID, addStatValue);
@@ -65,5 +59,12 @@ public class GameItemManager : Singleton<GameItemManager>
             }
         }
     }
-    
+    public int GetItemCount(int itemID)
+    {
+        if (ownItem.ContainsKey(itemID))
+        {
+            return ownItem[itemID];
+        }
+        return 0;
+    }
 }

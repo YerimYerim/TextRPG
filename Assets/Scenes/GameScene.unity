@@ -925,11 +925,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIScrollIndicator
       objectReference: {fileID: 0}
-    - target: {fileID: 3367501371698942099, guid: abea065351d5e06418f7d60463b05825,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

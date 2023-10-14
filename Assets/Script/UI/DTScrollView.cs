@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Script.UI
@@ -11,7 +13,7 @@ namespace Script.UI
         private GameObject[] _scrollItem;
         private List<GameObject> _scrollItems;   
         public delegate GameObject UpdateScrollViewDelegate(int index);
-
+        
         public void InitScrollView(UpdateScrollViewDelegate onUpdateEvent, GameObject scrollItem)
         {
             _scrollItem = new GameObject[1]; 
@@ -100,5 +102,31 @@ namespace Script.UI
         //     }
         //     return _cloneUseitem[i];
         // }
+
+        public void MoveScrollEndVertical()
+        {
+            var contentRectTransform = content.gameObject.transform as RectTransform;
+            LeanTween.moveY(contentRectTransform, contentRectTransform.position.y + content.rect.height - viewport.rect.height, 0.5f);
+        }
+
+        public bool IsFinishScroll(float offSet)
+        {
+            var contentRectTransform = content.gameObject.transform as RectTransform;
+            var positionTo = content.rect.height - viewport.rect.height;
+            if (positionTo <= contentRectTransform.anchoredPosition3D.y + offSet)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public bool IsOverViewportVertical(float offset)
+        {
+            if (content.rect.height > viewport.rect.height + offset)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

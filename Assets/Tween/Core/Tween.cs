@@ -57,9 +57,9 @@ namespace Lofle.Tween
 
 		private float _playTime = 0.0f;
 		private bool _bPingPongEnd = false;
-		private bool _bPlayReservation = false;
+		//private bool _bPlayReservation = false;
 
-		private eDirection _endDirection = eDirection.None;
+		//private eDirection _endDirection = eDirection.None;
 
 		public bool isAbsolute { get { return _isAbsolute; } set { _isAbsolute = value; } }
 		public bool isForward { get { return _bForward; } set { _bForward = value; } }
@@ -95,7 +95,7 @@ namespace Lofle.Tween
 
 		private IEnumerator Play( Action callback )
 		{
-			_bPlayReservation = false;
+			//_bPlayReservation = false;
 
 			bool bPlay = true;
 			while( bPlay )
@@ -207,7 +207,7 @@ namespace Lofle.Tween
 			{
 				if( null != _eventEndForward )
 				{
-					_endDirection = eDirection.Forwarded;
+					//_endDirection = eDirection.Forwarded;
 					_eventEndForward.Invoke();
 				}
 			}
@@ -215,7 +215,7 @@ namespace Lofle.Tween
 			{
 				if( null != _eventEndReverse )
 				{
-					_endDirection = eDirection.Reversed;
+					//_endDirection = eDirection.Reversed;
 					_eventEndReverse.Invoke();
 				}
 			}

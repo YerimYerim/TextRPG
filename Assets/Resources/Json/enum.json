@@ -88,5 +88,11 @@
     "enum_name": "max_stat",
     "source_enum_name": "STATUS_FUNCTION_TYPE_MAX_STAT",
     "enum_value": 0
+  },
+  {
+    "group_name": "status_function_type",
+    "enum_name": "get_stat",
+    "source_enum_name": "STATUS_FUNCTION_TYPE_GET_STAT",
+    "enum_value": 1
   }
 ]

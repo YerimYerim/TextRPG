@@ -1,0 +1,32 @@
+[
+  {
+    "config_id": "status_damage_factor",
+    "data_type": "int",
+    "value": 3
+  },
+  {
+    "config_id": "status_reduce_defense_factor",
+    "data_type": "int",
+    "value": 4
+  },
+  {
+    "config_id": "status_hp",
+    "data_type": "int",
+    "value": 1
+  },
+  {
+    "config_id": "status_defense_factor",
+    "data_type": "int",
+    "value": 5
+  },
+  {
+    "config_id": "status_dodge_factor",
+    "data_type": "int",
+    "value": 6
+  },
+  {
+    "config_id": "status_hit_factor",
+    "data_type": "int",
+    "value": 7
+  }
+]

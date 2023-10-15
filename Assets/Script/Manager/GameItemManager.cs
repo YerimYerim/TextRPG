@@ -37,7 +37,7 @@ public class GameItemManager : Singleton<GameItemManager>
 
     private void ChangeStat(int statID, int addStatValue)
     {
-        GameStatManager.Instance.AddStat(statID, addStatValue);
+        GamePlayerManager.Instance.myActor.playerStat.AddStat(statID, addStatValue);
     }
     public void GetItem(int itemID, int addCount)
     {

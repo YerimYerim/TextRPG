@@ -2,12 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Script.DataClass;
-using Script.Manager;
 
-public class GameStatManager : Singleton<GameStatManager>
+public class Stat 
 {
     private Dictionary<int, int> status = new();
-
+    
+    public Stat()
+    {
+        var statusData = GameDataManager.Instance._statusData;
+        foreach (var data in statusData)
+        {
+            AddStat(data.status_id, 0);
+        }
+    }
     public void AddStat(int statusID, int addValue)
     {
         var statusTableData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusID);

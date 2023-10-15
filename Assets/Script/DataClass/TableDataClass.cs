@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Collections.Generic;using UnityEngine;
 
 public class ScenarioData
 {
@@ -50,4 +50,11 @@ public partial class StatusTableData
     public bool ui_show { get; set; }
     public string function_type { get; set; }
     public List<int> function_value { get; set; }
+}
+
+public partial class ConfigTableData
+{
+    public string config_id { get; set; }
+    public string data_type { get; set; }
+    public object value { get; set; }
 }

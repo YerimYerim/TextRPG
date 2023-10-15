@@ -92,17 +92,7 @@ namespace Script.UI
         {
             return _cloneUseitem.FindAll(_ => _.GetComponent<T>() != null);
         }
-        // public GameObject GetItem(int i, Type type)
-        // {
-        //     _cloneUseitem ??= new List<GameObject>();
-        //     var items = _scrollItems.FindAll(_ => _.GetComponent(type));
-        //     if (_cloneUseitem.Count <= i)
-        //     {
-        //         _cloneUseitem.Add(Instantiate( _scrollItem, content.transform));
-        //     }
-        //     return _cloneUseitem[i];
-        // }
-
+        
         public void MoveScrollEndVertical()
         {
             var contentRectTransform = content.gameObject.transform as RectTransform;

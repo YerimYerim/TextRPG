@@ -37,7 +37,7 @@ namespace Script.DataClass
     public enum STATUS_FUNCTION_TYPE
     {
         STATUS_FUNCTION_TYPE_MAX_STAT,
-
+        STATUS_FUNCTION_TYPE_GET_STAT,
     }
     public static class EnumExtensions
     {
@@ -87,6 +87,7 @@ namespace Script.DataClass
             return statusFunction switch
             {
                 STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT => "max_stat",
+                STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT => "get_stat",
                 _ => string.Empty
             };
         }
@@ -95,6 +96,7 @@ namespace Script.DataClass
             return str switch
             {
                 "max_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
+                "get_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT,
                 _ =>  STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
             };
         }

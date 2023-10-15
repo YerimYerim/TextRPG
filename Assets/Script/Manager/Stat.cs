@@ -23,17 +23,31 @@ public class Stat
             if ( status.ContainsKey(statusID))
             {
                 var functionType = statusTableData.function_type.to_Status_function_type_enum();
-                if (functionType == STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT)
+                switch (functionType)
                 {
-                    var statusMaxData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusTableData.function_value[0]);
-                    if (statusMaxData != null)
+                    case STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT:
                     {
-                        status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
+                        var statusMaxData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusTableData.function_value_1[0]);
+                        if (statusMaxData != null)
+                        {
+                            status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
+                        }
+
+                        break;
                     }
-                }
-                else
-                {
-                    status[statusID] += addValue;
+                    case STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT:
+                    {
+                        for (int i = 0; i < statusTableData.function_value_2.Count; ++i)
+                        {
+                            status[statusTableData.function_value_1[i]] += statusTableData.function_value_2[i] * addValue;
+                            status[statusID] += addValue;
+                        }
+
+                        break;
+                    }
+                    default:
+                        status[statusID] += addValue;
+                        break;
                 }
             }
             else

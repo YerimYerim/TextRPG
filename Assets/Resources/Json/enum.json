@@ -72,6 +72,42 @@
     "enum_value": 0
   },
   {
+    "group_name": "item_type",
+    "enum_name": "equip_weapon",
+    "source_enum_name": "ITEM_TYPE_EQUIP_WEAPON",
+    "enum_value": 1
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "equip_head",
+    "source_enum_name": "ITEM_TYPE_EQUIP_HEAD",
+    "enum_value": 2
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "equip_armor",
+    "source_enum_name": "ITEM_TYPE_EQUIP_ARMOR",
+    "enum_value": 3
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "equip_shoes",
+    "source_enum_name": "ITEM_TYPE_EQUIP_SHOES",
+    "enum_value": 4
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "equip_ring",
+    "source_enum_name": "ITEM_TYPE_EQUIP_RING",
+    "enum_value": 5
+  },
+  {
+    "group_name": "item_type",
+    "enum_name": "equip_necklace",
+    "source_enum_name": "ITEM_TYPE_EQUIP_NECKLACE",
+    "enum_value": 6
+  },
+  {
     "group_name": "item_function_type",
     "enum_name": "chage_status",
     "source_enum_name": "ITEM_FUNCTION_TYPE_CHAGE_STATUS",
@@ -82,6 +118,12 @@
     "enum_name": "move_page",
     "source_enum_name": "ITEM_FUNCTION_TYPE_MOVE_PAGE",
     "enum_value": 1
+  },
+  {
+    "group_name": "item_function_type",
+    "enum_name": "equip",
+    "source_enum_name": "ITEM_FUNCTION_TYPE_EQUIP",
+    "enum_value": 2
   },
   {
     "group_name": "status_function_type",

@@ -28,5 +28,10 @@
     "config_id": "status_hit_factor",
     "data_type": "int",
     "value": 7
+  },
+  {
+    "config_id": "equip_item_config",
+    "data_type": "string[]",
+    "value": "equip_weapon, equip_head, equip_armor, equip_shoes, equip_ring, equip_necklace"
   }
 ]

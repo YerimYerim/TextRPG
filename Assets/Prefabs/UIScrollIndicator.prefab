@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-  minLongClickTime: 0.1
+  minLongClickTime: 10
   touchSoundKey: 
 --- !u!1 &5703106059531115146
 GameObject:
@@ -294,7 +294,7 @@ MonoBehaviour:
   _finishEvent:
     m_PersistentCalls:
       m_Calls: []
-  _style: 0
+  _style: 1
   _curve:
     serializedVersion: 2
     m_Curve:

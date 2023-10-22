@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 9133240174536873344}
   - component: {fileID: 4785263540050689258}
   - component: {fileID: 4034493352621457575}
-  - component: {fileID: 4488730038039111801}
+  - component: {fileID: 4750753008223470186}
   m_Layer: 5
   m_Name: ButtonToolBar
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4488730038039111801
+--- !u!114 &4750753008223470186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4450927634807447688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 141421e2f6f99544598bcdefe945def4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -197,6 +197,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+  minLongClickTime: 10
+  touchSoundKey: 
 --- !u!1 &4766064329517402387
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +211,7 @@ GameObject:
   - component: {fileID: 1526199205324994537}
   - component: {fileID: 6608608691978883775}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

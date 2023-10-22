@@ -108,6 +108,7 @@ namespace Script.DataClass
                 "equip_shoes"   => ITEM_TYPE.ITEM_TYPE_EQUIP_SHOES,
                 "equip_ring"    => ITEM_TYPE.ITEM_TYPE_EQUIP_RING,
                 "equip_necklace"=> ITEM_TYPE.ITEM_TYPE_EQUIP_NECKLACE,
+                _ => ITEM_TYPE.ITEM_TYPE_NORMAL
             };
         }
     }

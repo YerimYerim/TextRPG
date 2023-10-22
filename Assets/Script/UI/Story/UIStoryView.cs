@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Lofle.Tween;
 using Script.DataClass;
 using Script.Manager;
 using Script.UI;
@@ -19,7 +20,7 @@ public class UIStoryView : MonoBehaviour
     [SerializeField] private DTButton _indicator;
     [SerializeField] private float indicatorOffset;
     [SerializeField] private float scrollFinishOffset;
-    
+    [SerializeField] private Tween _indicatorTween;
     ScenarioData _scenarioData;
     private List<LTDescr> leantweenList = new List<LTDescr>();
     private void Awake()
@@ -53,6 +54,10 @@ public class UIStoryView : MonoBehaviour
         else
         {
             _indicator.gameObject.SetActive(_scrollRect.IsOverViewportVertical(indicatorOffset));
+            if (_indicator.IsActive())
+            {
+                _indicatorTween.Play(true);
+            }
         }
     }
 
@@ -64,6 +69,10 @@ public class UIStoryView : MonoBehaviour
     GameObject OnUpdateScrollView(int index)
     {
         _indicator.gameObject.SetActive(_scrollRect.IsOverViewportVertical(indicatorOffset));
+        if (_indicator.IsActive())
+        {
+            _indicatorTween.Play(true);
+        }
         _scenarioData = GamePageManager.Instance.DequeueCurPageData();
         var typeEnum = _scenarioData.type.to_TemplateType_enum();
         if (_scenarioData.is_renew_page == true)

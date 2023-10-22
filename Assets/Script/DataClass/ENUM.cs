@@ -27,6 +27,16 @@ namespace Script.DataClass
         ITEM_FUNCTION_TYPE_CHAGE_STATUS,
         ITEM_FUNCTION_TYPE_MOVE_PAGE,
     }
+    public enum ITEM_TYPE
+    {
+        ITEM_TYPE_NORMAL,
+        ITEM_TYPE_EQUIP_WEAPON,
+        ITEM_TYPE_EQUIP_HEAD,
+        ITEM_TYPE_EQUIP_ARMOR,
+        ITEM_TYPE_EQUIP_SHOES,
+        ITEM_TYPE_EQUIP_RING,
+        ITEM_TYPE_EQUIP_NECKLACE,
+    }
 
     public enum SuccessCondition
     {
@@ -41,20 +51,6 @@ namespace Script.DataClass
     }
     public static class EnumExtensions
     {
-        public static string to_String(this PAGE_TYPE pageType)
-        {
-            return pageType switch
-            {
-                PAGE_TYPE.PAGE_TYPE_TEXT            => "text",
-                PAGE_TYPE.PAGE_TYPE_IMG             => "img",
-                PAGE_TYPE.PAGE_TYPE_BUTTON          => "button",
-                PAGE_TYPE.PAGE_TYPE_GET_ITEM        => "get_item",
-                PAGE_TYPE.PAGE_TYPE_STATUS          => "status",
-                PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP => "recursive_group",
-                _ => String.Empty,
-            };
-        }
-
         public static PAGE_TYPE to_TemplateType_enum(this string str)
         {
             return str switch
@@ -82,15 +78,6 @@ namespace Script.DataClass
             };
         }
         
-        public static string to_string(this STATUS_FUNCTION_TYPE statusFunction)
-        {
-            return statusFunction switch
-            {
-                STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT => "max_stat",
-                STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT => "get_stat",
-                _ => string.Empty
-            };
-        }
         public static STATUS_FUNCTION_TYPE to_Status_function_type_enum(this string str)
         {
             return str switch
@@ -108,6 +95,19 @@ namespace Script.DataClass
                 "chage_status" => ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
                 "move_page" =>  ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_MOVE_PAGE,
                 _=> ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
+            };
+        }
+        public static ITEM_TYPE to_Item_type_enum(this string str)
+        {
+            return str switch
+            {
+                "normal"        => ITEM_TYPE.ITEM_TYPE_NORMAL,
+                "equip_weapon"  => ITEM_TYPE.ITEM_TYPE_EQUIP_WEAPON,
+                "equip_head"    => ITEM_TYPE.ITEM_TYPE_EQUIP_HEAD,
+                "equip_armor"   => ITEM_TYPE.ITEM_TYPE_EQUIP_ARMOR,
+                "equip_shoes"   => ITEM_TYPE.ITEM_TYPE_EQUIP_SHOES,
+                "equip_ring"    => ITEM_TYPE.ITEM_TYPE_EQUIP_RING,
+                "equip_necklace"=> ITEM_TYPE.ITEM_TYPE_EQUIP_NECKLACE,
             };
         }
     }

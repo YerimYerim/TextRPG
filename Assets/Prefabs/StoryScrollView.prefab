@@ -323,7 +323,8 @@ MonoBehaviour:
   _textPanel: {fileID: 5946351752249587114}
   _tweenTime: 0.3
   _indicator: {fileID: 0}
-  indicatorOffset: 0
+  indicatorOffset: 5
+  scrollFinishOffset: 5
 --- !u!1001 &1190657686733490055
 PrefabInstance:
   m_ObjectHideFlags: 0

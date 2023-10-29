@@ -51,6 +51,7 @@ public class UIToolBar : MonoBehaviour
                     break;
                 case BottomButtonType.STATUS:
                     _text.text = "상태";
+                    _button.onClick.AddListener(OnClickStatus);
                     break;
                 case BottomButtonType.COLLECTION:
                     _text.text = "도감";
@@ -64,6 +65,14 @@ public class UIToolBar : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void OnClickStatus()
+        {
+            if (GameUIManager.Instance.TryGetOrCreate<UIPopUpStatus>(false, UILayer.LEVEL_3, out var ui))
+            {
+                ui.Show();
             }
         }
     }

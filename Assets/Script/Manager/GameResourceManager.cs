@@ -1,5 +1,4 @@
-using System.IO;
-using Script.DataClass;
+
 using UnityEngine;
 
 namespace Script.Manager
@@ -10,6 +9,12 @@ namespace Script.Manager
         {
             var image = Resources.Load<Sprite>($"Sprites/{imageName}");
             return image;
+        }
+
+        public GameObject GetLoadPrefab(string prefabName)
+        {
+            GameObject prefab = Resources.Load($"Prefabs/{prefabName}") as GameObject;
+            return Instantiate(prefab);
         }
     }
 }

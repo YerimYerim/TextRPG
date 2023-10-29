@@ -44,8 +44,6 @@ namespace Script.Manager
                     rectTransform.SetParent(_uiLayerParents[(int) layer]);
                     rectTransform.position = Vector3.zero;
                     rectTransform.localScale = Vector3.one;
-                    
-                    rectTransform.
                 }
                 ui = prefab.AddComponent<T>();
                 _ui.Add(ui);

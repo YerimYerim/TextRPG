@@ -15,7 +15,7 @@ namespace Script.Manager
     public class GameUIManager : Singleton<GameUIManager>
     {
         private Canvas _canvasParents;
-        private Transform[] _uiLayerParents = new Transform[4];
+        private RectTransform[] _uiLayerParents = new RectTransform[4];
         private List<UIBase> _ui= new List<UIBase>();
         protected override void Awake()
         {
@@ -23,8 +23,14 @@ namespace Script.Manager
             _canvasParents = GameObject.Find("Canvas").GetComponent<Canvas>();
             for (int i = 0; i < _uiLayerParents.Length; ++i)
             {
-                _uiLayerParents[i] = new GameObject($"Layer_{i}").transform;
+                _uiLayerParents[i] = new GameObject($"Layer_{i}").AddComponent<RectTransform>();
                 _uiLayerParents[i].SetParent(_canvasParents.transform);
+                _uiLayerParents[i].anchorMin = Vector2.zero;
+                _uiLayerParents[i].anchorMax = Vector2.one;
+                _uiLayerParents[i].pivot = Vector2.one * 0.5f;
+                _uiLayerParents[i].sizeDelta = Vector2.zero;
+                _uiLayerParents[i].anchoredPosition = Vector2.zero;
+
                 _uiLayerParents[i].gameObject.layer = LayerMask.NameToLayer("UI");
                 _uiLayerParents[i].localPosition = Vector3.zero;
                 _uiLayerParents[i].localScale = Vector3.one;
@@ -37,24 +43,26 @@ namespace Script.Manager
             
             if(uiobjectInList == null)
             {
-                var prefab = GameResourceManager.Instance.GetLoadPrefab(typeof(T).Name);
+                var prefab = GameResourceManager.Instance.GetLoadUIPrefab(typeof(T).Name);
                 var rectTransform = prefab.transform as RectTransform;
                 if (rectTransform != null)
                 {
                     rectTransform.SetParent(_uiLayerParents[(int) layer]);
-                    rectTransform.position = Vector3.zero;
+                    rectTransform.anchoredPosition = Vector3.zero;
                     rectTransform.localScale = Vector3.one;
+                    rectTransform.sizeDelta = Vector2.zero;
+                    rectTransform.anchoredPosition = Vector2.zero;
                 }
-                ui = prefab.AddComponent<T>();
+
+                var script = prefab.GetComponent<T>();
+                ui = script == null ? prefab.AddComponent<T>() : script;
+                
                 _ui.Add(ui);
                 return prefab != null;
             }
-            else
-            {
-                ui = uiobjectInList as T;
-                return true;
-            }
             
+            ui = uiobjectInList as T;
+            return true;
         }
     }
 }

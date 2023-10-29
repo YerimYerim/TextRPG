@@ -47,8 +47,9 @@ public partial class StatusTableData
     public string status_desc { get; set; }
     public bool is_reset_able { get; set; }
     public int stack_amount { get; set; }
-    public bool ui_show { get; set; }
+    public bool is_ui_show { get; set; }
     public string function_type { get; set; }
+    public List<int> function_value { get; set; }
     public List<int> function_value_1 { get; set; }
     public List<int> function_value_2 { get; set; }
 }

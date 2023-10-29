@@ -14,7 +14,8 @@ public partial class ConfigTableData
             }
             case "int":
             {
-                return value;
+                int returnValue = (int)(long) value;
+                return returnValue;
             }
             default:
                 return string.Empty;

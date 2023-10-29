@@ -11,10 +11,12 @@ namespace Script.Manager
             return image;
         }
 
-        public GameObject GetLoadPrefab(string prefabName)
+        public GameObject GetLoadUIPrefab(string prefabName)
         {
             GameObject prefab = Resources.Load($"Prefabs/{prefabName}") as GameObject;
-            return Instantiate(prefab);
+            if (prefab == null)
+                return null;
+            return Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
         }
     }
 }

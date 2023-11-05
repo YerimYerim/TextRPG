@@ -64,5 +64,18 @@ namespace Script.Manager
             ui = uiobjectInList as T;
             return true;
         }
+
+        public bool TryGet<T>(bool isBack, UILayer layer, out T ui) where T : UIBase
+        {
+            var uiobjectInList = _ui.Find(_ => _.name == string.Concat(typeof(T).Name, "(Clone)"));
+            if (uiobjectInList != null)
+            {
+                ui = uiobjectInList as T;
+                return true;
+            }
+
+            ui = null;
+            return false;
+        }
     }
 }

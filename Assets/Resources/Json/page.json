@@ -78,6 +78,19 @@
     "is_renew_page": null
   },
   {
+    "page_id": 101,
+    "type": "battle",
+    "output_txt": "전투 테스트용 테스트 버튼",
+    "relate_value": null,
+    "occur_condition": null,
+    "occur_value": [],
+    "occur_prob": null,
+    "result_value": [10001, 1011],
+    "result_count": null,
+    "result_prob": [],
+    "is_renew_page": null
+  },
+  {
     "page_id": 1011,
     "type": "text",
     "output_txt": "당신은 재난 문자를 대수롭지 않게 여겼습니다. 보나마나 별것 아닐 게 분명했으니까요. 하지만 재난 문자를 확인하느라 잠이 확 깨 버렸네요.\n당신은 침대에서 일어나 기지개를 켜고 SNS에 들어갔습니다. 그런데… 최근 게시물에 낯선 영상이 보이는군요?\n[미친; 살려줘 ㅅㅂ..\n댓글: 뭐야 실제임?????\n댓글: 야 이거 찍은애 죽은 거 아니냐..\n댓글: CG 아니고 진짜라고??\n댓글: 이야 요즘 영화 홍보 신박하게 하넼ㅋㅋㅋㅋ\n댓글: 이거 영화 아니고 실제임;;]\n게임에서나 나올 법한 괴생명체가 찍힌 영상. 방금 받은 재난 문자를 떠올리며, 당신은 SNS를 빠르게 훑었습니다. 그런데 아무래도… 영상 속 상황이 실제인 것 같습니다.",

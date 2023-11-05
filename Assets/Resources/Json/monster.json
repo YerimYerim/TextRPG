@@ -1,0 +1,19 @@
+[
+  {
+    "monster_id": 10001,
+    "monster_name": "묵빛 골렘",
+    "monster_level": 3,
+    "monter_img": "img_monster_sample",
+    "occur_text": "야생의 묵빛 골렘이 나타났다!",
+    "status_damage_factor": 10,
+    "status_reduce_defense_factor": 2,
+    "status_hp": 200,
+    "status_defense_factor": 10,
+    "status_dodge_factor": 2,
+    "status_hit_factor": 5,
+    "action_group": [1000101, 1000102],
+    "phaze_hp_condition": [100],
+    "status_buff_phaze_changed": [3, 5],
+    "status_buff_phaze_changed_value": [20, 20]
+  }
+]

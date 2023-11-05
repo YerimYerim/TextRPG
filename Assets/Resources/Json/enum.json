@@ -36,6 +36,12 @@
     "enum_value": 5
   },
   {
+    "group_name": "page_type",
+    "enum_name": "battle",
+    "source_enum_name": "PAGE_TYPE_BATTLE",
+    "enum_value": 6
+  },
+  {
     "group_name": "occur_condition",
     "enum_name": "own_item",
     "source_enum_name": "OCCUR_CONDITION_OWN_ITEM",
@@ -135,6 +141,60 @@
     "group_name": "status_function_type",
     "enum_name": "get_stat",
     "source_enum_name": "STATUS_FUNCTION_TYPE_GET_STAT",
+    "enum_value": 1
+  },
+  {
+    "group_name": "action_type",
+    "enum_name": "normal_attack",
+    "source_enum_name": "ACTION_TYPE_NORMAL_ATTACK",
+    "enum_value": 0
+  },
+  {
+    "group_name": "action_type",
+    "enum_name": "special_attack",
+    "source_enum_name": "ACTION_TYPE_SPECIAL_ATTACK",
+    "enum_value": 1
+  },
+  {
+    "group_name": "action_type",
+    "enum_name": "dodge",
+    "source_enum_name": "ACTION_TYPE_DODGE",
+    "enum_value": 2
+  },
+  {
+    "group_name": "action_type",
+    "enum_name": "buff",
+    "source_enum_name": "ACTION_TYPE_BUFF",
+    "enum_value": 3
+  },
+  {
+    "group_name": "action_type",
+    "enum_name": "debuff",
+    "source_enum_name": "ACTION_TYPE_DEBUFF",
+    "enum_value": 4
+  },
+  {
+    "group_name": "battle_selecton_type",
+    "enum_name": "own_item",
+    "source_enum_name": "BATTLE_SELECTON_TYPE_OWN_ITEM",
+    "enum_value": 0
+  },
+  {
+    "group_name": "battle_selecton_type",
+    "enum_name": "status_high",
+    "source_enum_name": "BATTLE_SELECTON_TYPE_STATUS_HIGH",
+    "enum_value": 1
+  },
+  {
+    "group_name": "action_result_type",
+    "enum_name": "action_cancel",
+    "source_enum_name": "ACTION_RESULT_TYPE_ACTION_CANCEL",
+    "enum_value": 0
+  },
+  {
+    "group_name": "action_result_type",
+    "enum_name": "special_attack",
+    "source_enum_name": "ACTION_RESULT_TYPE_SPECIAL_ATTACK",
     "enum_value": 1
   }
 ]

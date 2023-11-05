@@ -161,7 +161,7 @@ namespace Script.Manager
             switch (occurCondition)
             {
                 case OccurCondition.OCCUR_CONDITION_OWN_ITEM:
-                    return GameItemManager.Instance.GetItemCount(occurValue[0]) > occurValue[1];
+                    return GameItemManager.Instance.GetItem(occurValue[0]) > occurValue[1];
                 case OccurCondition.OCCUR_CONDITION_STATUS_HIGH:
                     break;
                 case OccurCondition.OCCUR_CONDITION_STATUS_LOW:
@@ -169,7 +169,7 @@ namespace Script.Manager
                 case OccurCondition.OCCUR_CONDITION_PAGE_VIEWED:
                     return _pastReadPageID.Contains(occurValue[0]) && IsNotRead(scenarioData);
                 case OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
-                    return GameItemManager.Instance.GetItemCount(occurValue[0]) < occurValue[1] && _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
+                    return GameItemManager.Instance.GetItem(occurValue[0]) < occurValue[1] && _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
                 default: 
                     
                     break;

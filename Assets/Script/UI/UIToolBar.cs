@@ -48,6 +48,7 @@ public class UIToolBar : MonoBehaviour
             {
                 case BottomButtonType.INVENTORY:
                     _text.text = "가방";
+                    _button.onClick.AddListener(OnClickInventory);
                     break;
                 case BottomButtonType.STATUS:
                     _text.text = "상태";
@@ -71,6 +72,14 @@ public class UIToolBar : MonoBehaviour
         private void OnClickStatus()
         {
             if (GameUIManager.Instance.TryGetOrCreate<UIPopUpStatus>(false, UILayer.LEVEL_3, out var ui))
+            {
+                ui.Show();
+            }
+        }        
+        
+        private void OnClickInventory()
+        {
+            if (GameUIManager.Instance.TryGetOrCreate<UIPopUpInventory>(false, UILayer.LEVEL_3, out var ui))
             {
                 ui.Show();
             }

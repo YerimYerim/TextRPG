@@ -109,7 +109,7 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                GameItemManager.Instance.GetItem(_scenarioData.result_value[0], _scenarioData.result_value[1]);
+                GameItemManager.Instance.AddItem(_scenarioData.result_value[0], _scenarioData.result_value[1]);
                 textPanel.SetText(_scenarioData.output_txt);
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;

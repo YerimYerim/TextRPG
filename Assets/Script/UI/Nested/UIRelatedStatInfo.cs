@@ -32,8 +32,9 @@ public class UIInfoRelatedStat : MonoBehaviour
     }
     private void OnClickButton()
     {
-        if (GameUIManager.Instance.TryGetOrCreate<UIPopUpStatus>(false, UILayer.LEVEL_2, out var ui))
+        if (GameUIManager.Instance.TryGetOrCreate<UIPopUpStatus>(false, UILayer.LEVEL_4, out var ui))
         {
+            ui.Show();
             ui.SetStatInfo(_statID);
         }
     }

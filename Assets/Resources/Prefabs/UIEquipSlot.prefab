@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 7550727514984299330}
   - component: {fileID: 2288389453740473123}
   m_Layer: 5
-  m_Name: Image
+  m_Name: itemIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,11 +201,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIItemThumbnail
       objectReference: {fileID: 0}
-    - target: {fileID: 4978430303556600639, guid: 962a9a9c1551046498a814d546218282,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5064265798320519520, guid: 962a9a9c1551046498a814d546218282,
         type: 3}
       propertyPath: m_Pivot.x
@@ -304,11 +299,6 @@ PrefabInstance:
     - target: {fileID: 5064265798320519520, guid: 962a9a9c1551046498a814d546218282,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7305345459078116499, guid: 962a9a9c1551046498a814d546218282,
-        type: 3}
-      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

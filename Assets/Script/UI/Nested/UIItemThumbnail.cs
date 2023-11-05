@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Script.Manager;
 using Script.UI;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIItemThumbnail : MonoBehaviour
@@ -17,6 +13,8 @@ public class UIItemThumbnail : MonoBehaviour
     private Image _equipIcon;
     private TextMeshProUGUI _itemCount;
     private DTButton _button;
+    
+    private Transform _equippedIcon;
     private void Awake()
     {
         _rarityBg = transform.FindComponent<Image>("ImageRarityBG");
@@ -25,11 +23,17 @@ public class UIItemThumbnail : MonoBehaviour
         _equipIcon = transform.FindComponent<Image>("UIEquipIconGroup/ImageEquipIcon");
         _itemCount = transform.FindComponent<TextMeshProUGUI>("TextItemCount");
         _button = transform.GetComponent<DTButton>();
+        _equippedIcon = transform.Find("UIEquipIconGroup2");
     }
 
     public void SetItemInfo(int itemKey, bool useItemCount)
     {
         var itemInfo = GameDataManager.Instance._itemData.Find(_ => _.item_id == itemKey);
+        transform.gameObject.SetActive(itemInfo != null);
+        if (itemInfo == null)
+        {
+            return;
+        }
         var rarityInfo = GameDataManager.Instance._rarityData.Find(_ => _.rarity_id == itemInfo.rarity_id);
         _rarityBg.sprite = GameResourceManager.Instance.GetImage(rarityInfo.rarity_rsc);
         _itemThumbnail.sprite = GameResourceManager.Instance.GetImage(itemInfo.item_rsc);
@@ -65,5 +69,10 @@ public class UIItemThumbnail : MonoBehaviour
     public void SetOnClickLongEvent(Action action)
     {
         _button.SetLongClickEvent(()=>action?.Invoke());
+    }
+
+    public void SetEquipIcon(bool active)
+    {
+        _equippedIcon.gameObject.SetActive(active);
     }
 }

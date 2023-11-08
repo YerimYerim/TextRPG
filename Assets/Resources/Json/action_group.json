@@ -50,7 +50,9 @@
     "additional_selection_result": "action_cancel",
     "result_text_success": "회피에 성공했습니다.",
     "result_text_fail": "묵빛 골렘의 공격에 맞았습니다. {0}의 대미지를 받았습니다.",
-    "result_text_additional": [묵빛 골렘의 손이 맨바닥을 크게 타격합니다.],
+    "result_text_additional": [
+      "묵빛 골렘의 손이 맨바닥을 크게 타격합니다."
+    ],
     "is_unique_action": true
   },
   {
@@ -86,7 +88,9 @@
     "additional_selection_result": "special_attack",
     "result_text_success": null,
     "result_text_fail": "묵빛 골렘이 미지의 힘으로 자신을 강화합니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)",
-    "result_text_additional": [묵빛 골렘이 정신을 집중한 동안 두 배의 피해를 입혔습니다. 묵빛 골렘이 스스로를 강화하는데 성공했습니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)],
+    "result_text_additional": [
+      "묵빛 골렘이 정신을 집중한 동안 두 배의 피해를 입혔습니다. 묵빛 골렘이 스스로를 강화하는데 성공했습니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)"
+    ],
     "is_unique_action": false
   },
   {

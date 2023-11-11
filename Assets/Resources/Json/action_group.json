@@ -12,9 +12,10 @@
     "additional_selection_condition": null,
     "additional_selection_value": [],
     "additional_selection_result": null,
-    "result_text_success": "회피에 성공했습니다.",
-    "result_text_fail": "묵빛 골렘의 공격에 맞았습니다. {0}의 대미지를 받았습니다.",
-    "result_text_additional": [],
+    "result_text": "묵빛 골렘의 팔이 내려 꽂힙니다.",
+    "text_always": true,
+    "result_text_additional": null,
+    "text_always_additional": null,
     "is_unique_action": false
   },
   {
@@ -30,9 +31,10 @@
     "additional_selection_condition": null,
     "additional_selection_value": [],
     "additional_selection_result": null,
-    "result_text_success": "회피에 성공했습니다.",
-    "result_text_fail": "묵빛 골렘의 공격에 맞았습니다. {0}의 대미지를 받았습니다.",
-    "result_text_additional": [],
+    "result_text": "묵빛 골렘의 팔이 묵직하게 내려 꽂힙니다.",
+    "text_always": true,
+    "result_text_additional": null,
+    "text_always_additional": null,
     "is_unique_action": false
   },
   {
@@ -48,11 +50,10 @@
     "additional_selection_condition": "own_item",
     "additional_selection_value": [20001, 1],
     "additional_selection_result": "action_cancel",
-    "result_text_success": "회피에 성공했습니다.",
-    "result_text_fail": "묵빛 골렘의 공격에 맞았습니다. {0}의 대미지를 받았습니다.",
-    "result_text_additional": [
-      "묵빛 골렘의 손이 맨바닥을 크게 타격합니다."
-    ],
+    "result_text": "묵빛 골렘이 예리하게 빈틈을 파고듭니다.",
+    "text_always": true,
+    "result_text_additional": "묵빛 골렘의 손이 맨바닥을 크게 타격합니다.",
+    "text_always_additional": true,
     "is_unique_action": true
   },
   {
@@ -68,9 +69,10 @@
     "additional_selection_condition": null,
     "additional_selection_value": [],
     "additional_selection_result": null,
-    "result_text_success": "묵빛 골렘이 제법 날렵하게 움직였지만, 당신의 공격을 피하지는 못했습니다. {0}의 대미지를 입혔습니다.",
-    "result_text_fail": "어이없게도 재빠른 몸놀림에 당신의 공격이 적중하지 못했습니다.",
-    "result_text_additional": [],
+    "result_text": "묵빛 골렘이 예상치 못한 몸놀림으로 공격을 피합니다.",
+    "text_always": false,
+    "result_text_additional": null,
+    "text_always_additional": null,
     "is_unique_action": false
   },
   {
@@ -86,11 +88,10 @@
     "additional_selection_condition": "status_high",
     "additional_selection_value": [101, 10],
     "additional_selection_result": "special_attack",
-    "result_text_success": null,
-    "result_text_fail": "묵빛 골렘이 미지의 힘으로 자신을 강화합니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)",
-    "result_text_additional": [
-      "묵빛 골렘이 정신을 집중한 동안 두 배의 피해를 입혔습니다. 묵빛 골렘이 스스로를 강화하는데 성공했습니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)"
-    ],
+    "result_text": "묵빛 골렘이 미지의 힘으로 자신을 강화합니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)",
+    "text_always": true,
+    "result_text_additional": "묵빛 골렘이 정신을 집중한 동안 두 배의 피해를 입혔습니다. 묵빛 골렘이 스스로를 강화하는데 성공했습니다. 묵빛 골렘의 공격력이 15 상승합니다. (3턴)",
+    "text_always_additional": true,
     "is_unique_action": false
   },
   {
@@ -106,9 +107,10 @@
     "additional_selection_condition": null,
     "additional_selection_value": [],
     "additional_selection_result": null,
-    "result_text_success": null,
-    "result_text_fail": "묵빛 골렘이 미지의 힘으로 당신을 억압합니다. 당신의 방어력이 10 감소합니다. (2턴)",
-    "result_text_additional": [],
+    "result_text": "묵빛 골렘이 미지의 힘으로 당신을 억압합니다. 당신의 방어력이 10 감소합니다. (2턴)",
+    "text_always": true,
+    "result_text_additional": null,
+    "text_always_additional": null,
     "is_unique_action": false
   },
   {
@@ -124,9 +126,10 @@
     "additional_selection_condition": null,
     "additional_selection_value": [],
     "additional_selection_result": null,
-    "result_text_success": "회피에 성공했습니다.",
-    "result_text_fail": "묵빛 골렘의 공격에 맞았습니다. {0}의 대미지를 받았습니다.",
-    "result_text_additional": [],
+    "result_text": "묵빛 골렘의 팔이 묵직하게 내려 꽂힙니다.",
+    "text_always": true,
+    "result_text_additional": null,
+    "text_always_additional": null,
     "is_unique_action": false
   }
 ]

@@ -174,27 +174,9 @@
     "enum_value": 4
   },
   {
-    "group_name": "battle_selecton_type",
-    "enum_name": "own_item",
-    "source_enum_name": "BATTLE_SELECTON_TYPE_OWN_ITEM",
-    "enum_value": 0
-  },
-  {
-    "group_name": "battle_selecton_type",
-    "enum_name": "status_high",
-    "source_enum_name": "BATTLE_SELECTON_TYPE_STATUS_HIGH",
-    "enum_value": 1
-  },
-  {
-    "group_name": "action_result_type",
+    "group_name": "action_type",
     "enum_name": "action_cancel",
-    "source_enum_name": "ACTION_RESULT_TYPE_ACTION_CANCEL",
-    "enum_value": 0
-  },
-  {
-    "group_name": "action_result_type",
-    "enum_name": "special_attack",
-    "source_enum_name": "ACTION_RESULT_TYPE_SPECIAL_ATTACK",
-    "enum_value": 1
+    "source_enum_name": "ACTION_TYPE_ACTION_CANCEL",
+    "enum_value": 5
   }
 ]

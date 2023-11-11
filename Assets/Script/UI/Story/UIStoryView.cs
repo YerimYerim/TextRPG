@@ -7,10 +7,8 @@ using Script.UI;
 using Script.UI.Story;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
-public class UIStoryView : MonoBehaviour
+public class UIStoryView : UIBase
 {
     [SerializeField] private DTScrollView _scrollRect;
     [SerializeField] private UIStoryImagePanel _imagePanel;
@@ -101,7 +99,11 @@ public class UIStoryView : MonoBehaviour
             {
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(_scenarioData, ()=>OnClickButtonAction(_scenarioData));
+                buttonPanel.SetButton(_scenarioData, ()=>
+                {
+                    GamePageManager.Instance.NextDataEnqueue(_scenarioData);
+                    OnClickButtonAction(_scenarioData);
+                });
                 leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item;
             }
@@ -142,6 +144,14 @@ public class UIStoryView : MonoBehaviour
                 leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
                 return item; 
             }
+            case PAGE_TYPE.PAGE_TYPE_BATTLE:
+            {
+                var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
+                var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
+                buttonPanel.SetButton(_scenarioData, ()=>OnClickBattleButton(_scenarioData));
+                leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                return item;
+            }
         }
 
         return null;
@@ -175,6 +185,15 @@ public class UIStoryView : MonoBehaviour
         else
         {
             SetUI();
+        }
+    }
+
+    void OnClickBattleButton(ScenarioData scenarioData)
+    {
+        if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))
+        {
+            ui.Show();
+            this.Hide();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Script.DataClass
         PAGE_TYPE_GET_ITEM,
         PAGE_TYPE_STATUS,
         PAGE_TYPE_RECURSIVE_GROUP,
+        PAGE_TYPE_BATTLE,
     }
 
     public enum OccurCondition
@@ -61,6 +62,7 @@ namespace Script.DataClass
                 "get_item"        => PAGE_TYPE.PAGE_TYPE_GET_ITEM,
                 "status"          => PAGE_TYPE.PAGE_TYPE_STATUS,
                 "recursive_group" => PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP,
+                "battle"          => PAGE_TYPE.PAGE_TYPE_BATTLE,
                 _                 => PAGE_TYPE.PAGE_TYPE_TEXT,
             };
         }

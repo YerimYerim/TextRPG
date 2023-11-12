@@ -22,7 +22,6 @@ namespace Script.UI.Story
 
         private void OnClickButton(ScenarioData scenarioDataBase)
         {
-            GamePageManager.Instance.NextDataEnqueue(scenarioDataBase);
             _onClickAction?.Invoke();
         }
     }

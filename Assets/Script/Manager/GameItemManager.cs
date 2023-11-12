@@ -29,9 +29,15 @@ public class GameItemManager : Singleton<GameItemManager>
                             //MovePage();
                             break;
                         case ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS:
-                            ChangeStat(itemData.function_value_1[0], itemData.function_value_2[0]);
+                            ChangeStat(itemData.function_value_1[0], itemData.function_value_2[0] * useCount);
                             break;
                     }
+                }
+                
+                ownItem[itemID] -= useCount;
+                if (ownItem[itemID] <= 0)
+                {
+                    ownItem.Remove(itemID);
                 }
             }
         }
@@ -125,4 +131,6 @@ public class GameItemManager : Singleton<GameItemManager>
             return null;
         }
     }
+
+    
 }

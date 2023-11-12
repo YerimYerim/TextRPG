@@ -30,7 +30,14 @@ public class Stat
                         var statusMaxData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusTableData.function_value_1[0]);
                         if (statusMaxData != null)
                         {
-                            status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
+                            if (statusMaxData.stack_amount != -1)
+                            {
+                                status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
+                            }
+                            else
+                            {
+                                status[statusID] += addValue;
+                            }
                         }
 
                         break;

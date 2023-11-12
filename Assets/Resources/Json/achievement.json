@@ -1,0 +1,64 @@
+[
+  {
+    "ach_id": 1,
+    "ach_type": "page_view",
+    "ach_value": [102],
+    "ach_value_item_type": [],
+    "ach_count": 1,
+    "ach_title": "나갈 준비",
+    "ach_desc": "나갈 채비를 했습니다.",
+    "reward_item": 20001,
+    "reward_amount": 10
+  },
+  {
+    "ach_id": 2,
+    "ach_type": "own_item",
+    "ach_value": [],
+    "ach_value_item_type": [
+      "equip_weapon",
+      "equip_head",
+      "equip_armor",
+      "equip_shoes",
+      "equip_ring",
+      "equip_necklace"
+    ],
+    "ach_count": 3,
+    "ach_title": "장비 수집가",
+    "ach_desc": "장비를 3개 획득했습니다.",
+    "reward_item": 20001,
+    "reward_amount": 10
+  },
+  {
+    "ach_id": 3,
+    "ach_type": "kill_monster",
+    "ach_value": [],
+    "ach_value_item_type": [],
+    "ach_count": 1,
+    "ach_title": "몬스터 살해",
+    "ach_desc": "몬스터를 처음으로 해치웠습니다.",
+    "reward_item": 20001,
+    "reward_amount": 10
+  },
+  {
+    "ach_id": 4,
+    "ach_type": "kill_monster",
+    "ach_value": [10001],
+    "ach_value_item_type": [],
+    "ach_count": 1,
+    "ach_title": "골렘 파괴자",
+    "ach_desc": "골렘을 1마리 해치웠습니다.",
+    "reward_item": 20001,
+    "reward_amount": 10
+  },
+  {
+    "ach_id": 5,
+    "ach_type": "dead_count",
+    "ach_value": [],
+    "ach_value_item_type": [],
+    "ach_count": 1,
+    "ach_title": "죽어본 사람",
+    "ach_desc": "사망을 경험했습니다.",
+    "reward_item": 20001,
+    "reward_amount": 10
+  }
+]

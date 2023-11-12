@@ -178,5 +178,29 @@
     "enum_name": "action_cancel",
     "source_enum_name": "ACTION_TYPE_ACTION_CANCEL",
     "enum_value": 5
+  },
+  {
+    "group_name": "ach_type",
+    "enum_name": "page_view",
+    "source_enum_name": "ACH_TYPE_PAGE_VIEW",
+    "enum_value": 0
+  },
+  {
+    "group_name": "ach_type",
+    "enum_name": "own_item",
+    "source_enum_name": "ACH_TYPE_OWN_ITEM",
+    "enum_value": 1
+  },
+  {
+    "group_name": "ach_type",
+    "enum_name": "kill_monster",
+    "source_enum_name": "ACH_TYPE_KILL_MONSTER",
+    "enum_value": 2
+  },
+  {
+    "group_name": "ach_type",
+    "enum_name": "dead_count",
+    "source_enum_name": "ACH_TYPE_DEAD_COUNT",
+    "enum_value": 3
   }
 ]

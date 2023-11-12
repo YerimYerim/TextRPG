@@ -91,7 +91,7 @@ namespace Script.Manager
             for (int i = 0; i < resultValueCount; ++i)
             {
                 var next = GameDataManager.Instance._pageData.Find(_=>_.page_id == scenarioData.result_value[i]);
-                if (IsCanOccur(next))
+                if (next != null && IsCanOccur(next) == true)
                 {
                     if (i < scenarioData.result_prob.Length)
                     {
@@ -170,8 +170,7 @@ namespace Script.Manager
                     return _pastReadPageID.Contains(occurValue[0]) && IsNotRead(scenarioData);
                 case OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
                     return GameItemManager.Instance.GetItem(occurValue[0]) < occurValue[1] && _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
-                default: 
-                    
+                default:
                     break;
             }
             return IsNotRead(scenarioData);

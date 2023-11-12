@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
-    private readonly string[] _pageJsonFileNames = { "page", "status", "item", "rarity", "config"};
+    private readonly string[] _pageJsonFileNames = { "page", "status", "item", "rarity", "config", "monster", "action_group", "action_group_player"};
     internal List<ScenarioData> _pageData = new();
     internal List<StatusTableData> _statusData = new();
     internal List<ItemTableData> _itemData = new();
     internal List<RarityTableData> _rarityData = new();
     internal List<ConfigTableData> _configTableData = new();
+    internal List<MonsterTableData> _monsterTableData = new();
+    internal List<MonsterActionGroup> _monsterActionTableData = new();
+    internal List<PlayerActionGroup> _playerActionTableData = new();
+
     public void LoadData()
     {
         _pageData = ReadJsonFiles<ScenarioData>(_pageJsonFileNames[0]);
@@ -18,6 +22,9 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
         _itemData = ReadJsonFiles<ItemTableData>(_pageJsonFileNames[2]);
         _rarityData = ReadJsonFiles<RarityTableData>(_pageJsonFileNames[3]);
         _configTableData = ReadJsonFiles<ConfigTableData>(_pageJsonFileNames[4]);
+        _monsterTableData = ReadJsonFiles<MonsterTableData>(_pageJsonFileNames[5]);
+        _monsterActionTableData = ReadJsonFiles<MonsterActionGroup>(_pageJsonFileNames[6]);
+        _playerActionTableData = ReadJsonFiles<PlayerActionGroup>(_pageJsonFileNames[7]);
     }
 
     private static List<T> ReadJsonFiles<T>(string fileName)
@@ -45,7 +52,7 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
             }
             case "int":
             {
-                return tableData.value;
+                return (int)(long)tableData.value;
             }
             default:
                 return string.Empty;

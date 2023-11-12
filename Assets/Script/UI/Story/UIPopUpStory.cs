@@ -8,7 +8,7 @@ using Script.UI.Story;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UIStoryView : UIBase
+public class UIPopUpStory : UIBase
 {
     [SerializeField] private DTScrollView _scrollRect;
     [SerializeField] private UIStoryImagePanel _imagePanel;
@@ -193,6 +193,7 @@ public class UIStoryView : UIBase
         if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))
         {
             ui.Show();
+            ui.InitMonsterData(scenarioData.result_value[0]);
             this.Hide();
         }
     }

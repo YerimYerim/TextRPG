@@ -22,7 +22,7 @@ public class Stat
         {
             if ( status.ContainsKey(statusID))
             {
-                var functionType = statusTableData.function_type.to_Status_function_type_enum();
+                var functionType = statusTableData?.function_type?.to_Status_function_type_enum();
                 switch (functionType)
                 {
                     case STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT:

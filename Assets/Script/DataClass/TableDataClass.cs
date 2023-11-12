@@ -100,3 +100,30 @@ public class MonsterTableData
     public List<int> status_buff_phaze_changed_value { get; set; }
 }
 
+public class MonsterActionGroup
+{
+    public int? action_group_id { get; set; }
+    public int? action_id { get; set; }
+    public string action_type { get; set; }
+    public string occur_condition { get; set; }
+    public List<int> occur_value { get; set; }
+    public int? occur_prob { get; set; }
+    public string warning_text { get; set; }
+    public List<int> action_value { get; set; }
+    public string additional_selection { get; set; }
+    public string additional_selection_condition { get; set; }
+    public List<int> additional_selection_value { get; set; }
+    public string additional_selection_result { get; set; }
+    public string result_text { get; set; }
+    public bool? text_always { get; set; }
+    public string result_text_additional { get; set; }
+    public bool? text_always_additional { get; set; }
+    public bool? is_unique_action { get; set; }
+}
+
+public class PlayerActionGroup
+{
+    public string action_type { get; set; }
+    public string result_text { get; set; }
+    public bool text_priority { get; set; }
+}

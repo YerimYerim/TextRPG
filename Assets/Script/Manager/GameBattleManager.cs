@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class GameBattleManager : Singleton<GameBattleManager>
 {
-    public void DoBattle(ActorBase doingDamage, ActorBase receivingDamage)
+    public (bool isHit, int damage,string message) DoBattle(ActorBase attacker, ActorBase defencer, string resultSuccess, string resultFail)
     {
-        var damage = Math.Max(1, doingDamage.DoDamage(receivingDamage) - receivingDamage.ReduceDamage(doingDamage));
-        bool isHit = doingDamage.IsHit(receivingDamage);
+        // player 가 enemy 를 공격
+        bool isHit = attacker.IsHit(defencer);
 
         if (isHit)
         {
-            var hp = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_hp");
-            receivingDamage.playerStat.AddStat((int)hp.GetValueConfigData(), -damage);
+            return DoDamageIgnoreDodge(attacker, defencer, resultSuccess, resultFail);
         }
         else
         {
-            Debug.Log("빗나감");
+            return (false, 0, resultFail);
         }
+    }
+
+    public (bool isHit, int damage, string message) DoDamageIgnoreDodge(ActorBase player, ActorBase enemy, string resultSuccess, string resultFail)
+    {
+        var damage = Math.Max(1, player.DoDamage(enemy) - enemy.ReduceDamage(player));
+        var hp = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_hp");
+        enemy.playerStat.AddStat((int) hp.GetValueConfigData(), -damage);
+        string formatString = string.Format(resultSuccess, damage.ToString());
+        return (true, damage, formatString);
     }
 }

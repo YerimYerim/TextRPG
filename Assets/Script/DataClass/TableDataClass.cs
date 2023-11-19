@@ -124,6 +124,9 @@ public class MonsterActionGroup
 public class PlayerActionGroup
 {
     public string action_type { get; set; }
+    public string button_text { get; set; }
     public string result_text { get; set; }
-    public bool text_priority { get; set; }
+    public bool? text_priority { get; set; }
+    public bool? default_action { get; set; }
+    
 }

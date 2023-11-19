@@ -8,7 +8,7 @@ using Script.UI.Story;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UIPopUpStory : UIBase
+public class UIPopUpStroy : UIBase
 {
     [SerializeField] private DTScrollView _scrollRect;
     [SerializeField] private UIStoryImagePanel _imagePanel;
@@ -23,12 +23,21 @@ public class UIPopUpStory : UIBase
     private List<LTDescr> leantweenList = new List<LTDescr>();
     private void Awake()
     {
-        GameDataManager.Instance.LoadData();
-        _scrollRect.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject );
-        var scenarioData = GamePageManager.Instance.GetScenarioData(0);
-        GamePageManager.Instance.EnqueueCurPageData(scenarioData.page_id ?? 0);
-        _scrollRect.MakeList( GamePageManager.Instance.QueueCount);
+        _scrollRect.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject);
+        if(GamePageManager.Instance.QueueCount <= 0)
+        {
+            GameDataManager.Instance.LoadData();
+            var scenarioData = GamePageManager.Instance.GetScenarioData(0);
+            GamePageManager.Instance.EnqueueCurPageData(scenarioData?.page_id  ?? 0);
+        }
+        OnEventClear();
         _indicator.onClick.AddListener(OnClickIndicator);
+    }
+
+    public override void Show()
+    {
+        base.Show();
+        OnClickButtonAction(null);
     }
 
     private void OnClickIndicator()
@@ -81,10 +90,11 @@ public class UIPopUpStory : UIBase
         {
             case PAGE_TYPE.PAGE_TYPE_TEXT:
             {
-                var item = _scrollRect.GetItem( _textPanel.GameObject());
+                var item = _scrollRect.GetItem( _textPanel.GameObject()); 
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
                 textPanel.SetText(_scenarioData.output_txt);
-                leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                textPanel.gameObject.SetActive(true);
+                textPanel.SetTween(index,_tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_IMG:
@@ -92,7 +102,8 @@ public class UIPopUpStory : UIBase
                 var item = _scrollRect.GetItem( _imagePanel.GameObject());
                 var imgPanel = item.GetComponent<UIStoryImagePanel>();
                 imgPanel.SetImage(_scenarioData.relate_value);
-                leantweenList.Add(LeanTween.alphaCanvas( imgPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                imgPanel.gameObject.SetActive(true);
+               imgPanel.SetTween(index,_tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_BUTTON:
@@ -104,7 +115,9 @@ public class UIPopUpStory : UIBase
                     GamePageManager.Instance.NextDataEnqueue(_scenarioData);
                     OnClickButtonAction(_scenarioData);
                 });
-                leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                buttonPanel.gameObject.SetActive(true);
+                buttonPanel._canvas.alpha = 0;
+                buttonPanel.SetTween(index, _tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_GET_ITEM:
@@ -113,7 +126,9 @@ public class UIPopUpStory : UIBase
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
                 GameItemManager.Instance.AddItem(_scenarioData.result_value[0], _scenarioData.result_value[1]);
                 textPanel.SetText(_scenarioData.output_txt);
-                leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                textPanel._canvas.alpha = 0;
+                textPanel.gameObject.SetActive(true);
+                textPanel.SetTween(index, _tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_STATUS:
@@ -128,10 +143,12 @@ public class UIPopUpStory : UIBase
                 
                 // ?? 예림 : string 대응시 변경 해야할 부분 
                 var doString = stat < 0 ? "소모" : "획득";
-                var str = string.Format(_scenarioData.output_txt, statusData.status_name, statValue, doString);
+                var str = string.Format(_scenarioData.output_txt, statusData.status_name, statValue.ToString(), doString);
                 
                 textPanel.SetText(str);
-                leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                textPanel.gameObject.SetActive(true);
+                textPanel._canvas.alpha = 0;
+                textPanel.SetTween(index,_tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP:
@@ -141,7 +158,9 @@ public class UIPopUpStory : UIBase
                 textPanel.SetText(_scenarioData.output_txt);
                 GamePageManager.Instance.NextDataEnqueue(_scenarioData);
                 SetUI();
-                leantweenList.Add(LeanTween.alphaCanvas( textPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                textPanel.gameObject.SetActive(true);
+                textPanel._canvas.alpha = 0;
+               textPanel.SetTween(index,_tweenTime);
                 return item; 
             }
             case PAGE_TYPE.PAGE_TYPE_BATTLE:
@@ -149,7 +168,9 @@ public class UIPopUpStory : UIBase
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
                 buttonPanel.SetButton(_scenarioData, ()=>OnClickBattleButton(_scenarioData));
-                leantweenList.Add(LeanTween.alphaCanvas( buttonPanel._canvas, 1, _tweenTime).setDelay(index).setEase(LeanTweenType.animationCurve).setLoopOnce());
+                buttonPanel._canvas.alpha = 0;
+                buttonPanel.gameObject.SetActive(true);
+                buttonPanel.SetTween(index,_tweenTime);
                 return item;
             }
         }
@@ -171,14 +192,13 @@ public class UIPopUpStory : UIBase
     /// </summary>
     void OnEventClear()
     {
-        _scrollRect.ClearAll();
         _scrollRect.MakeList(GamePageManager.Instance.QueueCount);
     }
     
     void OnClickButtonAction(ScenarioData scenarioData)
     {
         OnDeleteButtons();
-        if (scenarioData.is_renew_page == true)
+        if (scenarioData?.is_renew_page == true)
         {
             OnEventClear();
         }
@@ -193,7 +213,7 @@ public class UIPopUpStory : UIBase
         if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))
         {
             ui.Show();
-            ui.InitMonsterData(scenarioData.result_value[0]);
+            ui.InitMonsterData(scenarioData.result_value[0], scenarioData.result_value[1], this);
             this.Hide();
         }
     }

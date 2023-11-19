@@ -100,6 +100,10 @@ public class GameItemManager : Singleton<GameItemManager>
             else
             {
                 equippedItem.Add(itemTableData.item_type, itemKey);
+                for (int i = 0; i < itemTableData.function_value_1.Count; ++i)
+                {
+                    GamePlayerManager.Instance.myActor.playerStat.AddStat(itemTableData.function_value_1[i], itemTableData.function_value_2[i]);
+                }
             }
         }
         else

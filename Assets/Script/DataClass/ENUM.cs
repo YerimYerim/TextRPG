@@ -50,6 +50,8 @@ namespace Script.DataClass
         STATUS_FUNCTION_TYPE_MAX_STAT,
         STATUS_FUNCTION_TYPE_GET_STAT,
     }
+    
+    
     public static class EnumExtensions
     {
         public static PAGE_TYPE to_TemplateType_enum(this string str)

@@ -15,14 +15,30 @@ namespace Script.UI.Story
             _ChoiceButton.button.onClick.RemoveAllListeners();
             _onClickAction = onClickAction;
             
-            _ChoiceButton.button.onClick.AddListener(()=>OnClickButton(scenarioDataBase));
+            _ChoiceButton.button.onClick.AddListener(OnClickButton);
             _ChoiceButton.text.text = scenarioDataBase.output_txt;
             _canvas.alpha = 0;
         }
-
-        private void OnClickButton(ScenarioData scenarioDataBase)
+        public void SetButton(string text, Action onClickAction)
+        {
+            _ChoiceButton.button.onClick.RemoveAllListeners();
+            _onClickAction = onClickAction;
+            
+            _ChoiceButton.button.onClick.AddListener(OnClickButton);
+            _ChoiceButton.text.text = text;
+            _canvas.alpha = 0;
+        }
+        private void OnClickButton()
         {
             _onClickAction?.Invoke();
+        }
+        public LTDescr SetTween(int delay, float tweenTime)
+        {
+            return LeanTween.alphaCanvas(_canvas, 1.0f, tweenTime).setDelay(delay).setEase(LeanTweenType.animationCurve).setOnComplete(
+                () =>
+                {
+                    _canvas.alpha = 1;
+                });
         }
     }
 }

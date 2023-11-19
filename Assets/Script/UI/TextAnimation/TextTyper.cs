@@ -130,7 +130,6 @@ public sealed class TextTyper : MonoBehaviour
         // Fix Issue-38 by clearing any old textInfo like sprites, so that SubMesh objects don't reshow their contents.
         var textInfo = this.TextComponent.textInfo;
         textInfo?.ClearMeshInfo(false);
-
         this.typeTextCoroutine = this.StartCoroutine(this.TypeTextCharByChar(text));
     }
 

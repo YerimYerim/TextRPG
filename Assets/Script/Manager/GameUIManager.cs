@@ -15,16 +15,18 @@ namespace Script.Manager
     public class GameUIManager : Singleton<GameUIManager>
     {
         private Canvas _canvasParents;
+        private Transform _safePaddingTransform;
         private RectTransform[] _uiLayerParents = new RectTransform[4];
         private List<UIBase> _ui= new List<UIBase>();
         protected override void Awake()
         {
             base.Awake();
             _canvasParents = GameObject.Find("Canvas").GetComponent<Canvas>();
+            _safePaddingTransform =  _canvasParents.transform.Find("SafeArea");
             for (int i = 0; i < _uiLayerParents.Length; ++i)
             {
                 _uiLayerParents[i] = new GameObject($"Layer_{i}").AddComponent<RectTransform>();
-                _uiLayerParents[i].SetParent(_canvasParents.transform);
+                _uiLayerParents[i].SetParent(_safePaddingTransform.transform);
                 _uiLayerParents[i].anchorMin = Vector2.zero;
                 _uiLayerParents[i].anchorMax = Vector2.one;
                 _uiLayerParents[i].pivot = Vector2.one * 0.5f;
@@ -45,7 +47,7 @@ namespace Script.Manager
             {
                 var prefab = GameResourceManager.Instance.GetLoadUIPrefab(typeof(T).Name);
                 var rectTransform = prefab.transform as RectTransform;
-                if (rectTransform != null)
+                if (rectTransform != null)  
                 {
                     rectTransform.SetParent(_uiLayerParents[(int) layer]);
                     rectTransform.anchoredPosition = Vector3.zero;

@@ -130,3 +130,16 @@ public class PlayerActionGroup
     public bool? default_action { get; set; }
     
 }
+public class AchievementTableData
+{
+    public int? ach_id { get; set; }
+    public string ach_type { get; set; }
+    public List<int> ach_value { get; set; }
+    public List<string> ach_value_item_type { get; set; }
+    public int? ach_count { get; set; }
+    public string ach_title { get; set; }
+    public string ach_desc { get; set; }
+    public int? reward_item { get; set; }
+    public int? reward_amount { get; set; }
+    
+}

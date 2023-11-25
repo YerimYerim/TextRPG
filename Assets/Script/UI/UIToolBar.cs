@@ -59,6 +59,7 @@ public class UIToolBar : MonoBehaviour
                     break;
                 case BottomButtonType.ACHIEVEMENT:
                     _text.text = "업적";
+                    _button.onClick.AddListener(OnClickAchievement);
                     break;
                 case BottomButtonType.SETTING:
                     _text.text = "설정";
@@ -80,6 +81,13 @@ public class UIToolBar : MonoBehaviour
         private void OnClickInventory()
         {
             if (GameUIManager.Instance.TryGetOrCreate<UIPopUpInventory>(false, UILayer.LEVEL_3, out var ui))
+            {
+                ui.Show();
+            }
+        }
+        private void OnClickAchievement()
+        {
+            if (GameUIManager.Instance.TryGetOrCreate<UIPopUpAchievement>(false, UILayer.LEVEL_3, out var ui))
             {
                 ui.Show();
             }

@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 6399109909395575591}
   - component: {fileID: 5741320481559950367}
   - component: {fileID: 8025243261286559591}
+  - component: {fileID: 5557419082923425023}
   m_Layer: 5
   m_Name: UIAchievement
   m_TagString: Untagged
@@ -234,6 +235,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 8
+--- !u!114 &5557419082923425023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3121133560967809318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b5734791df53b4a93e493d9cc1fe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgBgUndo: {fileID: 3759521110738421253}
+  textDescUndo: {fileID: 1011434209228039316}
+  imgBGHighlight: {fileID: 5242338555321866365}
+  imgBGAch: {fileID: 6774791650269834540}
+  textDescAch: {fileID: 601120360855767312}
+  _uiItemThumbnail: {fileID: 6103774896431805233}
+  imageRewardDone: {fileID: 6130372260060405410}
+  textTitle: {fileID: 1982888488818214866}
+  imageLine: {fileID: 6507982038499266421}
 --- !u!1 &3196900475527510086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,3 +1060,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7941143824406303219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6103774896431805233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4215486719224832706, guid: 962a9a9c1551046498a814d546218282,
+    type: 3}
+  m_PrefabInstance: {fileID: 7941143824406303219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae492bc59c1b3c34892c2fc998d63f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

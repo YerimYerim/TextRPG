@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6011090303184775239}
   - component: {fileID: 2001628525566643251}
-  - component: {fileID: 526797280965888880}
+  - component: {fileID: 4857650062654191393}
   m_Layer: 5
   m_Name: UIPopUpAchievement
   m_TagString: Untagged
@@ -49,7 +49,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952937937384242097}
   m_CullTransparentMesh: 1
---- !u!114 &526797280965888880
+--- !u!114 &4857650062654191393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,31 +58,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 952937937384242097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e55b1dc800037d4fb02a44d75c77545, type: 3}
+  m_Script: {fileID: 11500000, guid: f836f19d5412f8040aa327150e9c620d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hideButton: {fileID: 7892021319316549977}
   hideBGButton: {fileID: 8620536644016042262}
-  _objEquippedItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _itemThumbnail: {fileID: 0}
-  _itemScrollView: {fileID: 0}
-  _objInvenEmpty: {fileID: 0}
-  _textStatName: {fileID: 0}
-  _textStatDesc: {fileID: 0}
-  _relatedStats:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _statInfoParents: {fileID: 0}
-  _objStatInfoEmpty: {fileID: 0}
-  _equipType: {fileID: 0}
-  _equipTypeParent: {fileID: 0}
+  _scrollView: {fileID: 1490154619064801607}
+  _achievementItem: {fileID: 4135545501558484734}
 --- !u!1 &1058827937935701423
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +266,9 @@ RectTransform:
   - {fileID: 4211750890271981768}
   m_Father: {fileID: 6011090303184775239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 180, y: -318.7}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 315, y: 397.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3218553676714500351
@@ -928,7 +910,7 @@ GameObject:
   - component: {fileID: 4211750890271981768}
   - component: {fileID: 4818373371932851690}
   - component: {fileID: 3331153587334228230}
-  - component: {fileID: 7626178584551652537}
+  - component: {fileID: 1490154619064801607}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -994,7 +976,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7626178584551652537
+--- !u!114 &1490154619064801607
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1003,7 +985,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7548999206007702279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 254e575316f3f8b4e8bf1c7907b1fa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 7111446764373883284}
@@ -1017,10 +999,10 @@ MonoBehaviour:
   m_Viewport: {fileID: 753192915708433588}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
-  m_HorizontalScrollbarSpacing: -3
-  m_VerticalScrollbarSpacing: -3
+  m_HorizontalScrollbarVisibility: 0
+  m_VerticalScrollbarVisibility: 0
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1107,6 +1089,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7111446764373883284}
     m_Modifications:
+    - target: {fileID: 816647721553978720, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299933400283424922, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3121133560967809318, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_Name
@@ -1212,6 +1204,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7562535947550871030, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951602850457531765, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1223,3 +1225,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8393446980159476225}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4135545501558484734 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5557419082923425023, guid: 262f03f635e03a44090d2885cce74487,
+    type: 3}
+  m_PrefabInstance: {fileID: 8393446980159476225}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b5734791df53b4a93e493d9cc1fe8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

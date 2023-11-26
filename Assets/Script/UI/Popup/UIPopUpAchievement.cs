@@ -46,7 +46,7 @@ public class UIPopUpAchievement : UIBase
         hideButton.onClick.AddListener(Hide);
         hideBGButton.onClick.AddListener(Hide);
         
-        _scrollView.InitScrollView(OnUpdateScrollView);
+        _scrollView.InitScrollView(OnUpdateScrollView, _achievementItem.gameObject);
     }
 
     protected override void OnShow(params object[] param)
@@ -66,6 +66,7 @@ public class UIPopUpAchievement : UIBase
     void SetData()
     {
         _tableDatas.Clear();
+        GameAchieveManager.Instance.UpdateAchievementCount();
         foreach (var data in GameDataManager.Instance._achievementTableData)
         {
             _tableDatas.Add(new AchievementData(data));

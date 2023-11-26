@@ -200,5 +200,12 @@ namespace Script.Manager
 
             return _pastReadPageID.Contains(scenarioData.page_id ?? 0) == false && isCanNextMove;
         }
+
+        public bool IsRead(int id)
+        {
+            var isRead = _pastReadPageID.Contains(id);
+            
+            return isRead;
+        }
     }
 }

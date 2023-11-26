@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Script.DataClass;
 using Script.Manager;
 using UnityEngine;
 
@@ -57,5 +60,67 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
             Debug.Log("isNot");
         }
     }
-    
+
+    public void UpdateAchievementCount()
+    {
+        var tableData = GameDataManager.Instance._achievementTableData;
+        for (int i = 0; i < tableData.Count; ++i)
+        {
+            var achType = tableData[i].ach_type.to_Ach_type_enum();
+            int achievementCount = 0;
+            switch (achType)
+            {
+                case ACH_TYPE.ACH_TYPE_PAGE_VIEW:
+                    if (GamePageManager.Instance.IsRead(tableData[i].ach_id ?? 0))
+                    {
+                        achievementCount = 1;
+                    }
+                    break;
+                case ACH_TYPE.ACH_TYPE_OWN_ITEM:
+                    {
+                        var ownItemCount = GameItemManager.Instance.GetItemCountAll();
+                        for (int j = 0; j < ownItemCount; ++j)
+                        {
+                            var item = GameItemManager.Instance.GetItemByIndex(j);
+                            var itemData = GameDataManager.Instance._itemData.Find(_ => _.item_id == item.itemKey);
+                            if (tableData[i].ach_value_item_type.Contains(itemData.item_type))
+                            {
+                                ++achievementCount;
+                            }
+                        }
+                    }
+                    break;
+                case ACH_TYPE.ACH_TYPE_KILL_MONSTER:
+                    if (tableData[i].ach_value == null || tableData[i].ach_value.Count <= 0)
+                    {
+                        achievementCount = GamePlayerManager.Instance._killMonsterDic.Values.Sum();
+                    }
+                    else
+                    {
+                        for (int j = 0; j < tableData[i].ach_value.Count; ++i)
+                        {
+                            if (GamePlayerManager.Instance._killMonsterDic.TryGetValue(tableData[i].ach_value[j], out var count))
+                            {
+                                achievementCount += count;
+                            }
+                        }
+                    }
+                    break;
+                case ACH_TYPE.ACH_TYPE_DEAD_COUNT:
+                {
+                    achievementCount = GamePlayerManager.Instance.DeadCount;
+                } break;
+            }
+
+            if (_achievementCount.TryGetValue(tableData[i]?.ach_id ?? 0, out var achieveCount) == false)
+            {
+                _achievementCount.TryAdd(tableData[i]?.ach_id ?? 0, achievementCount);
+            }
+            else
+            {
+                _achievementCount[tableData[i]?.ach_id ?? 0] = achievementCount;
+            }
+            
+        }
+    }
 }

@@ -217,7 +217,7 @@ public class UIPopupBattle : UIBase
         if (playerhp <= 0)
         {
             GamePageManager.Instance.EnqueueCurPageData(_endScenarioID);
-
+            GamePlayerManager.Instance.DeadCount += 1;
             _parents.Show();
             
             Hide();
@@ -232,9 +232,8 @@ public class UIPopupBattle : UIBase
         if (monsterHp <= 0)
         {
             GamePageManager.Instance.EnqueueCurPageData(_endScenarioID);
-
+            GamePlayerManager.Instance.AddKillMonsterCount(_monsterData.monster_id ?? 0, 1);
             _parents.Show();
-            
             Hide();
             return true;
         }

@@ -49,6 +49,15 @@ namespace Script.DataClass
     {
         STATUS_FUNCTION_TYPE_MAX_STAT,
         STATUS_FUNCTION_TYPE_GET_STAT,
+    }    
+    
+    public enum ACH_TYPE
+    {
+        ACH_TYPE_PAGE_VIEW,
+        ACH_TYPE_OWN_ITEM,
+        ACH_TYPE_KILL_MONSTER,
+        ACH_TYPE_DEAD_COUNT,
+
     }
     
     
@@ -101,6 +110,20 @@ namespace Script.DataClass
                 _=> ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
             };
         }
+        
+        public static ACH_TYPE to_Ach_type_enum(this string str)
+        {
+            return str switch
+            {
+                "page_view" => ACH_TYPE.ACH_TYPE_PAGE_VIEW,
+                "own_item" => ACH_TYPE.ACH_TYPE_OWN_ITEM,
+                "kill_monster" => ACH_TYPE.ACH_TYPE_KILL_MONSTER,
+                "dead_count" => ACH_TYPE.ACH_TYPE_DEAD_COUNT,
+
+            };
+        }
+        
+        
         public static ITEM_TYPE to_Item_type_enum(this string str)
         {
             return str switch

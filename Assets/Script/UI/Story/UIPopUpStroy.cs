@@ -80,9 +80,10 @@ public class UIPopUpStroy : UIBase
         {
             _indicatorTween.Play(true);
         }
-        _scenarioData = GamePageManager.Instance.DequeueCurPageData();
-        var typeEnum = _scenarioData.type.to_TemplateType_enum();
-        if (_scenarioData.is_renew_page == true)
+        var data = GamePageManager.Instance.DequeueCurPageData();
+        _scenarioData = data;
+        var typeEnum = data.type.to_TemplateType_enum();
+        if (data.is_renew_page == true)
         {
             _scrollRect.ClearAll();
         }
@@ -92,7 +93,7 @@ public class UIPopUpStroy : UIBase
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject()); 
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                textPanel.SetText(_scenarioData.output_txt);
+                textPanel.SetText(data.output_txt);
                 textPanel.gameObject.SetActive(true);
                 textPanel.SetTween(index,_tweenTime);
                 return item;
@@ -101,19 +102,19 @@ public class UIPopUpStroy : UIBase
             {
                 var item = _scrollRect.GetItem( _imagePanel.GameObject());
                 var imgPanel = item.GetComponent<UIStoryImagePanel>();
-                imgPanel.SetImage(_scenarioData.relate_value);
+                imgPanel.SetImage(data.relate_value);
                 imgPanel.gameObject.SetActive(true);
-               imgPanel.SetTween(index,_tweenTime);
+                imgPanel.SetTween(index,_tweenTime);
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_BUTTON:
             {
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(_scenarioData, ()=>
+                buttonPanel.SetButton(data, ()=>
                 {
-                    GamePageManager.Instance.NextDataEnqueue(_scenarioData);
-                    OnClickButtonAction(_scenarioData);
+                    GamePageManager.Instance.NextDataEnqueue(data);
+                    OnClickButtonAction(data);
                 });
                 buttonPanel.gameObject.SetActive(true);
                 buttonPanel._canvas.alpha = 0;
@@ -124,7 +125,7 @@ public class UIPopUpStroy : UIBase
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                GameItemManager.Instance.AddItem(_scenarioData.result_value[0], _scenarioData.result_value[1]);
+                GameItemManager.Instance.AddItem(data.result_value[0], data.result_value[1]);
                 textPanel.SetText(_scenarioData.output_txt);
                 textPanel._canvas.alpha = 0;
                 textPanel.gameObject.SetActive(true);
@@ -133,9 +134,9 @@ public class UIPopUpStroy : UIBase
             }
             case PAGE_TYPE.PAGE_TYPE_STATUS:
             {
-                GamePlayerManager.Instance.myActor.playerStat.AddStat(_scenarioData.result_value[0], _scenarioData.result_value[1]);
-                var stat = GamePlayerManager.Instance.myActor.playerStat.GetStat(_scenarioData.result_value[0]);
-                var statusData = GamePlayerManager.Instance.myActor.playerStat.GetStatusData(_scenarioData.result_value[0]);
+                GamePlayerManager.Instance.myActor.playerStat.AddStat(data.result_value[0], data.result_value[1]);
+                var stat = GamePlayerManager.Instance.myActor.playerStat.GetStat(data.result_value[0]);
+                var statusData = GamePlayerManager.Instance.myActor.playerStat.GetStatusData(data.result_value[0]);
                 
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
@@ -143,7 +144,7 @@ public class UIPopUpStroy : UIBase
                 
                 // ?? 예림 : string 대응시 변경 해야할 부분 
                 var doString = stat < 0 ? "소모" : "획득";
-                var str = string.Format(_scenarioData.output_txt, statusData.status_name, statValue.ToString(), doString);
+                var str = string.Format(data.output_txt, statusData.status_name, statValue.ToString(), doString);
                 
                 textPanel.SetText(str);
                 textPanel.gameObject.SetActive(true);
@@ -155,19 +156,19 @@ public class UIPopUpStroy : UIBase
             {
                 var item = _scrollRect.GetItem( _textPanel.GameObject());
                 var textPanel = item.GetComponent<UIStroyTextPanel>();
-                textPanel.SetText(_scenarioData.output_txt);
-                GamePageManager.Instance.NextDataEnqueue(_scenarioData);
+                textPanel.SetText(data.output_txt);
+                GamePageManager.Instance.NextDataEnqueue(data);
                 SetUI();
                 textPanel.gameObject.SetActive(true);
                 textPanel._canvas.alpha = 0;
-               textPanel.SetTween(index,_tweenTime);
+                textPanel.SetTween(index,_tweenTime);
                 return item; 
             }
             case PAGE_TYPE.PAGE_TYPE_BATTLE:
             {
                 var item = _scrollRect.GetItem(_buttonsPanel.GameObject());
                 var buttonPanel = item.GetComponent<UIStoryButtonPanel>();
-                buttonPanel.SetButton(_scenarioData, ()=>OnClickBattleButton(_scenarioData));
+                buttonPanel.SetButton(data, ()=>OnClickBattleButton(data));
                 buttonPanel._canvas.alpha = 0;
                 buttonPanel.gameObject.SetActive(true);
                 buttonPanel.SetTween(index,_tweenTime);

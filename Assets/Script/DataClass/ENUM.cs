@@ -119,7 +119,7 @@ namespace Script.DataClass
                 "own_item" => ACH_TYPE.ACH_TYPE_OWN_ITEM,
                 "kill_monster" => ACH_TYPE.ACH_TYPE_KILL_MONSTER,
                 "dead_count" => ACH_TYPE.ACH_TYPE_DEAD_COUNT,
-
+                _ => ACH_TYPE.ACH_TYPE_OWN_ITEM
             };
         }
         

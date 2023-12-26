@@ -202,5 +202,29 @@
     "enum_name": "dead_count",
     "source_enum_name": "ACH_TYPE_DEAD_COUNT",
     "enum_value": 3
+  },
+  {
+    "group_name": "content_type",
+    "enum_name": "item",
+    "source_enum_name": "CONTENT_TYPE_ITEM",
+    "enum_value": 0
+  },
+  {
+    "group_name": "content_type",
+    "enum_name": "status",
+    "source_enum_name": "CONTENT_TYPE_STATUS",
+    "enum_value": 1
+  },
+  {
+    "group_name": "content_type",
+    "enum_name": "achievement",
+    "source_enum_name": "CONTENT_TYPE_ACHIEVEMENT",
+    "enum_value": 2
+  },
+  {
+    "group_name": "content_type",
+    "enum_name": "collection",
+    "source_enum_name": "CONTENT_TYPE_COLLECTION",
+    "enum_value": 3
   }
 ]

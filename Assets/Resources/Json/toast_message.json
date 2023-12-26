@@ -1,0 +1,26 @@
+[
+  {
+    "content_type": "item",
+    "toast_message_icon": "ui_icon_button_3",
+    "toast_message_title": "[아이템 획득]",
+    "toast_message_desc": "'[{0}] {1}'을/를 획득하셨습니다."
+  },
+  {
+    "content_type": "status",
+    "toast_message_icon": "ui_icon_button_3",
+    "toast_message_title": "[능력치 획득]",
+    "toast_message_desc": "'{0}'을/를 획득하셨습니다."
+  },
+  {
+    "content_type": "achievement",
+    "toast_message_icon": "ui_icon_button_3",
+    "toast_message_title": "[업적 달성]",
+    "toast_message_desc": "{0}"
+  },
+  {
+    "content_type": "collection",
+    "toast_message_icon": "ui_icon_button_3",
+    "toast_message_title": "[도감 등록]",
+    "toast_message_desc": "{0} 도감에 '{1}'의 정보가 등록되었습니다."
+  }
+]

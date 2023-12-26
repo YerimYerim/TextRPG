@@ -143,3 +143,11 @@ public class AchievementTableData
     public int? reward_amount { get; set; }
     
 }
+
+public class ToastMessageData
+{
+    public string content_type { get; set; }
+    public string toast_message_icon { get; set; }
+    public string toast_message_title { get; set; }
+    public string toast_message_desc { get; set; }
+}

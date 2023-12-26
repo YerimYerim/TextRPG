@@ -65,7 +65,16 @@ public class GameItemManager : Singleton<GameItemManager>
             {
                 ownItem[itemID] = Math.Min(ownItem[itemID] + addCount, itemData.stack_amount);
             }
+            if(GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4,out var ui))
+            {
+                var rarityInfo = GameDataManager.Instance._rarityData.Find(_ => _.rarity_id == itemData.rarity_id);
+                var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type.to_Content_type_enum() == CONTENT_TYPE.CONTENT_TYPE_ITEM);
+
+                string desc = String.Format(toastMessageData.toast_message_desc, rarityInfo.rarity_string, itemData.item_name);
+                GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_ITEM,  toastMessageData.toast_message_icon,  toastMessageData.toast_message_title, desc));
+            }
         }
+        
     }
     public int GetItem(int itemID)
     {

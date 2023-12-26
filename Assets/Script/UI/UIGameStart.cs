@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Lofle.Tween;
+using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using TMPro;
@@ -44,7 +45,11 @@ public class UIGameStart : UIBase
 
     private void OnEventFinishAction()
     {
-        
+        if (GameUIManager.Instance.TryGetOrCreate<UIPopUpStroy>(false, UILayer.LEVEL_1, out var ui))
+        {
+            ui.Show();
+        }
+        Hide();
     }
 
     private void OnEventProgressAction(float progress)

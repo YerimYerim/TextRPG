@@ -1,4 +1,8 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Script.Manager
@@ -17,11 +21,15 @@ namespace Script.Manager
         private Canvas _canvasParents;
         private Transform _safePaddingTransform;
         private RectTransform[] _uiLayerParents = new RectTransform[4];
-        private List<UIBase> _ui= new List<UIBase>();
+        private List<UIBase> _ui= new();
+        private Queue<KeyValuePair<UIBase, Action>> _sequentialUI = new();
+        private int _currentSequentialIndex = 0;
+        private bool isPlaySequential = false;
         protected override void Awake()
         {
             base.Awake();
             _canvasParents = GameObject.Find("Canvas").GetComponent<Canvas>();
+            DontDestroyOnLoad(_canvasParents);
             _safePaddingTransform =  _canvasParents.transform.Find("SafeArea");
             for (int i = 0; i < _uiLayerParents.Length; ++i)
             {
@@ -67,7 +75,7 @@ namespace Script.Manager
             return true;
         }
 
-        public bool TryGet<T>(bool isBack, UILayer layer, out T ui) where T : UIBase
+        public bool TryGet<T>(out T ui) where T : UIBase
         {
             var uiobjectInList = _ui.Find(_ => _.name == string.Concat(typeof(T).Name, "(Clone)"));
             if (uiobjectInList != null)
@@ -78,6 +86,41 @@ namespace Script.Manager
 
             ui = null;
             return false;
+        }
+
+        private void Update()
+        {
+            ShowSequentialPopup();
+        }
+
+        public void RegisterSequentialPopup<T>(T ui, Action action) where T : UIBase
+        {
+            ui.onEventHide += ()=>
+            {
+                isPlaySequential = false;
+            };
+            _sequentialUI.Enqueue(new KeyValuePair<UIBase, Action>(ui, action));
+            if (isPlaySequential == false)
+            {
+                ShowSequentialPopup();
+            }
+        }
+
+        public void ShowSequentialPopup()
+        {
+            if(_sequentialUI.Count > 0 && isPlaySequential == false)
+            {
+                var sequentialUI = _sequentialUI.Dequeue();
+                isPlaySequential = true;
+                sequentialUI.Value?.Invoke();
+                sequentialUI.Key.Show();
+            }
+        }
+        public void Clear()
+        {
+            _ui.Clear();
+            _sequentialUI.Clear();
+            Awake();
         }
     }
 }

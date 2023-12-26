@@ -37,7 +37,6 @@ public class UIPopUpStroy : UIBase
     public override void Show()
     {
         base.Show();
-        OnClickButtonAction(null);
     }
 
     private void OnClickIndicator()

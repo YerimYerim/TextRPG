@@ -1,4 +1,5 @@
 using System;
+using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using TMPro;
@@ -87,10 +88,7 @@ public class UIToolBar : MonoBehaviour
         }
         private void OnClickAchievement()
         {
-            if (GameUIManager.Instance.TryGetOrCreate<UIPopUpAchievement>(false, UILayer.LEVEL_3, out var ui))
-            {
-                ui.Show();
-            }
+            GameShortCutManager.Instance.GoToContent(CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT);
         }
     }
     

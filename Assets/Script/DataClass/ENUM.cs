@@ -59,8 +59,16 @@ namespace Script.DataClass
         ACH_TYPE_DEAD_COUNT,
 
     }
-    
-    
+
+    public enum CONTENT_TYPE
+    {
+        CONTENT_TYPE_ITEM,
+        CONTENT_TYPE_STATUS,
+        CONTENT_TYPE_ACHIEVEMENT,
+        CONTENT_TYPE_COLLECTION,
+
+    }
+
     public static class EnumExtensions
     {
         public static PAGE_TYPE to_TemplateType_enum(this string str)
@@ -122,8 +130,6 @@ namespace Script.DataClass
                 _ => ACH_TYPE.ACH_TYPE_OWN_ITEM
             };
         }
-        
-        
         public static ITEM_TYPE to_Item_type_enum(this string str)
         {
             return str switch
@@ -136,6 +142,17 @@ namespace Script.DataClass
                 "equip_ring"    => ITEM_TYPE.ITEM_TYPE_EQUIP_RING,
                 "equip_necklace"=> ITEM_TYPE.ITEM_TYPE_EQUIP_NECKLACE,
                 _ => ITEM_TYPE.ITEM_TYPE_NORMAL
+            };
+        }
+        public static CONTENT_TYPE to_Content_type_enum(this string str)
+        {
+            return str switch
+            {
+                "item"=> CONTENT_TYPE.CONTENT_TYPE_ITEM,
+                "status"=> CONTENT_TYPE.CONTENT_TYPE_STATUS,
+                "achievement"=> CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT,
+                "collection"=> CONTENT_TYPE.CONTENT_TYPE_COLLECTION,
+                _ => CONTENT_TYPE.CONTENT_TYPE_ITEM
             };
         }
     }

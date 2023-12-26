@@ -10,13 +10,13 @@ namespace Lofle.Tween
 		[SerializeField]
 		private Transform _to = null;
 
-		private TweenPosition _position = null;
+		private UITweenPosition _position = null;
 		private TweenRotation _rotation = null;
 		private TweenScale _scale = null;
 
 		override protected void Init()
 		{
-			_position = gameObject.AddComponent<TweenPosition>();
+			_position = gameObject.AddComponent<UITweenPosition>();
 			_rotation = gameObject.AddComponent<TweenRotation>();
 			_scale = gameObject.AddComponent<TweenScale>();
 

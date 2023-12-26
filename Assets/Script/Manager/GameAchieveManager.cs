@@ -120,7 +120,17 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
             {
                 _achievementCount[tableData[i]?.ach_id ?? 0] = achievementCount;
             }
-            
+
+            var state = GetAchieveState(tableData[i].ach_id ?? 0, tableData[i]);
+            if (state == ACHIEVE_STATE.COMPLETE)
+            {
+                if(GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4,out var ui))
+                {
+                    var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type.to_Content_type_enum() == CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT);
+                    string desc = String.Format(toastMessageData.toast_message_desc, tableData[i].ach_title);
+                    GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT,  toastMessageData.toast_message_icon,  toastMessageData.toast_message_title, desc));
+                }
+            }
         }
     }
 }

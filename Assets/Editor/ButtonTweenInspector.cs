@@ -38,10 +38,10 @@ public class ButtonTweenInspector : UnityEditor.Editor
 			UnityEventTools.AddPersistentListener( buttonEvent.EventOnPointerUp, tween.PlayReverse );
 		}
 
-		GUI.enabled = null == buttonEvent.GetComponent<TweenPosition>();
+		GUI.enabled = null == buttonEvent.GetComponent<UITweenPosition>();
 		if( GUILayout.Button( "Position" ) )
 		{
-			var tween = buttonEvent.gameObject.AddComponent<TweenPosition>();
+			var tween = buttonEvent.gameObject.AddComponent<UITweenPosition>();
 			tween.isPlayOnStart = false;
 			tween.To = new Vector3( 1, 1, 1 );
 

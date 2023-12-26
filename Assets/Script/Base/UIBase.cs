@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
+    public event Action onEventHide;
     protected virtual void OnShow(params object[] param)
     {
         
@@ -22,5 +24,6 @@ public class UIBase : MonoBehaviour
     {
         transform.gameObject.SetActive(false);
         OnHide();
+        onEventHide?.Invoke();
     }
 }

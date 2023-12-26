@@ -112,15 +112,15 @@ namespace Lofle.Tween
 			}
 		}
 
-		public void Play( bool bForward )
+		public void Play( bool bForward, Action FinishCallBack = null)
 		{
 			if( bForward )
 			{
-				PlayForward();
+				PlayForward(FinishCallBack);
 			}
 			else
 			{
-				PlayReverse();
+				PlayReverse(FinishCallBack);
 			}
 		}
 

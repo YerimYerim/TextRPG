@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameDataManager : Script.Manager.Singleton<GameDataManager>
 {
     private readonly string[] _pageJsonFileNames = { "page", "status", "item", "rarity", "config", 
-        "monster", "action_group", "action_group_player", "achievement" };
+        "monster", "action_group", "action_group_player", "achievement","toast_message" };
     internal List<ScenarioData> _pageData = new();
     internal List<StatusTableData> _statusData = new();
     internal List<ItemTableData> _itemData = new();
@@ -16,6 +16,7 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
     internal List<MonsterActionGroup> _monsterActionTableData = new();
     internal List<PlayerActionGroup> _playerActionTableData = new();
     internal List<AchievementTableData> _achievementTableData = new();
+    internal List<ToastMessageData> _toastMessageTableData = new();
 
     public void LoadData()
     {
@@ -28,6 +29,7 @@ public class GameDataManager : Script.Manager.Singleton<GameDataManager>
         _monsterActionTableData = ReadJsonFiles<MonsterActionGroup>(_pageJsonFileNames[6]);
         _playerActionTableData = ReadJsonFiles<PlayerActionGroup>(_pageJsonFileNames[7]);
         _achievementTableData = ReadJsonFiles<AchievementTableData>(_pageJsonFileNames[8]);
+        _toastMessageTableData = ReadJsonFiles<ToastMessageData>(_pageJsonFileNames[9]);
     }
 
     private static List<T> ReadJsonFiles<T>(string fileName)

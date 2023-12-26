@@ -76,7 +76,7 @@ public class UIPopUpInventory : UIBase
     protected override void OnHide(params object[] param)
     {
         base.OnHide(param);
-        if (GameUIManager.Instance.TryGet<UIItemInteractButton>(true, UILayer.LEVEL_4, out var ui))
+        if (GameUIManager.Instance.TryGet<UIItemInteractButton>(out var ui))
         {
             ui.Hide();
         }

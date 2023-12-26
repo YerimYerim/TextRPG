@@ -1096,6 +1096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1299933400283424922, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 285
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299933400283424922, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -1103,6 +1108,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIAchievement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557419082923425023, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: imgBGHighlight
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557419082923425023, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: imageRewardDone
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557419082923425023, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: _uiItemThumbnail
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
@@ -1122,7 +1142,7 @@ PrefabInstance:
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
@@ -1132,7 +1152,7 @@ PrefabInstance:
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
@@ -1182,12 +1202,12 @@ PrefabInstance:
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 157.5
       objectReference: {fileID: 0}
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 6399109909395575591, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
@@ -1204,6 +1224,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507982038499266421, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7562535947550871030, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 295
+      objectReference: {fileID: 0}
     - target: {fileID: 7562535947550871030, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -1211,11 +1241,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8951602850457531765, guid: 262f03f635e03a44090d2885cce74487,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 285
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951602850457531765, guid: 262f03f635e03a44090d2885cce74487,
+        type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3108173961487078092, guid: 262f03f635e03a44090d2885cce74487, type: 3}
+    - {fileID: 3196900475527510086, guid: 262f03f635e03a44090d2885cce74487, type: 3}
+    - {fileID: 6928353831220949335, guid: 262f03f635e03a44090d2885cce74487, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 262f03f635e03a44090d2885cce74487, type: 3}

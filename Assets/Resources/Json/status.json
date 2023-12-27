@@ -11,7 +11,8 @@
     "function_type": "max_stat",
     "function_value": [1],
     "function_value_1": [1],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 2,
@@ -25,7 +26,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 3,
@@ -39,7 +41,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 4,
@@ -53,7 +56,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 5,
@@ -67,7 +71,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 6,
@@ -81,7 +86,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 7,
@@ -95,7 +101,8 @@
     "function_type": null,
     "function_value": [],
     "function_value_1": [],
-    "function_value_2": []
+    "function_value_2": [],
+    "is_collection_check": true
   },
   {
     "status_id": 101,
@@ -109,6 +116,7 @@
     "function_type": "get_stat",
     "function_value": [],
     "function_value_1": [4, 7],
-    "function_value_2": [1, 2]
+    "function_value_2": [1, 2],
+    "is_collection_check": true
   }
 ]

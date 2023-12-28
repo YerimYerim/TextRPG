@@ -9,7 +9,6 @@ public class UIAchievementItem : MonoBehaviour
     [SerializeField] private Transform imgBGAch;
     [SerializeField] private TextMeshProUGUI textDescAch;
     [SerializeField] private TextMeshProUGUI textTitle;
-    [SerializeField] private Transform imageLine;
     private GameAchieveManager.ACHIEVE_STATE _state;
     
 
@@ -58,7 +57,6 @@ public class UIAchievementItem : MonoBehaviour
     private void SetText(AchievementTableData data)
     {
         textTitle.text = data.ach_title;
-        textDescUndo.text = data.ach_desc;
         textDescAch.text = data.ach_desc;
     }
 

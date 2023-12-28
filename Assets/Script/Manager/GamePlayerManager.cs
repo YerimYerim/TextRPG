@@ -14,7 +14,10 @@ public class GamePlayerManager : Singleton<GamePlayerManager>
     protected override void Awake()
     {
         base.Awake();
-        
+        myActor ??= new ActorBase();
+        DeadCount = 0;
+        _killMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
+        _metMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
     }
 
     public void AddKillMonsterCount(int id, int addCount)

@@ -38,7 +38,10 @@ public class GameShortCutManager : Singleton<GameShortCutManager>
             } break;
             case CONTENT_TYPE.CONTENT_TYPE_COLLECTION:
             {
-                //미구현
+                if (GameUIManager.Instance.TryGetOrCreate<UIPopUpCollection>(false, UILayer.LEVEL_3, out var ui))
+                {
+                    ui.Show();
+                }
                 return true;
             } break;
             default:

@@ -57,6 +57,7 @@ public class UIToolBar : MonoBehaviour
                     break;
                 case BottomButtonType.COLLECTION:
                     _text.text = "도감";
+                    _button.onClick.AddListener(OnClickCollection);
                     break;
                 case BottomButtonType.ACHIEVEMENT:
                     _text.text = "업적";
@@ -89,6 +90,11 @@ public class UIToolBar : MonoBehaviour
         private void OnClickAchievement()
         {
             GameShortCutManager.Instance.GoToContent(CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT);
+        }
+
+        private void OnClickCollection()
+        {
+            GameShortCutManager.Instance.GoToContent(CONTENT_TYPE.CONTENT_TYPE_COLLECTION);
         }
     }
     

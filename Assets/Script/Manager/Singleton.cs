@@ -35,5 +35,9 @@ namespace Script.Manager
                 Destroy(gameObject);
             }
         }
+
+        protected virtual void Init()
+        {
+        }
     }
 }

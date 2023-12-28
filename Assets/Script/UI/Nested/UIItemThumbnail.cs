@@ -15,6 +15,7 @@ public class UIItemThumbnail : MonoBehaviour
     private DTButton _button;
     
     private Transform _equippedIcon;
+    private Transform _nullImage;
     private void Awake()
     {
         _rarityBg = transform.FindComponent<Image>("ImageRarityBG");
@@ -24,6 +25,7 @@ public class UIItemThumbnail : MonoBehaviour
         _itemCount = transform.FindComponent<TextMeshProUGUI>("TextItemCount");
         _button = transform.GetComponent<DTButton>();
         _equippedIcon = transform.Find("UIEquipIconGroup2");
+        _nullImage = transform.Find("ImageNullContent");
     }
 
     public void SetItemInfo(int itemKey, bool useItemCount)
@@ -74,5 +76,10 @@ public class UIItemThumbnail : MonoBehaviour
     public void SetEquipIcon(bool active)
     {
         _equippedIcon.gameObject.SetActive(active);
+    }
+
+    public void SetNull(bool active)
+    {
+        _nullImage.gameObject.SetActive(active);
     }
 }

@@ -71,7 +71,8 @@ public class UIPopupBattle : UIBase
         
         _playerAction.Clear();
         _playerAction.AddRange(GameDataManager.Instance._playerActionTableData);
-
+        
+        GamePlayerManager.Instance.AddMetMonsterCount(_monsterData?.monster_id ?? 0, 1);
         AddBattleActions();
         SetUI();
     }

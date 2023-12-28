@@ -93,7 +93,7 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
                 case ACH_TYPE.ACH_TYPE_KILL_MONSTER:
                     if (tableData[i].ach_value == null || tableData[i].ach_value.Count <= 0)
                     {
-                        achievementCount = GamePlayerManager.Instance._killMonsterDic.Values.Sum();
+                        achievementCount = GamePlayerManager.Instance._killMonsterDic?.Values?.Sum() ?? 0;
                     }
                     else
                     {

@@ -36,6 +36,7 @@ public partial class ItemTableData
     public string function_type { get; set; }
     public List<int> function_value_1 { get; set; }
     public List<int> function_value_2 { get; set; }
+    public bool is_collection_check { get; set; }
 }
 
 public partial class StatusTableData
@@ -52,6 +53,7 @@ public partial class StatusTableData
     public List<int> function_value { get; set; }
     public List<int> function_value_1 { get; set; }
     public List<int> function_value_2 { get; set; }
+    public bool is_collection_check { get; set; }
 }
 
 public partial class ConfigTableData
@@ -98,6 +100,8 @@ public class MonsterTableData
     public List<int> phaze_hp_condition { get; set; }
     public List<int> status_buff_phaze_changed { get; set; }
     public List<int> status_buff_phaze_changed_value { get; set; }
+    public bool is_collection_check { get; set; }
+    public string monster_desc { get; set; }
 }
 
 public class MonsterActionGroup

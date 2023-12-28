@@ -16,6 +16,7 @@
     "status_buff_phaze_changed": [3, 5],
     "status_buff_phaze_changed_value": [20, 20],
     "is_collection_check": true,
-    "collection_ptr": "img_wolf"
+    "collection_ptr": "img_wolf",
+    "monster_desc": "검은빛이 도는 골렘입니다."
   }
 ]

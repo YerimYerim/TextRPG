@@ -16,6 +16,11 @@ public class Stat
             AddStat(data.status_id, 0);
         }
     }
+
+    public void Clear()
+    {
+        status.Clear();
+    }
     public void AddStat(int statusID, int addValue, bool notify = true)
     {
         var statusTableData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusID);

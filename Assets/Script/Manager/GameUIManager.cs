@@ -118,6 +118,10 @@ namespace Script.Manager
         }
         public void Clear()
         {
+            for (int i = 0; i < _ui.Count; ++i)
+            {
+                _ui[i].Hide();
+            }
             _ui.Clear();
             _sequentialUI.Clear();
             Awake();

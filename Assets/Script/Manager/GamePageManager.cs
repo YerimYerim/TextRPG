@@ -22,6 +22,12 @@ namespace Script.Manager
             return null;
         }
 
+        public void InitStory()
+        {
+            var scenarioData = GetScenarioData(0);
+            EnqueueCurPageData(scenarioData?.page_id  ?? 0);
+            _pastReadPageID.Clear();
+        }
         /// <summary>
         /// 해당  id의 page 를 모두 가져온다
         /// </summary>

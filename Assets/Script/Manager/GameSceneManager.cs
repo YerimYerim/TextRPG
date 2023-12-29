@@ -23,6 +23,10 @@ namespace Script.Manager
                 progressEvent?.Invoke(_progress);
                 yield return null;
             }
+            // 다 초기화 해주기
+            GamePlayerManager.Instance.myActor.playerStat.Clear();
+            GamePlayerManager.Instance.InitMyActor();
+            GamePageManager.Instance.InitStory();
             finishAction?.Invoke();
         }
     }

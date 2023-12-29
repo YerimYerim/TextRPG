@@ -39,6 +39,13 @@ public class UIPopUpStroy : UIBase
         base.Show();
     }
 
+    protected override void OnHide(params object[] param)
+    {
+        base.OnHide(param);
+        _scrollRect.MakeList(0);
+        OnEventClear();
+    }
+
     private void OnClickIndicator()
     {
         _scrollRect.MoveScrollEndVertical();
@@ -149,6 +156,14 @@ public class UIPopUpStroy : UIBase
                 textPanel.gameObject.SetActive(true);
                 textPanel._canvas.alpha = 0;
                 textPanel.SetTween(index,_tweenTime);
+
+                if (GamePlayerManager.Instance.CheckPlayerDead())
+                {
+                    if (GameUIManager.Instance.TryGetOrCreate<UIPlayerDead>(true, UILayer.LEVEL_4, out var ui))
+                    {
+                        ui.Show();
+                    }
+                }
                 return item;
             }
             case PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP:
@@ -213,8 +228,7 @@ public class UIPopUpStroy : UIBase
         if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))
         {
             ui.Show();
-            ui.InitMonsterData(scenarioData.result_value[0], scenarioData.result_value[1], this);
-            this.Hide();
+            ui.InitMonsterData(scenarioData.result_value[0], scenarioData.result_value[1], _scrollRect.transform);
         }
     }
 }

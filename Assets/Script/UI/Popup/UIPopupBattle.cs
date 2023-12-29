@@ -33,18 +33,19 @@ public class UIPopupBattle : UIBase
     private int _curActionIndex; 
     private float _tweenTime  = 0.1f;
     private int _endScenarioID;
-    private UIBase _parents;
+    private Transform _parents;
     private void Awake()
     {
         _scrollView.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject );
         _scrollView.MakeList(0);
     }
 
-    public void InitMonsterData(int monsterID , int endScenarioData, UIBase parents)
+    public void InitMonsterData(int monsterID , int endScenarioData, Transform parents)
     {
         _monsterData = GameDataManager.Instance._monsterTableData.Find(_ => _.monster_id == monsterID);
         _endScenarioID = endScenarioData;
         _parents = parents;
+        _parents.gameObject.SetActive(false);
         _actorBase = new ActorBase
         {
             playerStat = new Stat()
@@ -57,12 +58,12 @@ public class UIPopupBattle : UIBase
         int dodgeKey = (int)GameDataManager.Instance.GetValueConfigData("status_dodge_factor");
         int hitKey = (int)GameDataManager.Instance.GetValueConfigData("status_hit_factor");
         
-        _actorBase.playerStat.AddStat(damageKey, _monsterData.status_damage_factor ?? 0);
-        _actorBase.playerStat.AddStat(reduceDefKey, _monsterData.status_reduce_defense_factor ?? 0);
-        _actorBase.playerStat.AddStat(hpKey, _monsterData.status_hp ?? 0);
-        _actorBase.playerStat.AddStat(defKey, _monsterData.status_defense_factor ?? 0);
-        _actorBase.playerStat.AddStat(dodgeKey, _monsterData.status_dodge_factor ?? 0);
-        _actorBase.playerStat.AddStat(hitKey, _monsterData.status_hit_factor ?? 0);
+        _actorBase.playerStat.AddStat(damageKey, _monsterData.status_damage_factor ?? 0 , false);
+        _actorBase.playerStat.AddStat(reduceDefKey, _monsterData.status_reduce_defense_factor ?? 0, false);
+        _actorBase.playerStat.AddStat(hpKey, _monsterData.status_hp ?? 0, false);
+        _actorBase.playerStat.AddStat(defKey, _monsterData.status_defense_factor ?? 0, false);
+        _actorBase.playerStat.AddStat(dodgeKey, _monsterData.status_dodge_factor ?? 0, false);
+        _actorBase.playerStat.AddStat(hitKey, _monsterData.status_hit_factor ?? 0, false);
         
         _monsterImagePanel.SetUI(_monsterData, _monsterData.status_hp ?? 0 );
         _curPhaze = 0;
@@ -219,9 +220,15 @@ public class UIPopupBattle : UIBase
         {
             GamePageManager.Instance.EnqueueCurPageData(_endScenarioID);
             GamePlayerManager.Instance.DeadCount += 1;
-            _parents.Show();
-            
+            _parents.gameObject.SetActive(true);
             Hide();
+            if (GamePlayerManager.Instance.CheckPlayerDead())
+            {
+                if (GameUIManager.Instance.TryGetOrCreate<UIPlayerDead>(true, UILayer.LEVEL_4, out var ui))
+                {
+                    ui.Show();
+                }
+            }
             return true;
         }
         return false;
@@ -234,7 +241,7 @@ public class UIPopupBattle : UIBase
         {
             GamePageManager.Instance.EnqueueCurPageData(_endScenarioID);
             GamePlayerManager.Instance.AddKillMonsterCount(_monsterData.monster_id ?? 0, 1);
-            _parents.Show();
+            _parents.gameObject.SetActive(true);
             Hide();
             return true;
         }

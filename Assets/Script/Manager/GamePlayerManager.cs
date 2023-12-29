@@ -15,7 +15,6 @@ public class GamePlayerManager : Singleton<GamePlayerManager>
     {
         base.Awake();
         myActor ??= new ActorBase();
-        InitMyActor();
         DeadCount = 0;
         _killMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
         _metMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
@@ -51,5 +50,12 @@ public class GamePlayerManager : Singleton<GamePlayerManager>
         {
             _metMonsterDic.TryAdd(id, addCount);
         }
+    }
+    
+    public bool CheckPlayerDead()
+    {
+        int hpKey = (int)GameDataManager.Instance.GetValueConfigData("status_hp");
+        var curHp = myActor.playerStat.GetStat(hpKey);
+        return curHp <= 0;
     }
 }

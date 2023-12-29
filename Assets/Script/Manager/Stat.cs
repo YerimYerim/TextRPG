@@ -16,7 +16,7 @@ public class Stat
             AddStat(data.status_id, 0);
         }
     }
-    public void AddStat(int statusID, int addValue)
+    public void AddStat(int statusID, int addValue, bool notify = true)
     {
         var statusTableData = GameDataManager.Instance._statusData.FirstOrDefault(_ => _.status_id == statusID);
         if (statusTableData != null)
@@ -62,7 +62,7 @@ public class Stat
             {
                 status.Add(statusID, addValue);
             }
-            if(addValue > 0)
+            if(addValue > 0 && notify == true)
             {
                 if (GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4, out var ui))
                 {

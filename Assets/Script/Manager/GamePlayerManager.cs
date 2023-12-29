@@ -15,11 +15,20 @@ public class GamePlayerManager : Singleton<GamePlayerManager>
     {
         base.Awake();
         myActor ??= new ActorBase();
+        InitMyActor();
         DeadCount = 0;
         _killMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
         _metMonsterDic ??= new Dictionary<int, int>(); // monsterid , kill Count
     }
 
+    public void InitMyActor()
+    {
+        var statusList = GameDataManager.Instance._statusData;
+        foreach (var stat in statusList)
+        {
+            myActor.playerStat.AddStat(stat.status_id, stat?.default_status ?? 0 , false );
+        }
+    }
     public void AddKillMonsterCount(int id, int addCount)
     {
         if (_killMonsterDic.TryGetValue(id, out var curCount))

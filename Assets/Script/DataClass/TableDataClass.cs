@@ -54,6 +54,7 @@ public partial class StatusTableData
     public List<int> function_value_1 { get; set; }
     public List<int> function_value_2 { get; set; }
     public bool is_collection_check { get; set; }
+    public int? default_status { get; set; }
 }
 
 public partial class ConfigTableData

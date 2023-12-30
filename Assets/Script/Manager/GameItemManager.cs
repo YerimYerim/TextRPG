@@ -40,6 +40,7 @@ public class GameItemManager : Singleton<GameItemManager>
                     ownItem.Remove(itemID);
                 }
             }
+            GameDataSaveManager.SaveDataAll();
         }
     }
 
@@ -73,8 +74,8 @@ public class GameItemManager : Singleton<GameItemManager>
                 string desc = String.Format(toastMessageData.toast_message_desc, rarityInfo.rarity_string, itemData.item_name);
                 GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_ITEM,  toastMessageData.toast_message_icon,  toastMessageData.toast_message_title, desc));
             }
+            GameDataSaveManager.SaveDataAll();
         }
-        
     }
     public int GetItem(int itemID)
     {
@@ -144,6 +145,25 @@ public class GameItemManager : Singleton<GameItemManager>
             return null;
         }
     }
-
     
+    public override void SaveData(string[] fileName)
+    {
+        base.SaveData(fileName);
+        
+        var ownItemData = GameDataSaveManager.ToJson(ownItem);
+        var equippedItemData = GameDataSaveManager.ToJson(equippedItem);
+        
+        GameDataSaveManager.Save(fileName[0], ownItemData);
+        GameDataSaveManager.Save(fileName[1], equippedItemData);
+    }
+    public override void LoadData(string[] fileName)
+    {
+        base.LoadData(fileName);
+        
+        string ownItemJson = GameDataSaveManager.Load(fileName[0]);
+        string equipItemJson = GameDataSaveManager.Load(fileName[1]);
+
+        ownItem = GameDataSaveManager.FromJson<int, int>(ownItemJson);
+        equippedItem = GameDataSaveManager.FromJson<string, int>(equipItemJson);
+    }
 }

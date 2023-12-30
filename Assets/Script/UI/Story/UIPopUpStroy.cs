@@ -24,12 +24,6 @@ public class UIPopUpStroy : UIBase
     private void Awake()
     {
         _scrollRect.InitScrollView(OnUpdateScrollView, _imagePanel.GameObject(), _buttonsPanel.gameObject, _textPanel.gameObject);
-        if(GamePageManager.Instance.QueueCount <= 0)
-        {
-            GameDataManager.Instance.LoadData();
-            var scenarioData = GamePageManager.Instance.GetScenarioData(0);
-            GamePageManager.Instance.EnqueueCurPageData(scenarioData?.page_id  ?? 0);
-        }
         OnEventClear();
         _indicator.onClick.AddListener(OnClickIndicator);
     }
@@ -213,6 +207,7 @@ public class UIPopUpStroy : UIBase
     void OnClickButtonAction(ScenarioData scenarioData)
     {
         OnDeleteButtons();
+        GameDataSaveManager.SaveDataAll();
         if (scenarioData?.is_renew_page == true)
         {
             OnEventClear();
@@ -225,6 +220,7 @@ public class UIPopUpStroy : UIBase
 
     void OnClickBattleButton(ScenarioData scenarioData)
     {
+        GameDataSaveManager.SaveDataAll();
         if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))
         {
             ui.Show();

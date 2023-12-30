@@ -12,8 +12,11 @@ namespace Script.Manager
     {
         private float _progress;
 
+
         public IEnumerator LoadScene(string sceneName, Action<float> progressEvent = null, Action finishAction = null)
         {
+            GameDataSaveManager.LoadDataAll();
+
             // 비동기적으로 Scene 로드
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
             while (!asyncLoad.isDone)
@@ -24,9 +27,7 @@ namespace Script.Manager
                 yield return null;
             }
             // 다 초기화 해주기
-            GamePlayerManager.Instance.myActor.playerStat.Clear();
-            GamePlayerManager.Instance.InitMyActor();
-            GamePageManager.Instance.InitStory();
+            
             finishAction?.Invoke();
         }
     }

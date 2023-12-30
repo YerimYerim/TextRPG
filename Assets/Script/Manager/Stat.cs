@@ -76,6 +76,7 @@ public class Stat
                     GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_STATUS, toastMessageData.toast_message_icon, toastMessageData.toast_message_title, desc));
                 }
             }
+            GameDataSaveManager.SaveDataAll();
         }
     }
 
@@ -94,5 +95,15 @@ public class Stat
     public StatusTableData GetStatusData(int statusID)
     {
         return GameDataManager.Instance._statusData.Find(_ => _.status_id == statusID);
+    }
+
+    public Dictionary<int, int> GetStatusDataDictionary()
+    {
+        return status;
+    }
+    
+    public void SetStatusDataDictionary( Dictionary<int, int> statusDic)
+    {
+        status = statusDic;
     }
 }

@@ -39,6 +39,9 @@ public class UIPlayerDead : UIBase
     private void OnEventFinishAction()
     {
         GameUIManager.Instance.Clear();
+        GamePlayerManager.Instance.InitMyActor();
+        GameDataSaveManager.SaveDataAll();
+        
         if (GameUIManager.Instance.TryGetOrCreate<UIGameStart>(false, UILayer.LEVEL_1, out var ui))
         {
             ui.Show();

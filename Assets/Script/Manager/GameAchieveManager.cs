@@ -15,7 +15,6 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
         RECEIVED
     }
 
-    
     private Dictionary<int, int> _achievementCount = new();
     private Dictionary<int, bool> _received = new();
 
@@ -132,5 +131,27 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
                 }
             }
         }
+    }
+    
+    public override void SaveData(string[] fileNames)
+    {
+        base.SaveData(fileNames);
+        
+        var achievementCount = GameDataSaveManager.ToJson(_achievementCount);
+        var received = GameDataSaveManager.ToJson(_received);
+        
+        GameDataSaveManager.Save(fileNames[0], achievementCount);
+        GameDataSaveManager.Save(fileNames[1], received);
+    }
+
+    public override void LoadData(string[] fileNames)
+    {
+        base.LoadData(fileNames);
+        
+        string achievementCount = GameDataSaveManager.Load(fileNames[0]);
+        string received = GameDataSaveManager.Load(fileNames[1]);
+
+        _achievementCount = GameDataSaveManager.FromJson<int, int>(achievementCount);
+        _received = GameDataSaveManager.FromJson<int, bool>(received);
     }
 }

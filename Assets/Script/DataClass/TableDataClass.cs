@@ -1,5 +1,7 @@
-using System.Collections.Generic;using UnityEngine;
-
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+[Serializable]
 public class ScenarioData
 {
     public int? page_id { get; set; }

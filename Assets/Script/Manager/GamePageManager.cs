@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Script.DataClass;
+using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
 
@@ -10,7 +11,8 @@ namespace Script.Manager
     public class GamePageManager : Singleton<GamePageManager>
     {
         private Queue<ScenarioData> _curPageData = new();
-        private readonly HashSet<int> _pastReadPageID = new();
+        private HashSet<int> _pastReadPageID = new();
+        private HashSet<int> _pastReadAllPageID = new();
         public int QueueCount => _curPageData.Count;
 
         public ScenarioData GetScenarioData(int index)
@@ -25,9 +27,10 @@ namespace Script.Manager
         public void InitStory()
         {
             var scenarioData = GetScenarioData(0);
-            EnqueueCurPageData(scenarioData?.page_id  ?? 0);
+            EnqueueCurPageData(scenarioData?.page_id ?? 0);
             _pastReadPageID.Clear();
         }
+
         /// <summary>
         /// 해당  id의 page 를 모두 가져온다
         /// </summary>
@@ -35,14 +38,15 @@ namespace Script.Manager
         /// <param name="isAddReadPage"></param>
         public void EnqueueCurPageData(int pageID, bool isAddReadPage = true)
         {
-            var scenarioData = GameDataManager.Instance._pageData.FindAll(_=>_.page_id == pageID && IsCanOccur(_));
+            var scenarioData = GameDataManager.Instance._pageData.FindAll(_ => _.page_id == pageID && IsCanOccur(_));
             if (isAddReadPage == true)
             {
                 _pastReadPageID.Add(pageID);
             }
+
             foreach (var data in scenarioData)
             {
-                if(RandProbSingle(data.occur_prob ?? 100) == true)
+                if (RandProbSingle(data.occur_prob ?? 100) == true)
                 {
                     _curPageData.Enqueue(data);
                 }
@@ -57,7 +61,9 @@ namespace Script.Manager
 
         public void NextDataEnqueue(ScenarioData returnData)
         {
-            if (returnData.result_value.Length <= 0 || returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_GET_ITEM ||  returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_STATUS )
+            if (returnData.result_value.Length <= 0 ||
+                returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_GET_ITEM ||
+                returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_STATUS)
                 return;
             if (returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP)
             {
@@ -65,13 +71,13 @@ namespace Script.Manager
                 {
                     var nextPageID = GetNextPageID(returnData);
                     var page = GameDataManager.Instance._pageData.Find(_ => _.page_id == nextPageID);
-                    
+
                     if (IsCanOccur(page))
                     {
                         EnqueueCurPageData(nextPageID, false);
                         ++i;
                     }
-                    
+
                 }
             }
             else
@@ -90,29 +96,31 @@ namespace Script.Manager
         {
             var pageType = scenarioData.type.to_TemplateType_enum();
             int resultValueCount = scenarioData.result_value.Length;
-            
+
             List<int> prob = new List<int>();
             List<int> result = new List<int>();
 
             for (int i = 0; i < resultValueCount; ++i)
             {
-                var next = GameDataManager.Instance._pageData.Find(_=>_.page_id == scenarioData.result_value[i]);
+                var next = GameDataManager.Instance._pageData.Find(_ => _.page_id == scenarioData.result_value[i]);
                 if (next != null && IsCanOccur(next) == true)
                 {
                     if (i < scenarioData.result_prob.Length)
                     {
                         prob.Add(scenarioData.result_prob[i]);
                     }
+
                     result.Add(scenarioData.result_value[i]);
                 }
             }
-       
+
             scenarioData.result_prob = prob.ToArray();
             scenarioData.result_value = result.ToArray();
             if (pageType is PAGE_TYPE.PAGE_TYPE_BUTTON or PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP)
             {
                 return RandProb(scenarioData.result_prob, scenarioData.result_value);
             }
+
             return 0;
         }
 
@@ -125,16 +133,17 @@ namespace Script.Manager
 
             int sumProb = prob.Sum();
             var result = Random.Range(0, sumProb);
-            
+
             for (int i = 0; i < prob.Length; ++i)
             {
                 int probBefore = 0;
-                for(int j = 0; j < i; ++j)
+                for (int j = 0; j < i; ++j)
                 {
                     probBefore += prob[j];
                 }
+
                 var probNext = 0;
-                for(int j = 0; j < Math.Min(i + 1 , prob.Length); ++j)
+                for (int j = 0; j < Math.Min(i + 1, prob.Length); ++j)
                 {
                     probNext += prob[j];
                 }
@@ -144,7 +153,7 @@ namespace Script.Manager
                     return probResult[i];
                 }
             }
-            
+
             return 0;
         }
 
@@ -157,6 +166,7 @@ namespace Script.Manager
             {
                 return true;
             }
+
             return false;
         }
 
@@ -175,10 +185,12 @@ namespace Script.Manager
                 case OccurCondition.OCCUR_CONDITION_PAGE_VIEWED:
                     return _pastReadPageID.Contains(occurValue[0]) && IsNotRead(scenarioData);
                 case OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
-                    return GameItemManager.Instance.GetItem(occurValue[0]) < occurValue[1] && _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
+                    return GameItemManager.Instance.GetItem(occurValue[0]) < occurValue[1] &&
+                           _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
                 default:
                     break;
             }
+
             return IsNotRead(scenarioData);
 
         }
@@ -210,8 +222,66 @@ namespace Script.Manager
         public bool IsRead(int id)
         {
             var isRead = _pastReadPageID.Contains(id);
-            
+
             return isRead;
+        }
+
+        public override void SaveData(string[] fileName)
+        {
+            base.SaveData(fileName);
+            var pageData = _curPageData.ToArray();
+            if (pageData.Length <= 0)
+            {
+                var data = GetScenarioData(0);
+                pageData = new ScenarioData[1];
+                pageData[0] = new ScenarioData();
+                pageData[0] =  data;
+            }
+            
+            var readPage = _pastReadPageID.ToArray();
+            
+            _pastReadAllPageID.AddRange(readPage);
+            
+            var allReadPage = _pastReadAllPageID.ToArray();
+            
+            var lastPageId= GameDataSaveManager.ToJson(pageData[0]?.page_id ?? 0);
+            var readPages = GameDataSaveManager.ToJson(readPage);
+            var allReadPages = GameDataSaveManager.ToJson(allReadPage);
+            
+            GameDataSaveManager.Save(fileName[0], lastPageId);
+            GameDataSaveManager.Save(fileName[1], readPages);
+            GameDataSaveManager.Save(fileName[2], allReadPages);
+        }
+        
+        public override void LoadData(string[] fileName)
+        {
+            base.LoadData(fileName);
+
+            string lastPageId = GameDataSaveManager.Load(fileName[0]);
+            string readPages = GameDataSaveManager.Load(fileName[1]);
+            string readAllPastPages = GameDataSaveManager.Load(fileName[2]);
+
+            if (lastPageId == null || readPages == null || readAllPastPages == null)
+            {
+                GamePageManager.Instance.InitStory();
+                return;
+            }
+            
+            
+            var pageId = GameDataSaveManager.FromIntJson(lastPageId);
+            EnqueueCurPageData(pageId);
+            
+            List<int> listID = GameDataSaveManager.FromIntArrayJson<int>(readPages);
+            if (listID != null)
+            {
+                _pastReadPageID.AddRange(listID);
+            }            
+            
+            var allPastReadID = GameDataSaveManager.FromIntArrayJson<int>(readAllPastPages);
+            if (allPastReadID != null)
+            {
+                _pastReadAllPageID.AddRange(allPastReadID);
+            }
         }
     }
 }

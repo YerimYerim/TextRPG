@@ -19,6 +19,7 @@ namespace Script.Manager
                         instance = singletonObject.AddComponent<T>();
                     }
                 }
+
                 return instance;
             }
         }
@@ -38,6 +39,16 @@ namespace Script.Manager
 
         protected virtual void Init()
         {
+        }
+
+        public virtual void SaveData(string[] fileNames)
+        {
+            
+        }
+
+        public virtual void LoadData(string[] fileName)
+        {
+
         }
     }
 }

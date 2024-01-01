@@ -65,15 +65,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.47058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: cd4f915895370484eb57eaf1455f2a00, type: 3}
+  m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -128,6 +128,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6290220074283474030}
     m_Modifications:
+    - target: {fileID: 1310540613430296301, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 15b9050cf3fb52242b5cb6ee2f47fae5,
+        type: 3}
     - target: {fileID: 4450927634807447688, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
         type: 3}
       propertyPath: m_Name
@@ -252,6 +258,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6290220074283474030}
     m_Modifications:
+    - target: {fileID: 1310540613430296301, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0588e7351ed29a241ab1158a5b1a1d29,
+        type: 3}
     - target: {fileID: 4450927634807447688, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
         type: 3}
       propertyPath: m_Name
@@ -376,6 +388,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6290220074283474030}
     m_Modifications:
+    - target: {fileID: 1310540613430296301, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d5b7774c957d3243a8f3dbca69dc995,
+        type: 3}
     - target: {fileID: 4450927634807447688, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
         type: 3}
       propertyPath: m_Name
@@ -500,6 +518,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6290220074283474030}
     m_Modifications:
+    - target: {fileID: 1310540613430296301, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9668117bd1ad664e9d5b29946691a7a,
+        type: 3}
     - target: {fileID: 4450927634807447688, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
         type: 3}
       propertyPath: m_Name
@@ -624,6 +648,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6290220074283474030}
     m_Modifications:
+    - target: {fileID: 1310540613430296301, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e49ca25328950e149970258a19c1d21d,
+        type: 3}
     - target: {fileID: 4450927634807447688, guid: ad80fae66e2444e4d9daeb9c8bb26e7e,
         type: 3}
       propertyPath: m_Name

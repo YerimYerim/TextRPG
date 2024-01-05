@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Script.DataClass;
 using Script.Manager;
 using UnityEngine;
 
 public class GameItemManager : Singleton<GameItemManager>
 {
     private Dictionary<int, int> ownItem = new();
-    private Dictionary<string, int> equippedItem = new();
+    private Dictionary<ITEM_TYPE, int> equippedItem = new();
     public void UseItem(int itemID, int useCount)
     {
         var itemData = GameDataManager.Instance._itemData.FirstOrDefault(_ => _.item_id == itemID);
@@ -22,7 +21,7 @@ public class GameItemManager : Singleton<GameItemManager>
                 }
                 else
                 {
-                    var functionType = itemData.function_type.to_Item_function_type_enum();
+                    var functionType = itemData.function_type;
                     switch (functionType)
                     {
                         case ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_MOVE_PAGE:
@@ -64,12 +63,12 @@ public class GameItemManager : Singleton<GameItemManager>
             }
             else
             {
-                ownItem[itemID] = Math.Min(ownItem[itemID] + addCount, itemData.stack_amount);
+                ownItem[itemID] = Math.Min(ownItem[itemID] + addCount, itemData?.stack_amount ?? 0);
             }
             if(GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4,out var ui))
             {
                 var rarityInfo = GameDataManager.Instance._rarityData.Find(_ => _.rarity_id == itemData.rarity_id);
-                var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type.to_Content_type_enum() == CONTENT_TYPE.CONTENT_TYPE_ITEM);
+                var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type == CONTENT_TYPE.CONTENT_TYPE_ITEM);
 
                 string desc = String.Format(toastMessageData.toast_message_desc, rarityInfo.rarity_string, itemData.item_name);
                 GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_ITEM,  toastMessageData.toast_message_icon,  toastMessageData.toast_message_title, desc));
@@ -102,15 +101,15 @@ public class GameItemManager : Singleton<GameItemManager>
         {
             var itemTableData = GameDataManager.Instance._itemData.Find(_ => _.item_id == itemKey);
 
-            if ( equippedItem.ContainsKey(itemTableData.item_type) == true)
+            if ( equippedItem.ContainsKey(itemTableData?.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL) == true)
             {
-                UnEquipItem(itemTableData.item_type);
+                UnEquipItem(itemTableData?.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL);
                 EquipItem(itemKey);
             }
             else
             {
-                equippedItem.Add(itemTableData.item_type, itemKey);
-                for (int i = 0; i < itemTableData.function_value_1.Count; ++i)
+                equippedItem.Add(itemTableData?.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL, itemKey);
+                for (int i = 0; i < itemTableData?.function_value_1.Length; ++i)
                 {
                     GamePlayerManager.Instance.myActor.playerStat.AddStat(itemTableData.function_value_1[i], itemTableData.function_value_2[i]);
                 }
@@ -122,7 +121,7 @@ public class GameItemManager : Singleton<GameItemManager>
         }
     }
 
-    public void UnEquipItem(string equipType)
+    public void UnEquipItem(ITEM_TYPE equipType)
     {
         if (equippedItem.TryGetValue(equipType, out var itemKey))
         {
@@ -134,7 +133,7 @@ public class GameItemManager : Singleton<GameItemManager>
         }
     }
 
-    public int? GetEquippedItem(string equipType)
+    public int? GetEquippedItem(ITEM_TYPE equipType)
     {
         if (equippedItem.TryGetValue(equipType, out var itemId))
         {
@@ -164,6 +163,6 @@ public class GameItemManager : Singleton<GameItemManager>
         string equipItemJson = GameDataSaveManager.Load(fileName[1]);
 
         ownItem = GameDataSaveManager.FromJson<int, int>(ownItemJson);
-        equippedItem = GameDataSaveManager.FromJson<string, int>(equipItemJson);
+        equippedItem = GameDataSaveManager.FromJson<ITEM_TYPE, int>(equipItemJson);
     }
 }

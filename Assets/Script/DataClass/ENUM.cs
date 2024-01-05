@@ -1,159 +1,68 @@
-using System;
-
-namespace Script.DataClass
+public enum PAGE_TYPE
 {
+     PAGE_TYPE_TEXT = 0,
+     PAGE_TYPE_IMG = 1,
+     PAGE_TYPE_BUTTON = 2,
+     PAGE_TYPE_GET_ITEM = 3,
+     PAGE_TYPE_STATUS = 4,
+     PAGE_TYPE_RECURSIVE_GROUP = 5,
+     PAGE_TYPE_BATTLE = 6,
+}
+public enum OCCUR_CONDITION
+{
+     OCCUR_CONDITION_OWN_ITEM = 0,
+     OCCUR_CONDITION_STATUS_HIGH = 1,
+     OCCUR_CONDITION_STATUS_LOW = 2,
+     OCCUR_CONDITION_PAGE_VIEWED = 3,
+     OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM = 4,
+}
+public enum ITEM_TYPE
+{
+     ITEM_TYPE_NORMAL = 0,
+     ITEM_TYPE_EQUIP_WEAPON = 1,
+     ITEM_TYPE_EQUIP_HEAD = 2,
+     ITEM_TYPE_EQUIP_ARMOR = 3,
+     ITEM_TYPE_EQUIP_SHOES = 4,
+     ITEM_TYPE_EQUIP_RING = 5,
+     ITEM_TYPE_EQUIP_NECKLACE = 6,
+}
+public enum ITEM_FUNCTION_TYPE
+{
+     ITEM_FUNCTION_TYPE_CHAGE_STATUS = 0,
+     ITEM_FUNCTION_TYPE_MOVE_PAGE = 1,
+     ITEM_FUNCTION_TYPE_EQUIP = 2,
+}
+public enum STATUS_FUNCTION_TYPE
+{
+     STATUS_FUNCTION_TYPE_MAX_STAT = 0,
+     STATUS_FUNCTION_TYPE_GET_STAT = 1,
+}
+public enum ACTION_TYPE
+{
+     ACTION_TYPE_NORMAL_ATTACK = 0,
+     ACTION_TYPE_SPECIAL_ATTACK = 1,
+     ACTION_TYPE_DODGE = 2,
+     ACTION_TYPE_BUFF = 3,
+     ACTION_TYPE_DEBUFF = 4,
+     ACTION_TYPE_ACTION_CANCEL = 5,
+}
+public enum ACH_TYPE
+{
+     ACH_TYPE_PAGE_VIEW = 0,
+     ACH_TYPE_OWN_ITEM = 1,
+     ACH_TYPE_KILL_MONSTER = 2,
+     ACH_TYPE_DEAD_COUNT = 3,
+}
+public enum CONTENT_TYPE
+{
+     CONTENT_TYPE_ITEM = 0,
+     CONTENT_TYPE_STATUS = 1,
+     CONTENT_TYPE_ACHIEVEMENT = 2,
+     CONTENT_TYPE_COLLECTION = 3,
+}
 
-    public enum PAGE_TYPE
-    {
-        PAGE_TYPE_TEXT,
-        PAGE_TYPE_IMG,
-        PAGE_TYPE_BUTTON,
-        PAGE_TYPE_GET_ITEM,
-        PAGE_TYPE_STATUS,
-        PAGE_TYPE_RECURSIVE_GROUP,
-        PAGE_TYPE_BATTLE,
-    }
-
-    public enum OccurCondition
-    {
-        OCCUR_CONDITION_NONE,
-        OCCUR_CONDITION_OWN_ITEM,           //특정 아이템 보유 시 발생
-        OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM, //특정 아이템 미보유 시 발생
-        OCCUR_CONDITION_STATUS_HIGH,        //특정 스탯이 특정값 이상인 경우 발생
-        OCCUR_CONDITION_STATUS_LOW,         //특정 스탯이 특정값 이하인 경우 발생
-        OCCUR_CONDITION_PAGE_VIEWED,        //특정 페이지를 열람했을 때 발생
-    }
-    public enum ITEM_FUNCTION_TYPE
-    {
-        ITEM_FUNCTION_TYPE_CHAGE_STATUS,
-        ITEM_FUNCTION_TYPE_MOVE_PAGE,
-    }
-    public enum ITEM_TYPE
-    {
-        ITEM_TYPE_NORMAL,
-        ITEM_TYPE_EQUIP_WEAPON,
-        ITEM_TYPE_EQUIP_HEAD,
-        ITEM_TYPE_EQUIP_ARMOR,
-        ITEM_TYPE_EQUIP_SHOES,
-        ITEM_TYPE_EQUIP_RING,
-        ITEM_TYPE_EQUIP_NECKLACE,
-    }
-
-    public enum SuccessCondition
-    {
-        Power,
-        MpMax,
-    }
-
-    public enum STATUS_FUNCTION_TYPE
-    {
-        STATUS_FUNCTION_TYPE_MAX_STAT,
-        STATUS_FUNCTION_TYPE_GET_STAT,
-    }    
-    
-    public enum ACH_TYPE
-    {
-        ACH_TYPE_PAGE_VIEW,
-        ACH_TYPE_OWN_ITEM,
-        ACH_TYPE_KILL_MONSTER,
-        ACH_TYPE_DEAD_COUNT,
-
-    }
-
-    public enum CONTENT_TYPE
-    {
-        CONTENT_TYPE_ITEM,
-        CONTENT_TYPE_STATUS,
-        CONTENT_TYPE_ACHIEVEMENT,
-        CONTENT_TYPE_COLLECTION,
-
-    }
-
-    public static class EnumExtensions
-    {
-        public static PAGE_TYPE to_TemplateType_enum(this string str)
-        {
-            return str switch
-            {
-                "text"            => PAGE_TYPE.PAGE_TYPE_TEXT,
-                "img"             => PAGE_TYPE.PAGE_TYPE_IMG,
-                "button"          => PAGE_TYPE.PAGE_TYPE_BUTTON,
-                "get_item"        => PAGE_TYPE.PAGE_TYPE_GET_ITEM,
-                "status"          => PAGE_TYPE.PAGE_TYPE_STATUS,
-                "recursive_group" => PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP,
-                "battle"          => PAGE_TYPE.PAGE_TYPE_BATTLE,
-                _                 => PAGE_TYPE.PAGE_TYPE_TEXT,
-            };
-        }
-        
-        public static OccurCondition to_OccurCondition_enum(this string str)
-        {
-            return str switch
-            {
-                "own_item" => OccurCondition.OCCUR_CONDITION_OWN_ITEM,
-                "not_enough_own_item" => OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM,
-                "status_high" => OccurCondition.OCCUR_CONDITION_STATUS_HIGH,
-                "status_low" => OccurCondition.OCCUR_CONDITION_STATUS_LOW,
-                "page_viewed" => OccurCondition.OCCUR_CONDITION_PAGE_VIEWED,
-                _ => OccurCondition.OCCUR_CONDITION_NONE
-            };
-        }
-        
-        public static STATUS_FUNCTION_TYPE to_Status_function_type_enum(this string str)
-        {
-            return str switch
-            {
-                "max_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
-                "get_stat" => STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT,
-                _ =>  STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT,
-            };
-        }
-        
-        public static ITEM_FUNCTION_TYPE to_Item_function_type_enum(this string str)
-        {
-            return str switch
-            {
-                "chage_status" => ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
-                "move_page" =>  ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_MOVE_PAGE,
-                _=> ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS,
-            };
-        }
-        
-        public static ACH_TYPE to_Ach_type_enum(this string str)
-        {
-            return str switch
-            {
-                "page_view" => ACH_TYPE.ACH_TYPE_PAGE_VIEW,
-                "own_item" => ACH_TYPE.ACH_TYPE_OWN_ITEM,
-                "kill_monster" => ACH_TYPE.ACH_TYPE_KILL_MONSTER,
-                "dead_count" => ACH_TYPE.ACH_TYPE_DEAD_COUNT,
-                _ => ACH_TYPE.ACH_TYPE_OWN_ITEM
-            };
-        }
-        public static ITEM_TYPE to_Item_type_enum(this string str)
-        {
-            return str switch
-            {
-                "normal"        => ITEM_TYPE.ITEM_TYPE_NORMAL,
-                "equip_weapon"  => ITEM_TYPE.ITEM_TYPE_EQUIP_WEAPON,
-                "equip_head"    => ITEM_TYPE.ITEM_TYPE_EQUIP_HEAD,
-                "equip_armor"   => ITEM_TYPE.ITEM_TYPE_EQUIP_ARMOR,
-                "equip_shoes"   => ITEM_TYPE.ITEM_TYPE_EQUIP_SHOES,
-                "equip_ring"    => ITEM_TYPE.ITEM_TYPE_EQUIP_RING,
-                "equip_necklace"=> ITEM_TYPE.ITEM_TYPE_EQUIP_NECKLACE,
-                _ => ITEM_TYPE.ITEM_TYPE_NORMAL
-            };
-        }
-        public static CONTENT_TYPE to_Content_type_enum(this string str)
-        {
-            return str switch
-            {
-                "item"=> CONTENT_TYPE.CONTENT_TYPE_ITEM,
-                "status"=> CONTENT_TYPE.CONTENT_TYPE_STATUS,
-                "achievement"=> CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT,
-                "collection"=> CONTENT_TYPE.CONTENT_TYPE_COLLECTION,
-                _ => CONTENT_TYPE.CONTENT_TYPE_ITEM
-            };
-        }
-    }
+public enum ACTION_RESULT_TYPE
+{
+     
+     
 }

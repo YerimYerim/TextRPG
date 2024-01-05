@@ -14,13 +14,13 @@ public class UIPopUpInventory : UIBase
     [Header("EquipItem")] 
     [SerializeField] private GameObject[] _objEquippedItems;
     private UIEquippedItem[] _equippedItems = new UIEquippedItem[6];
-    private string[] equipItemTypes = {
-        "equip_weapon",
-        "equip_head",        
-        "equip_armor",
-        "equip_shoes",
-        "equip_ring",
-        "equip_necklace",
+    private ITEM_TYPE[] equipItemTypes = {
+        ITEM_TYPE.ITEM_TYPE_EQUIP_WEAPON,
+        ITEM_TYPE.ITEM_TYPE_EQUIP_HEAD,
+        ITEM_TYPE.ITEM_TYPE_EQUIP_ARMOR,
+        ITEM_TYPE.ITEM_TYPE_EQUIP_SHOES,
+        ITEM_TYPE.ITEM_TYPE_EQUIP_RING,
+        ITEM_TYPE.ITEM_TYPE_EQUIP_NECKLACE,
     };
     
     [Header("Inventory")] 
@@ -91,7 +91,7 @@ public class UIPopUpInventory : UIBase
         item.SetOnClickEvent(()=>OnClickItem(itemKey, item));
         
         var itemData = GameDataManager.Instance._itemData.Find(_ => _.item_id == itemKey);
-        var equippedItem = GameItemManager.Instance.GetEquippedItem(itemData.item_type);
+        var equippedItem = GameItemManager.Instance.GetEquippedItem(itemData.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL);
         
         item.SetEquipIcon(equippedItem == itemKey);
         
@@ -153,11 +153,11 @@ public class UIPopUpInventory : UIBase
             _textStatName.text = rarityString;
             for (int i = 0; i < _relatedStats.Length; ++i)
             {
-                if (itemInfo.function_type is "change_status" or "equip" && i < itemInfo.function_value_1.Count)
+                if (itemInfo.function_type is ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS or ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_EQUIP && i < itemInfo.function_value_1.Length)
                 {
                     _relatedStats[i].gameObject.SetActive(true);
                     var subStatInfo = GameDataManager.Instance._statusData.Find(_ => _.status_id == itemInfo.function_value_1[i]);
-                    _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, itemInfo.function_value_2[i], subStatInfo.status_id);
+                    _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, itemInfo.function_value_2[i], subStatInfo?.status_id ?? 0);
                 }
                 else
                 {

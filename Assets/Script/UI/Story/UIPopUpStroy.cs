@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Lofle.Tween;
-using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using Script.UI.Story;
@@ -19,7 +18,7 @@ public class UIPopUpStroy : UIBase
     [SerializeField] private float indicatorOffset;
     [SerializeField] private float scrollFinishOffset;
     [SerializeField] private Tween _indicatorTween;
-    ScenarioData _scenarioData;
+    PageTableData _scenarioData;
     private List<LTDescr> leantweenList = new List<LTDescr>();
     private void Awake()
     {
@@ -82,7 +81,7 @@ public class UIPopUpStroy : UIBase
         }
         var data = GamePageManager.Instance.DequeueCurPageData();
         _scenarioData = data;
-        var typeEnum = data.type.to_TemplateType_enum();
+        var typeEnum = data.type;
         if (data.is_renew_page == true)
         {
             _scrollRect.ClearAll();
@@ -204,7 +203,7 @@ public class UIPopUpStroy : UIBase
         _scrollRect.MakeList(GamePageManager.Instance.QueueCount);
     }
     
-    void OnClickButtonAction(ScenarioData scenarioData)
+    void OnClickButtonAction(PageTableData scenarioData)
     {
         OnDeleteButtons();
         GameDataSaveManager.SaveDataAll();
@@ -218,7 +217,7 @@ public class UIPopUpStroy : UIBase
         }
     }
 
-    void OnClickBattleButton(ScenarioData scenarioData)
+    void OnClickBattleButton(PageTableData scenarioData)
     {
         GameDataSaveManager.SaveDataAll();
         if (GameUIManager.Instance.TryGetOrCreate<UIPopupBattle>(false, UILayer.LEVEL_1, out var ui))

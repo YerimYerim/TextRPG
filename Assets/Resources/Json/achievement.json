@@ -1,7 +1,7 @@
 [
   {
     "ach_id": 1,
-    "ach_type": "page_view",
+    "ach_type": 0,
     "ach_value": [102],
     "ach_value_item_type": [],
     "ach_count": 1,
@@ -12,7 +12,7 @@
   },
   {
     "ach_id": 2,
-    "ach_type": "own_item",
+    "ach_type": 1,
     "ach_value": [],
     "ach_value_item_type": [
       "equip_weapon",
@@ -30,7 +30,7 @@
   },
   {
     "ach_id": 3,
-    "ach_type": "kill_monster",
+    "ach_type": 2,
     "ach_value": [],
     "ach_value_item_type": [],
     "ach_count": 1,
@@ -41,7 +41,7 @@
   },
   {
     "ach_id": 4,
-    "ach_type": "kill_monster",
+    "ach_type": 2,
     "ach_value": [10001],
     "ach_value_item_type": [],
     "ach_count": 1,
@@ -52,7 +52,7 @@
   },
   {
     "ach_id": 5,
-    "ach_type": "dead_count",
+    "ach_type": 3,
     "ach_value": [],
     "ach_value_item_type": [],
     "ach_count": 1,

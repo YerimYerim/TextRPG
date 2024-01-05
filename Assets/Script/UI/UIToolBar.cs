@@ -1,5 +1,4 @@
-using System;
-using Script.DataClass;
+
 using Script.Manager;
 using Script.UI;
 using TMPro;

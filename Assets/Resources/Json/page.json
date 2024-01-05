@@ -1,7 +1,7 @@
 [
   {
     "page_id": 101,
-    "type": "text",
+    "type": 0,
     "output_txt": "지이잉- 지이잉-",
     "relate_value": null,
     "occur_condition": null,
@@ -14,7 +14,7 @@
   },
   {
     "page_id": 101,
-    "type": "text",
+    "type": 0,
     "output_txt": "평화로운 휴일, 머리맡에 놓아둔 휴대폰이 시끄럽게 울립니다. 늦잠을 자던 당신은 비몽사몽 하며 눈을 비비다, 휴대폰을 확인했습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -27,7 +27,7 @@
   },
   {
     "page_id": 101,
-    "type": "img",
+    "type": 1,
     "output_txt": null,
     "relate_value": "img_phone",
     "occur_condition": null,
@@ -40,7 +40,7 @@
   },
   {
     "page_id": 101,
-    "type": "text",
+    "type": 0,
     "output_txt": " - [긴급재난문자] 정체불명의 괴물체 및 괴현상 출현. 시민 여러분께서는 안전을 위해 가까운 대피소로 대피 바랍니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -53,7 +53,7 @@
   },
   {
     "page_id": 101,
-    "type": "button",
+    "type": 2,
     "output_txt": "뭐야, 이건…? 오발송인가?",
     "relate_value": null,
     "occur_condition": null,
@@ -66,7 +66,7 @@
   },
   {
     "page_id": 101,
-    "type": "button",
+    "type": 2,
     "output_txt": "대피하라고? 뭔진 모르겠지만 일단 나가자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -79,7 +79,7 @@
   },
   {
     "page_id": 101,
-    "type": "battle",
+    "type": 6,
     "output_txt": "전투 테스트용 테스트 버튼",
     "relate_value": null,
     "occur_condition": null,
@@ -92,7 +92,7 @@
   },
   {
     "page_id": 1011,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 재난 문자를 대수롭지 않게 여겼습니다. 보나마나 별것 아닐 게 분명했으니까요. 하지만 재난 문자를 확인하느라 잠이 확 깨 버렸네요.\n당신은 침대에서 일어나 기지개를 켜고 SNS에 들어갔습니다. 그런데… 최근 게시물에 낯선 영상이 보이는군요?\n[미친; 살려줘 ㅅㅂ..\n댓글: 뭐야 실제임?????\n댓글: 야 이거 찍은애 죽은 거 아니냐..\n댓글: CG 아니고 진짜라고??\n댓글: 이야 요즘 영화 홍보 신박하게 하넼ㅋㅋㅋㅋ\n댓글: 이거 영화 아니고 실제임;;]\n게임에서나 나올 법한 괴생명체가 찍힌 영상. 방금 받은 재난 문자를 떠올리며, 당신은 SNS를 빠르게 훑었습니다. 그런데 아무래도… 영상 속 상황이 실제인 것 같습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -105,7 +105,7 @@
   },
   {
     "page_id": 1011,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -118,7 +118,7 @@
   },
   {
     "page_id": 1012,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 재난 문자를 대수롭지 않게 여겼습니다. 언제나 그렇듯이 별것 아닐 거라고 생각했어요. 그런데 재난 문자를 확인하느라 잠이 확 깨 버렸군요.\n당신은 잠시 침대에 앉아 있다가 거실로 나가 TV를 켰습니다.\n[<속보> 전세계 곳곳에서 괴현상 발생]\n그런데 예능 화면 위에 떠 있는 뉴스 속보 자막. 방금 받은 재난 문자가 떠오르며 왠지 모를 불길함이 느껴집니다. 자각할 새도 없이, 당신의 손이 채널을 돌려 뉴스를 틀었습니다.\n\"…뿐만 아니라 괴생명체가 출현하여 시민들을 공격하고 있으며, 정부가 빠르게 군대를 동원하여…\"\n괴생명체, 정부, 군대…. TV에서는 믿기지 않는 이야기들이 쏟아지고 있었습니다. 대체 이게 무슨 일일까요…?\n너무나도 혼란스럽지만 한 가지는 분명했습니다. 바로 이 믿기지 않는 이야기들을 사실이라고 받아들여야 한다는 것 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -131,7 +131,7 @@
   },
   {
     "page_id": 1012,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -144,7 +144,7 @@
   },
   {
     "page_id": 1013,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 재난 문자를 대수롭지 않게 여겼습니다. 재난 문자가 오는 건 종종 있는 일이었으니까요. 내용이 평소와 좀 다르긴 하지만… 별일은 아닐 것 같습니다. 그보다는 재난 문자 때문에 잠이 확 달아나 버린 게 큰일이죠.\n늦잠을 방해 받은 당신은 한숨을 푹 쉬고 침대에서 일어나 기지개를 켰습니다.\n쿠구궁-\n그런데 갑자기 밭 밑에서 진동이 느껴지네요. 낯선 감각에 순간 심장이 철렁한 당신은 반사적으로 창문 너머 바깥을 쳐다봤습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -157,7 +157,7 @@
   },
   {
     "page_id": 1013,
-    "type": "img",
+    "type": 1,
     "output_txt": null,
     "relate_value": "img_purple_sky",
     "occur_condition": null,
@@ -170,7 +170,7 @@
   },
   {
     "page_id": 1013,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신의 시야에 가득 들어오는 보랏빛 하늘. 당신은 그제야 하늘이 기묘한 빛을 띠고 있다는 걸 깨달았습니다.\n설마… 방금 받은 재난 문자와 관련 있는 걸까요? 어쩌면 그 재난 문자는 잘못 보낸 게 아닐지도 모른다고, 당신은 뒤늦게 생각했습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -183,7 +183,7 @@
   },
   {
     "page_id": 1013,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -196,7 +196,7 @@
   },
   {
     "page_id": 1014,
-    "type": "text",
+    "type": 0,
     "output_txt": "괴물체라는 게 뭔지 잘은 모르겠지만, 아무래도 재난 문자의 내용이 심상치 않아 보입니다. 당신은 바로 자리를 박차고 일어났어요. 재난 문자가, 그것도 대피하라는 내용의 문자가 온 것을 보고도 무시할 수는 없었으니까요.",
     "relate_value": null,
     "occur_condition": null,
@@ -209,7 +209,7 @@
   },
   {
     "page_id": 1014,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -222,7 +222,7 @@
   },
   {
     "page_id": 102,
-    "type": "text",
+    "type": 0,
     "output_txt": "빠르게 외출복으로 갈아입은 당신은 핸드폰을 손에 쥐고 현관으로 달려 나갔습니다. 그런데 문득 멈추는 당신의 걸음.",
     "relate_value": null,
     "occur_condition": null,
@@ -235,7 +235,7 @@
   },
   {
     "page_id": 102,
-    "type": "button",
+    "type": 2,
     "output_txt": "이대로 나가면 안 될 것 같은데…",
     "relate_value": null,
     "occur_condition": null,
@@ -248,7 +248,7 @@
   },
   {
     "page_id": 103,
-    "type": "recursive_group",
+    "type": 5,
     "output_txt": "당신은 현관 앞에 서서 주변을 살며시 둘러봤습니다. 뭔가 챙길 것이 없을까, 고민하는 당신의 시선이 빠르게 집 안을 훑습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -261,7 +261,7 @@
   },
   {
     "page_id": 1031,
-    "type": "button",
+    "type": 2,
     "output_txt": "우산",
     "relate_value": null,
     "occur_condition": null,
@@ -274,7 +274,7 @@
   },
   {
     "page_id": 1032,
-    "type": "button",
+    "type": 2,
     "output_txt": "구급약품",
     "relate_value": null,
     "occur_condition": null,
@@ -287,7 +287,7 @@
   },
   {
     "page_id": 1033,
-    "type": "button",
+    "type": 2,
     "output_txt": "기타",
     "relate_value": null,
     "occur_condition": null,
@@ -300,7 +300,7 @@
   },
   {
     "page_id": 1034,
-    "type": "button",
+    "type": 2,
     "output_txt": "망치",
     "relate_value": null,
     "occur_condition": null,
@@ -313,7 +313,7 @@
   },
   {
     "page_id": 1035,
-    "type": "button",
+    "type": 2,
     "output_txt": "골프채",
     "relate_value": null,
     "occur_condition": null,
@@ -326,7 +326,7 @@
   },
   {
     "page_id": 10311,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 현관 앞 바구니에 꽂혀 있던 우산을 꺼내 들었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -339,7 +339,7 @@
   },
   {
     "page_id": 10311,
-    "type": "button",
+    "type": 2,
     "output_txt": "여차하면 무기로도 쓸 수 있을 거야.",
     "relate_value": null,
     "occur_condition": null,
@@ -352,7 +352,7 @@
   },
   {
     "page_id": 10321,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 거실장에 놓여 있던 구급약품을 챙겼습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -365,7 +365,7 @@
   },
   {
     "page_id": 10321,
-    "type": "button",
+    "type": 2,
     "output_txt": "혹시 다칠지도 모르니까…!",
     "relate_value": null,
     "occur_condition": null,
@@ -378,7 +378,7 @@
   },
   {
     "page_id": 10331,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 취미로 샀다가 방치해 둔 기타를 꺼냈습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -391,7 +391,7 @@
   },
   {
     "page_id": 10331,
-    "type": "button",
+    "type": 2,
     "output_txt": "나름 튼튼하니까 무기로 쓸 수 있을지도 몰라.",
     "relate_value": null,
     "occur_condition": null,
@@ -404,7 +404,7 @@
   },
   {
     "page_id": 10341,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 현관 앞 수납장에 들어 있던 망치를 꺼내 들었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -417,7 +417,7 @@
   },
   {
     "page_id": 10341,
-    "type": "button",
+    "type": 2,
     "output_txt": "뭔가 부술 일이 생길 수도 있으니까…!",
     "relate_value": null,
     "occur_condition": null,
@@ -430,7 +430,7 @@
   },
   {
     "page_id": 10351,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 안방에서 아버지의 골프채를 꺼내 왔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -443,7 +443,7 @@
   },
   {
     "page_id": 10351,
-    "type": "button",
+    "type": 2,
     "output_txt": "무기로 쓰기엔 이게 최고지.",
     "relate_value": null,
     "occur_condition": null,
@@ -456,7 +456,7 @@
   },
   {
     "page_id": 104,
-    "type": "text",
+    "type": 0,
     "output_txt": "지이잉- 지이잉-",
     "relate_value": null,
     "occur_condition": null,
@@ -469,7 +469,7 @@
   },
   {
     "page_id": 104,
-    "type": "text",
+    "type": 0,
     "output_txt": " - [긴급재난문자] 괴물체 및 괴현상 출현 중. 시민 여러분께서는 가까운 대피소로 대피 바랍니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -482,7 +482,7 @@
   },
   {
     "page_id": 104,
-    "type": "text",
+    "type": 0,
     "output_txt": "현관 앞에서 머뭇거리는 당신을 채찍질하듯, 다시 한번 재난 문자가 울립니다. 더는 시간을 지체할 수 없을 것 같아요.\n당신은 저도 모르게 심호흡을 내뱉었습니다. 그리고 마침내, 신발을 신고 현관문을 열었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -495,7 +495,7 @@
   },
   {
     "page_id": 104,
-    "type": "button",
+    "type": 2,
     "output_txt": "뭐가 뭔지 모르겠지만 일단 나가자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -508,7 +508,7 @@
   },
   {
     "page_id": 105,
-    "type": "text",
+    "type": 0,
     "output_txt": "밖으로 나오자, 당신과 마찬가지로 재난 문자를 받고 뛰쳐나온 사람들이 가득 보입니다. 다들 이 상황이 당황스러운지 우왕좌왕하고 있네요.\n \"대, 대피소가 어디예요…?\"\n \"괴물체라니 이게 대체 무슨 소리요?!\"\n \"여기에서 제일 가까운 대피소가…\"\n \"흑, 엄마…\"\n사람들은 저마다 자기 할 말만 늘어놓았습니다. 그중에는 가족을 찾는 사람들도 적지 않았어요. 그러고 보니 당신의 부모님도 오전부터 외출을 나갔습니다. 당신의 부모님은 이 상황을 알고 있는 걸까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -521,7 +521,7 @@
   },
   {
     "page_id": 105,
-    "type": "button",
+    "type": 2,
     "output_txt": "맞아, 그러고 보니까 엄마, 아빠는…?",
     "relate_value": null,
     "occur_condition": null,
@@ -534,7 +534,7 @@
   },
   {
     "page_id": 106,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 사람들을 따라 대피소로 이동하면서 어머니에게 전화를 걸었습니다.\n - 여보세요? 너 지금 어디니…! 괜찮은 거지…?\n짧은 연결음 끝에 들려오는 어머니의 목소리. 순간 당신의 입에서 안도의 한숨이 새어 나옵니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -547,7 +547,7 @@
   },
   {
     "page_id": 106,
-    "type": "button",
+    "type": 2,
     "output_txt": "응, 엄마… 난 괜찮아.",
     "relate_value": null,
     "occur_condition": null,
@@ -560,7 +560,7 @@
   },
   {
     "page_id": 107,
-    "type": "text",
+    "type": 0,
     "output_txt": " - 다행이다… 엄마, 아빠도 괜찮아…! 대피소로 피하고 있-\n - 쿠르릉-!\n - 여보…!\n전화 너머에서 굉음이 들려오더니 전화가 뚝- 끊어졌습니다. 이게 대체 어떻게 된 일일까요? 부모님은… 무사한 거겠죠?",
     "relate_value": null,
     "occur_condition": null,
@@ -573,7 +573,7 @@
   },
   {
     "page_id": 107,
-    "type": "button",
+    "type": 2,
     "output_txt": "엄마…?",
     "relate_value": null,
     "occur_condition": null,
@@ -586,7 +586,7 @@
   },
   {
     "page_id": 108,
-    "type": "text",
+    "type": 0,
     "output_txt": "다시 전화를 걸어 봤지만 당신의 어머니는 전화를 받지 않았습니다.\n쿠궁-! 콰과광-!!\n \"꺄악…!\"\n \"으아악…! 저, 저게 뭐야…?!!\"\n \"도, 도망쳐…!!\"\n다시 한번 부모님에게 전화를 걸려는데, 사람들이 비명을 지르며 달아나기 시작합니다. 전화에 정신이 팔려 상황을 이해하지 못한 당신은 멍하니 앞을 바라보았습니다.\n얼마 전까지 당신이 있던 곳, 멀지 않은 거리에 있는 아파트 단지 쪽에서 불길하게 소용돌이 치는 빛의 고리가 보입니다. 그리고… 그 너머에서 나오는 괴물들까지도요.",
     "relate_value": null,
     "occur_condition": null,
@@ -599,7 +599,7 @@
   },
   {
     "page_id": 108,
-    "type": "button",
+    "type": 2,
     "output_txt": "...도망쳐야 돼.",
     "relate_value": null,
     "occur_condition": null,
@@ -612,7 +612,7 @@
   },
   {
     "page_id": 109,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 본능적으로 몸을 움직였습니다. 다행히 빛의 고리가 점점 멀어지면서 작게 보이네요.",
     "relate_value": null,
     "occur_condition": null,
@@ -625,7 +625,7 @@
   },
   {
     "page_id": 109,
-    "type": "button",
+    "type": 2,
     "output_txt": "다른 사람들이랑 같이 움직이자.",
     "relate_value": null,
     "occur_condition": null,
@@ -638,7 +638,7 @@
   },
   {
     "page_id": 109,
-    "type": "button",
+    "type": 2,
     "output_txt": "혼자 움직이는 게 나을 것 같아.",
     "relate_value": null,
     "occur_condition": null,
@@ -651,7 +651,7 @@
   },
   {
     "page_id": 1091,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 정신 없이 도망치는 사람들과 함께 길을 달렸습니다.\n콰광-\n \"대, 대피소로…! 얼른…!!\"\n \"조금만 가면 대피소야…!\"\n쿵- 쿠궁-\n대피소는 정말로 안전한 게 맞을까요? 밀려오는 불안을 애써 무시하며, 당신은 대피소를 향해 갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -664,7 +664,7 @@
   },
   {
     "page_id": 1091,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -677,7 +677,7 @@
   },
   {
     "page_id": 1092,
-    "type": "text",
+    "type": 0,
     "output_txt": "대피소가 멀지 않은 곳에 있어서, 당신을 포함한 많은 사람들이 곧 대피소에 도착했습니다. 그런데 대피소는 이미 사람들로 가득해 보입니다.\n들어가려면 들어갈 수는 있지만… 저 많은 사람들 틈에 있고 싶지 않군요. 게다가 대피소라고 해도 그저 커다란 강당일 뿐… 괴물에 대응할 만한 게 있어 보이지도 않습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -690,7 +690,7 @@
   },
   {
     "page_id": 1092,
-    "type": "button",
+    "type": 2,
     "output_txt": "…여기 있어 봤자 아무것도 못 할 것 같아.",
     "relate_value": null,
     "occur_condition": null,
@@ -703,7 +703,7 @@
   },
   {
     "page_id": 1093,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 아까부터 계속 손에 들고 있던 휴대폰을 세게 움켜쥐었습니다. 문득, 갑자기 끊어졌던 어머니의 전화가 떠오르네요.",
     "relate_value": null,
     "occur_condition": null,
@@ -716,7 +716,7 @@
   },
   {
     "page_id": 1093,
-    "type": "button",
+    "type": 2,
     "output_txt": "차라리 엄마, 아빠를 보러 가는 게 낫지 않을까?",
     "relate_value": null,
     "occur_condition": null,
@@ -729,7 +729,7 @@
   },
   {
     "page_id": 1094,
-    "type": "text",
+    "type": 0,
     "output_txt": "괴물을 상대할 자신은 없지만, 이곳에서 무의미하게 시간을 보내는 것보다는 부모님을 만나러 가는 게 낫지 않을까요? 불길한 생각을 하고 싶지는 않지만... 어쩌면 영영 부모님을 못 보게 될지도 모르고요.\n당신은 부모님을 볼 수 있는 가능성이 조금이라도 있는 쪽을 택하고 싶었습니다. 설사 그게 위험에 빠지는 길이라 할지라도요.",
     "relate_value": null,
     "occur_condition": null,
@@ -742,7 +742,7 @@
   },
   {
     "page_id": 1094,
-    "type": "button",
+    "type": 2,
     "output_txt": "나가자. 가서 엄마, 아빠를 찾는 거야.",
     "relate_value": null,
     "occur_condition": null,
@@ -755,7 +755,7 @@
   },
   {
     "page_id": 1095,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 미련 없이 몸을 돌렸습니다. 혹시 괴물들이 튀어 나올 수도 있으니까 조심조심 움직였어요.\n콰앙-\n그런데 어느 순간, 뒤에서 시끄러운 소리가 들려옵니다. 뒤를 돌아보자 대피소로 몰려든 사람들과… 그들을 쫓아온 괴물들이 보이는군요.\n쿵-\n괴물의 공격을 받은 대피소 건물 벽이 부서집니다. 사람들의 비명이 당신이 있는 곳까지 들려왔습니다. 짙은 공포가 느껴지는 비명 소리들. 저 대피소에서 무슨 일이 벌어졌을지… 차마 생각할 엄두도 나지 않네요.\n최대한 많은 사람들이 무사하기를 빌며, 당신은 빠르게 대피소에서 멀어졌습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -768,7 +768,7 @@
   },
   {
     "page_id": 1095,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -781,7 +781,7 @@
   },
   {
     "page_id": 1096,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 사람이 적은 샛길로 빠졌습니다. 서로 밀치며 도망치기 바쁜 사람들 틈에 섞여 있는 건 아무리 생각해도 도움이 될 것 같지 않았어요. 어차피 대피소로 가는 길은 하나가 아니니까, 차분하게 주변을 살피면서 가는 것도 나쁘지 않을 거예요.",
     "relate_value": null,
     "occur_condition": null,
@@ -794,7 +794,7 @@
   },
   {
     "page_id": 1096,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -807,7 +807,7 @@
   },
   {
     "page_id": 1097,
-    "type": "text",
+    "type": 0,
     "output_txt": "잠시 후, 당신은 대피소 근처에 도착했습니다. 하지만 당신은 더 이상 앞으로 나아가지 못하고 멈춰 있었어요. 왜냐하면…\n콰광-\n \"꺄악…!\"\n \"안으로 들어가게 해 줘, 제발…!!\"\n \"누, 누가 좀… 으아아악!\"\n당신보다 먼저 대피소에 도착한 사람들을 쫓아온 듯 보이는 괴물들이, 대피소를 공격하고 있었기 때문이죠.",
     "relate_value": null,
     "occur_condition": null,
@@ -820,7 +820,7 @@
   },
   {
     "page_id": 1097,
-    "type": "button",
+    "type": 2,
     "output_txt": "...대피소도 안전하지 않아.",
     "relate_value": null,
     "occur_condition": null,
@@ -833,7 +833,7 @@
   },
   {
     "page_id": 1098,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 대피소라고 해서 안전한 곳이 아님을 깨닫고, 괴물들을 피해 벽 뒤로 몸을 숨겼습니다. 공포 때문일까요?\n휴대폰을 쥔 손에 힘이 들어갑니다. 문득, 아까 전 갑작스럽게 끊어졌던 어머니의 전화가 떠오르네요.",
     "relate_value": null,
     "occur_condition": null,
@@ -846,7 +846,7 @@
   },
   {
     "page_id": 1098,
-    "type": "button",
+    "type": 2,
     "output_txt": "…차라리 엄마, 아빠를 찾자.",
     "relate_value": null,
     "occur_condition": null,
@@ -859,7 +859,7 @@
   },
   {
     "page_id": 1099,
-    "type": "text",
+    "type": 0,
     "output_txt": "대피소도 위험한 건 마찬가지라면, 부모님을 만나러 가는 게 낫지 않을까요? 불길한 생각을 하고 싶지는 않지만... 어쩌면 영영 부모님을 못 보게 될지도 모르고요.\n결심을 마친 당신은 미련 없이 돌아섰습니다. 대피소가 있는 뒤쪽에서 들려오던 사람들의 비명 소리가 조금씩 옅어집니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -872,7 +872,7 @@
   },
   {
     "page_id": 1099,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -885,7 +885,7 @@
   },
   {
     "page_id": 201,
-    "type": "text",
+    "type": 0,
     "output_txt": "주변을 경계하며 앞으로 나아가는데, 어디선가 끙끙 앓는 듯한 소리가 들려옵니다.\n끼잉-\n누가 다치기라도 한 걸까요? 왠지 신경이 쓰입니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -898,7 +898,7 @@
   },
   {
     "page_id": 201,
-    "type": "button",
+    "type": 2,
     "output_txt": "아냐… 위험할 수도 있으니까 무시하자.",
     "relate_value": null,
     "occur_condition": null,
@@ -911,7 +911,7 @@
   },
   {
     "page_id": 201,
-    "type": "button",
+    "type": 2,
     "output_txt": "그냥 가면 찜찜할 것 같은데… 확인이라도 해 보자.",
     "relate_value": null,
     "occur_condition": null,
@@ -924,7 +924,7 @@
   },
   {
     "page_id": 2011,
-    "type": "text",
+    "type": 0,
     "output_txt": "끙끙 앓는 듯한 소리가 조금 신경 쓰였지만, 당신은 애써 외면하고 가던 길을 갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -937,7 +937,7 @@
   },
   {
     "page_id": 2011,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -950,7 +950,7 @@
   },
   {
     "page_id": 2012,
-    "type": "text",
+    "type": 0,
     "output_txt": "소리가 나는 곳으로 가 보니 작은 강아지가 축 늘어진 채 앉아 있습니다. 주인을 잃어버리기라도 한 걸까요? 당신을 올려다보는 눈망울이 무척이나 애처로워 보입니다.\n당신이 저도 모르게 손을 내밀자 강아지가 바로 달려오네요. 당신의 손에 뺨을 비비는 모습이 너무나 귀엽고 사랑스럽습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -963,7 +963,7 @@
   },
   {
     "page_id": 2012,
-    "type": "button",
+    "type": 2,
     "output_txt": "나랑 같이 갈래?",
     "relate_value": null,
     "occur_condition": null,
@@ -976,7 +976,7 @@
   },
   {
     "page_id": 2013,
-    "type": "text",
+    "type": 0,
     "output_txt": "멍-\n당신의 말을 알아듣기라도 한 것처럼 강아지가 멍멍 짖습니다. 당신은 결국 강아지를 품에 안았어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -989,7 +989,7 @@
   },
   {
     "page_id": 2013,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1002,7 +1002,7 @@
   },
   {
     "page_id": 202,
-    "type": "text",
+    "type": 0,
     "output_txt": "찰박-\n길을 걷던 당신의 발에 물컹한 무언가가 밟힙니다. 발을 떼자 웬 점액 같은 게 끈적하게 묻어나네요. 이게 대체 뭘까요?\n케엑-\n당신이 궁금증을 느끼는 찰나, 불길한 소리와 함께 낯선 무언가가 다가옵니다. 둥근 외형에 미끄덩해 보이는 표면, 그리고 그 한 가운데에 자리한… 눈과 입 같은 구멍. 그래요, 당신을 향해 다가오는 저건, 마치 '슬라임' 같아요!",
     "relate_value": null,
     "occur_condition": null,
@@ -1015,7 +1015,7 @@
   },
   {
     "page_id": 202,
-    "type": "button",
+    "type": 2,
     "output_txt": "도망치자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1028,7 +1028,7 @@
   },
   {
     "page_id": 202,
-    "type": "button",
+    "type": 2,
     "output_txt": "싸우자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1041,7 +1041,7 @@
   },
   {
     "page_id": 2021,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 슬라임에게서 겨우 도망쳤습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1054,7 +1054,7 @@
   },
   {
     "page_id": 2021,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1067,7 +1067,7 @@
   },
   {
     "page_id": 2022,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 용감하게 싸웠지만 슬라임은 강했습니다. 도저히 이길 수 있을 것 같지가 않아서, 겨우 슬라임을 따돌리고 나왔어요. 차라리 처음부터 도망쳤더라면 부상은 입지 않았을 텐데… 스스로를 너무 믿은 모양입니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1080,7 +1080,7 @@
   },
   {
     "page_id": 2022,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1093,7 +1093,7 @@
   },
   {
     "page_id": 2023,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 슬라임을 물리쳤습니다!",
     "relate_value": null,
     "occur_condition": null,
@@ -1106,7 +1106,7 @@
   },
   {
     "page_id": 2023,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1119,7 +1119,7 @@
   },
   {
     "page_id": 203,
-    "type": "text",
+    "type": 0,
     "output_txt": "길을 걷는 당신의 눈에 텅 빈 채 열려 있는 가게가 보입니다. 슬쩍 들어가 보니 음식점인 것 같은데… 아무래도 사장님은 가게 문을 잠그는 것도 잊고 대피를 한 모양입니다.\n한참을 걸었더니 지치는군요. 여기서 좀 쉬어 가는 것도 괜찮을 것 같습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1132,7 +1132,7 @@
   },
   {
     "page_id": 203,
-    "type": "button",
+    "type": 2,
     "output_txt": "목 마른데 물이나 마시자.",
     "relate_value": null,
     "occur_condition": null,
@@ -1145,7 +1145,7 @@
   },
   {
     "page_id": 203,
-    "type": "button",
+    "type": 2,
     "output_txt": "어? 저기 콜라가 있잖아? 콜라 하나만 가져갈까…?",
     "relate_value": null,
     "occur_condition": null,
@@ -1158,7 +1158,7 @@
   },
   {
     "page_id": 203,
-    "type": "button",
+    "type": 2,
     "output_txt": "주인 없는 곳에서 함부로 움직이면 안 되지.",
     "relate_value": null,
     "occur_condition": null,
@@ -1171,7 +1171,7 @@
   },
   {
     "page_id": 2031,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 잠시 물을 마시며 숨을 돌린 뒤, 다시 밖으로 나갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1184,7 +1184,7 @@
   },
   {
     "page_id": 2031,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1197,7 +1197,7 @@
   },
   {
     "page_id": 2032,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 콜라 한 캔을 챙긴 뒤, 다시 밖으로 나갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1210,7 +1210,7 @@
   },
   {
     "page_id": 2032,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1223,7 +1223,7 @@
   },
   {
     "page_id": 2033,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 잠시 숨만 돌린 뒤, 다시 밖으로 나갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1236,7 +1236,7 @@
   },
   {
     "page_id": 2033,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1249,7 +1249,7 @@
   },
   {
     "page_id": 204,
-    "type": "text",
+    "type": 0,
     "output_txt": "꼬르륵-\n일어나서 지금까지 제대로 챙겨 먹은 게 없다 보니 배가 몹시 고파 옵니다. 아무래도 뭐든 좀 먹어야 할 것 같은데… 먹을 만한 게 없을까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -1262,7 +1262,7 @@
   },
   {
     "page_id": 204,
-    "type": "button",
+    "type": 2,
     "output_txt": "먹을 게 어디 있어… 좀만 더 참자.",
     "relate_value": null,
     "occur_condition": null,
@@ -1275,7 +1275,7 @@
   },
   {
     "page_id": 204,
-    "type": "button",
+    "type": 2,
     "output_txt": "내가 가지고 있는 것 중에 먹을 만한 게…",
     "relate_value": null,
     "occur_condition": null,
@@ -1288,7 +1288,7 @@
   },
   {
     "page_id": 2041,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 굶기로 결정했습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1301,7 +1301,7 @@
   },
   {
     "page_id": 2041,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1314,7 +1314,7 @@
   },
   {
     "page_id": 2042,
-    "type": "text",
+    "type": 0,
     "output_txt": "짐을 뒤지자 먹을 만한 게 보이네요. 당신은 바로 그것을 입에 넣었습니다. 배고픈 게 가시니 기운이 나는군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1327,7 +1327,7 @@
   },
   {
     "page_id": 2042,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1340,7 +1340,7 @@
   },
   {
     "page_id": 205,
-    "type": "text",
+    "type": 0,
     "output_txt": "왈왈-\n어디선가 갑자기 개 짖는 소리가 들려옵니다. 누군가 난리 통에 개를 잃어버리기라도 한 걸까요? 안타까움을 느끼며 고개를 돌리는데, 어라…? 뭔가 이상합니다.\n으르르-\n당신을 향해 으르렁거리는 개의 눈이 피처럼 붉게 물들어 있습니다. 거기다 입에서는 침을 질질 흘리고, 이빨은 비정상적으로 크기까지…! 어쩐지 예감이 안 좋은데요…?",
     "relate_value": null,
     "occur_condition": null,
@@ -1353,7 +1353,7 @@
   },
   {
     "page_id": 205,
-    "type": "button",
+    "type": 2,
     "output_txt": "안 되겠다, 도망치자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1366,7 +1366,7 @@
   },
   {
     "page_id": 205,
-    "type": "button",
+    "type": 2,
     "output_txt": "몰라, 까짓 거 싸워 보자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1379,7 +1379,7 @@
   },
   {
     "page_id": 2051,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 미친 개한테서 겨우 도망쳤습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1392,7 +1392,7 @@
   },
   {
     "page_id": 2051,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1405,7 +1405,7 @@
   },
   {
     "page_id": 2052,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 용감하게 싸웠지만 미친 개는 강했습니다. 도저히 이길 수 있을 것 같지가 않아서, 겨우 미친 개를 따돌리고 나왔어요. 차라리 처음부터 도망쳤더라면 부상은 입지 않았을 텐데… 스스로를 너무 믿은 모양입니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1418,7 +1418,7 @@
   },
   {
     "page_id": 2052,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1431,7 +1431,7 @@
   },
   {
     "page_id": 2053,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 미친 개를 물리쳤습니다!",
     "relate_value": null,
     "occur_condition": null,
@@ -1444,7 +1444,7 @@
   },
   {
     "page_id": 2053,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1457,7 +1457,7 @@
   },
   {
     "page_id": 206,
-    "type": "text",
+    "type": 0,
     "output_txt": "툭-\n옆에서 무언가가 데구르르 굴러옵니다. 동전같이 둥금 모양에 노랗게 반짝이는 이 모습은… 마치 금화 같아요! 진짜 금으로 만들어진 걸까요? 문득 궁금해진 당신은 무의식적으로 그것을 주워 들었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1470,7 +1470,7 @@
   },
   {
     "page_id": 206,
-    "type": "button",
+    "type": 2,
     "output_txt": "…굴러온 거니까 내가 가져도 되겠지?",
     "relate_value": null,
     "occur_condition": null,
@@ -1483,7 +1483,7 @@
   },
   {
     "page_id": 206,
-    "type": "button",
+    "type": 2,
     "output_txt": "아냐, 누군 건지도 모르는데 함부로 주우면 안 되지…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1496,7 +1496,7 @@
   },
   {
     "page_id": 2061,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 금화로 추정되는 그것을 살짝 깨물었습니다. 그런데… 잇자국이 남네요…? 설마 이거… 정말 금으로 만들어진 걸까요?\n당신은 의문을 품에 안은 채, 금화를 챙겼습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1509,7 +1509,7 @@
   },
   {
     "page_id": 2061,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1522,7 +1522,7 @@
   },
   {
     "page_id": 2062,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 금화로 추정되는 그것을 다시 내려놓았습니다. 혹시라도 주인이 있는 거라면, 훔친 게 되니까요! 아무리 세상이 이상해졌다지만 범죄를 저지를 순 없죠.",
     "relate_value": null,
     "occur_condition": null,
@@ -1535,7 +1535,7 @@
   },
   {
     "page_id": 2062,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1548,7 +1548,7 @@
   },
   {
     "page_id": 207,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"저, 저기요…!\"\n뒤에서 누군가가 부르는 소리가 들려옵니다. 돌아보니 어린 소녀가 겁에 질린 얼굴로 당신을 바라보고 있네요.\n \"혹시… 이 근처에 대피소가 어딘지 아세요…? 핸드폰을 잃어버려서… 흑.\"\n소녀가 작게 훌쩍입니다. 아마도 대피소를 찾지 못해서 불안한 모양이에요. 이 근처 지리는 잘 모르지만 휴대폰 지도를 보면 대피소를 찾을 수 있을지도 모르겠습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1561,7 +1561,7 @@
   },
   {
     "page_id": 207,
-    "type": "button",
+    "type": 2,
     "output_txt": "대피소를 찾아보자.",
     "relate_value": null,
     "occur_condition": null,
@@ -1574,7 +1574,7 @@
   },
   {
     "page_id": 207,
-    "type": "button",
+    "type": 2,
     "output_txt": "나도 시간이 없는데…",
     "relate_value": null,
     "occur_condition": null,
@@ -1587,7 +1587,7 @@
   },
   {
     "page_id": 2071,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 휴대폰으로 지도를 확인했습니다. 다행히 대피소 몇 개가 금방 나오는군요.\n소녀에게 지도를 보여 주자, 소녀의 얼굴이 밝아졌습니다.\n \"이쪽으로 이렇게 가면 되는 거겠죠…?\"\n소녀는 지도를 몇 번이고 보면서 꼼꼼하게 길을 익혔습니다.\n \"정말 감사해요! 별건 아니지만… 이거라도 받으세요.\"\n환하게 웃은 소녀가 당신에게 과자를 내밀었습니다.\n골목길로 들어가는 소녀를 배웅해 준 당신은 다시 발걸음을 뗐습니다. 어쩐지 마음이 따듯해지는 것만 같아요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1600,7 +1600,7 @@
   },
   {
     "page_id": 2071,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1613,7 +1613,7 @@
   },
   {
     "page_id": 2072,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신이 곤란한 얼굴로 고개를 젓자, 소녀가 입술을 깨뭅니다.\n \"죄송해요, 괜히 붙잡아서…\"\n울음을 참는 듯한 목소리로 말한 소녀는 곧 고개를 꾸벅 숙인 뒤 골목길로 들어가 버렸습니다.\n다시 발걸음을 떼는 당신의 머릿속에, 어째서인지 울먹이던 소녀의 얼굴이 자꾸만 떠올랐습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1626,7 +1626,7 @@
   },
   {
     "page_id": 2072,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1639,7 +1639,7 @@
   },
   {
     "page_id": 208,
-    "type": "text",
+    "type": 0,
     "output_txt": "투둑- 투두둑-\n갑자기 비가 내리기 시작합니다. 가는 날이 장날이라더니 하필이면 비가 내리는군요. 당신은 일단 가까운 건물로 들어갔습니다.\n과연 비가 언제쯤 그칠까요? 그냥 소나기면 좋겠지만 아니라면 어떡하죠? 뭔가 비를 막을 만한 게 있다면 계속 길을 갈 수 있을 텐데…",
     "relate_value": null,
     "occur_condition": null,
@@ -1652,7 +1652,7 @@
   },
   {
     "page_id": 208,
-    "type": "button",
+    "type": 2,
     "output_txt": "우산 써야겠다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1665,7 +1665,7 @@
   },
   {
     "page_id": 208,
-    "type": "button",
+    "type": 2,
     "output_txt": "조금만 더 기다려 보자… 금방 그칠 수도 있잖아.",
     "relate_value": null,
     "occur_condition": null,
@@ -1678,7 +1678,7 @@
   },
   {
     "page_id": 2081,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 가지고 있던 우산을 꺼내 펼쳤습니다. 비 걱정을 한결 덜어서 다행이군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1691,7 +1691,7 @@
   },
   {
     "page_id": 2081,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1704,7 +1704,7 @@
   },
   {
     "page_id": 2082,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 비가 그치기만을 하염 없이 기다렸습니다. 비는 생각보다 오래 내렸어요. 시간이 꽤 지체되어서 차라리 비를 맞는 게 나았을까, 잠시 후회가 됐습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1717,7 +1717,7 @@
   },
   {
     "page_id": 2082,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1730,7 +1730,7 @@
   },
   {
     "page_id": 209,
-    "type": "text",
+    "type": 0,
     "output_txt": "구구-\n앞에서 새소리가 들려옵니다. 회색빛이 도는 통통한 몸체… 비둘기인 것 같아요. 그런데 비둘기 크기가 평소 보던 것보다 조금 큽니다. 거기다 비둘기 눈이… 붉은색이에요!\n구구구구-\n시끄럽게 우는 비둘기가 당신을 향해 날아옵니다…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1743,7 +1743,7 @@
   },
   {
     "page_id": 209,
-    "type": "button",
+    "type": 2,
     "output_txt": "으아아, 도망쳐…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1756,7 +1756,7 @@
   },
   {
     "page_id": 209,
-    "type": "button",
+    "type": 2,
     "output_txt": "내가 비둘기한테 질 것 같아?!",
     "relate_value": null,
     "occur_condition": null,
@@ -1769,7 +1769,7 @@
   },
   {
     "page_id": 2091,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 이상한 비둘기한테서 겨우 도망쳤습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1782,7 +1782,7 @@
   },
   {
     "page_id": 2091,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1795,7 +1795,7 @@
   },
   {
     "page_id": 2092,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 용감하게 싸웠지만 이상한 비둘기는 강했습니다. 도저히 이길 수 있을 것 같지가 않아서, 겨우 이상한 비둘기를 따돌리고 나왔어요. 차라리 처음부터 도망쳤더라면 부상은 입지 않았을 텐데… 스스로를 너무 믿은 모양입니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1808,7 +1808,7 @@
   },
   {
     "page_id": 2092,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1821,7 +1821,7 @@
   },
   {
     "page_id": 2093,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 이상한 비둘기를 물리쳤습니다!",
     "relate_value": null,
     "occur_condition": null,
@@ -1834,7 +1834,7 @@
   },
   {
     "page_id": 2093,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1847,7 +1847,7 @@
   },
   {
     "page_id": 210,
-    "type": "text",
+    "type": 0,
     "output_txt": "킁킁-\n당신의 코에 맛있는 냄새가 포착됐습니다. 냄새가 이끄는 대로 걷다 보니 타코야키 노점 앞이네요. 사람은 아무도 없이, 노점만 덩그러니 놓여 있습니다. 잘 익은 타코야키도 몇 개 있고요. 아마 사장님이 급하게 대피하느라 노점도 정리하지 못한 모양이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1860,7 +1860,7 @@
   },
   {
     "page_id": 210,
-    "type": "button",
+    "type": 2,
     "output_txt": "배고픈데 몇 개만 먹자…!",
     "relate_value": null,
     "occur_condition": null,
@@ -1873,7 +1873,7 @@
   },
   {
     "page_id": 210,
-    "type": "button",
+    "type": 2,
     "output_txt": "재료도 남아 있네? 직접 만들어 볼까?",
     "relate_value": null,
     "occur_condition": null,
@@ -1886,7 +1886,7 @@
   },
   {
     "page_id": 2101,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 타코야키 몇 알을 먹고 다시 길을 나섰습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1899,7 +1899,7 @@
   },
   {
     "page_id": 2101,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1912,7 +1912,7 @@
   },
   {
     "page_id": 2102,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 남은 재료로 타코야키를 직접 만들었습니다. 만들어서 먹으니 따끈따끈하고 훨씬 더 맛있는 것 같네요! 어쩐지 요리 실력도 조금 늘어난 기분이고 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1925,7 +1925,7 @@
   },
   {
     "page_id": 2102,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -1938,7 +1938,7 @@
   },
   {
     "page_id": 110,
-    "type": "text",
+    "type": 0,
     "output_txt": "지이잉- 지이잉-",
     "relate_value": null,
     "occur_condition": null,
@@ -1951,7 +1951,7 @@
   },
   {
     "page_id": 110,
-    "type": "text",
+    "type": 0,
     "output_txt": "천천히 길을 걷고 있는데 휴대폰이 울립니다. 이 시끄러운 진동음은 재난 문자가 분명해요. 또 무슨 불길한 소식을 전하려고 이렇게 울리는 걸까요?\n - [긴급재난문자] 이 시간부로 괴물체를 배출하는 통로를 '게이트'라고 명명. 수상한 빛의 고리 발견 시 즉시 대피 바랍니다.\n불안한 마음으로 휴대폰을 확인하자, 다행인지 불행인지 그저 정보만을 담고 있는 문자가 보입니다. 아까 아파트 단지에 나타났던 빛의 고리를 앞으로는 '게이트'라고 부르면 되는 모양이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -1964,7 +1964,7 @@
   },
   {
     "page_id": 110,
-    "type": "button",
+    "type": 2,
     "output_txt": "게이트? 꼭 무슨 판타지 소설 같네.",
     "relate_value": null,
     "occur_condition": null,
@@ -1977,7 +1977,7 @@
   },
   {
     "page_id": 1101,
-    "type": "text",
+    "type": 0,
     "output_txt": "이 상황이 정말로 그저 소설이었다면 참 좋았을 텐데. 새어 나오려는 한숨을 막으며, 당신은 휴대폰을 집어 넣었습니다. 씁쓸해하고만 있기엔, 아직 갈 길이 머니까요. 어서 부지런히 발을 놀려야 했습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -1990,7 +1990,7 @@
   },
   {
     "page_id": 1101,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2003,7 +2003,7 @@
   },
   {
     "page_id": 111,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"정지! 멈추십시오! 더는 지나갈 수 없습니다!\"\n한 무리의 군대가 길을 가로막고, 당신에게 멈추라는 신호를 보냅니다. 길에 설치한 바리케이드 하며 군인들의 단단한 무장까지, 뭔가 심상치 않아 보이는군요. 하지만 당신은 이 길을 지나가야만 합니다. 당신의 부모님이 아직 무사한 게 맞다면, 이 길 너머 저 멀리 보이는 건물 안에 있을 테니까요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2016,7 +2016,7 @@
   },
   {
     "page_id": 111,
-    "type": "button",
+    "type": 2,
     "output_txt": "가족들을 보러 가야 해요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2029,7 +2029,7 @@
   },
   {
     "page_id": 1111,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 길을 막고 있는 군인에게 간단하게 사정을 말했습니다.\n군인이 곤란한 기색을 비치는군요. 당신을 보는 시선에 고민이 어려 보입니다. 혹시 당신을 들여보내 주려는 걸까요?\n \"…사정은 알겠지만 그래도 안 됩니다. 통제 구역에 남아 있는 민간인들은 군에서 구출할 테니 저희를 믿고 이만 돌아가십시오.\"\n당신의 기대를 무너뜨리며, 군인이 한 발 앞으로 나왔습니다. 반듯하게 서 있는 모습에서 결코 당신을 들여보내지 않겠다는 의지가 느껴지는 것만 같아요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2042,7 +2042,7 @@
   },
   {
     "page_id": 1111,
-    "type": "button",
+    "type": 2,
     "output_txt": "제발… 어떻게 안 될까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2055,7 +2055,7 @@
   },
   {
     "page_id": 1112,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"안 됩니다. 군의 지시를 따라 주십시오. 이 이상 계속해서 무리한 부탁을 하신다면 강제로 끌어낼 수도 있습니다.\"\n군인이 인상을 살짝 찌푸리며 당신을 쳐다보네요. 아무래도 더 애원해 봤자 통하지 않을 것 같습니다. 아니, 더 떼를 썼다간 통하지 않는 걸 넘어서 역효과가 날지도 모르겠어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2068,7 +2068,7 @@
   },
   {
     "page_id": 1112,
-    "type": "button",
+    "type": 2,
     "output_txt": "안 되겠어, 일단은 물러나야겠다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2081,7 +2081,7 @@
   },
   {
     "page_id": 1113,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 어쩔 수 없이 발길을 돌렸습니다. 군인이 안심하는 얼굴로 당신을 바라보네요.\n \"저쪽으로 가시면 대피소가 있습니다. 그곳에 가 계시면 안전할 겁니다.\"\n당신은 감사하다고 인사한 뒤, 군인이 가리킨 쪽으로 천천히 걸음을 옮겼습니다. 아무래도 정면 돌파는 힘들 것 같고… 다른 방법을 찾아봐야겠습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2094,7 +2094,7 @@
   },
   {
     "page_id": 1113,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2107,7 +2107,7 @@
   },
   {
     "page_id": 112,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 군대의 경계를 피해 이곳저곳을 꽤 한참 맴돌았습니다. 군대의 저지선이 생각보다 견고해서 안쪽으로 들어갈 방법이 요원해 보였지만… 간절히 바라면 온 우주가 도와준다죠? 드디어 방법을 찾은 것 같네요! 저 앞쪽에 아무도 없는 건물이 보이거든요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2120,7 +2120,7 @@
   },
   {
     "page_id": 112,
-    "type": "button",
+    "type": 2,
     "output_txt": "역시…! 빈틈이 있을 줄 알았어!",
     "relate_value": null,
     "occur_condition": null,
@@ -2133,7 +2133,7 @@
   },
   {
     "page_id": 1121,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 얼른 그 건물로 다가갔습니다. 음, 그런데… 가까이 가서 보니 왜 이쪽엔 군대가 없는지 알 것 같아요. 건물과 건물 사이에 사람이 다닐 수 있는 정도의 틈이 있는 건 좋은데 문으로 막아 뒀네요. 그나마 다행이라면 문이 튼튼해 보이지는 않는다는 걸까요? 자물쇠로 잠가 놨는데 꽤 허름해 보입니다. 잘만 하면 부술 수 있을 것 같아요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2146,7 +2146,7 @@
   },
   {
     "page_id": 1121,
-    "type": "button",
+    "type": 2,
     "output_txt": "망치",
     "relate_value": null,
     "occur_condition": null,
@@ -2159,7 +2159,7 @@
   },
   {
     "page_id": 1121,
-    "type": "button",
+    "type": 2,
     "output_txt": "골프채",
     "relate_value": null,
     "occur_condition": null,
@@ -2172,7 +2172,7 @@
   },
   {
     "page_id": 1122,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 망치로 자물쇠를 내려쳤습니다.\n깡-\n자물쇠가 바로 휘어졌지만 부서지진 않았어요.\n깡, 깡-!\n몇 번 더 내려치자 그제야 자물쇠가 부서졌습니다. 휴우, 힘을 쓰니 조금 지치지만 혹시라도 누가 오면 안 되니까 얼른 넘어가야겠어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2185,7 +2185,7 @@
   },
   {
     "page_id": 1122,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2198,7 +2198,7 @@
   },
   {
     "page_id": 1123,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 골프채로 자물쇠를 내려쳤습니다.\n깡-\n그런데 너무 세게 내려쳐서일까요? 자물쇠가 아니라 걸고리가 아예 뜯어져 버렸어요…! 뭐, 어쨌든 문이 열렸으니까 별로 상관은 없지만요. 모로 가도 서울만 가면 된다고 하잖아요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2211,7 +2211,7 @@
   },
   {
     "page_id": 1123,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2224,7 +2224,7 @@
   },
   {
     "page_id": 113,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"오, 오지 마…!\"\n멀지 않은 곳에서 사람 목소리가 들립니다. 그것도 굉장히 겁에 질린 목소리가요.\n소리가 난 쪽으로 고개를 돌리니… 이런, 젊은 여자가 개인지 늑대인지 구분이 안 갈 만큼 거대한 개와 대치하고 있네요. 개가 금방이라도 여자를 향해 달려들 것 같아요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2237,7 +2237,7 @@
   },
   {
     "page_id": 113,
-    "type": "button",
+    "type": 2,
     "output_txt": "안 돼… 도와주자!",
     "relate_value": null,
     "occur_condition": null,
@@ -2250,7 +2250,7 @@
   },
   {
     "page_id": 1131,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"헉… 하아… 감사해요, 진짜 죽는 줄 알았는데…\"\n여자가 눈물을 글썽이며 감사를 표합니다. 안도하는 얼굴을 보니 모처럼 좋은 일을 한 것 같아 뿌듯해지네요. 그런데 이 사람은 어쩌다 이런 곳에 혼자 있게 된 걸까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2263,7 +2263,7 @@
   },
   {
     "page_id": 1131,
-    "type": "button",
+    "type": 2,
     "output_txt": "자초지종을 물어보자.",
     "relate_value": null,
     "occur_condition": null,
@@ -2276,7 +2276,7 @@
   },
   {
     "page_id": 1132,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"아, 그게…\"\n당신의 물음에 여자가 난처한 표정을 짓습니다. 여자의 얼굴에 고민하는 기색이 역력합니다.\n \"원래는 저기 쇼핑몰에 있었는데요, 저기 분위기가 영 안 좋아서요. 저 안에 있어 봤자 좋을 게 없겠다 싶어서 나온 건데… 이렇게 될 줄은 몰랐어요. 솔직히 처음에 재난 문자 받았을 땐 이게 뭔 소린가 싶기도 했고. 이런 괴물들을 만날 줄 알았으면 안 나오는 건데. 휴…\"\n여자가 한숨을 푹 내쉽니다. 그런데 방금 여자가 쇼핑몰이라고 했던가요? 심지어 쇼핑몰 내부 분위기가 안 좋다고 했죠? 당신이 아는 게 맞다면, 당신의 부모님도 그곳에 있을 가능성이 큰데 말이에요…! 부모님이 괜찮으실지 걱정되는군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2289,7 +2289,7 @@
   },
   {
     "page_id": 1132,
-    "type": "button",
+    "type": 2,
     "output_txt": "내부에서 무슨 큰일이라도 일어난 건가요…?",
     "relate_value": null,
     "occur_condition": null,
@@ -2302,7 +2302,7 @@
   },
   {
     "page_id": 1133,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"아뇨, 그건 아니고… 싸우는 사람들이 많았거든요. 저는 싸움에 휘말리기 싫어서 나온 거예요. 지금 생각하면 싸움에 휘말리더라도 그냥 안에 있는 게 나았을 것 같지만.\"\n다행히 쇼핑몰 안까지 괴물들이 출현한 건 아닌가 봐요. 불행 중 다행이군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2315,7 +2315,7 @@
   },
   {
     "page_id": 1133,
-    "type": "button",
+    "type": 2,
     "output_txt": "얼른 쇼핑몰로 가 봐야겠어.",
     "relate_value": null,
     "occur_condition": null,
@@ -2328,7 +2328,7 @@
   },
   {
     "page_id": 1134,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"어, 저쪽으로 가려고요? 여기서 더 가면 위험할 텐데…? 저도 겨우 나온 거예요. 사실 저 안에… 괴물한테 당한 사람들도 많아요, 엄청.\"\n여자가 질색하는 표정으로 고개를 저으며 염려를 표합니다. 하지만 당신은 포기할 생각이 없었어요. 여기까지 어떻게 왔는데 포기하겠어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2341,7 +2341,7 @@
   },
   {
     "page_id": 1134,
-    "type": "button",
+    "type": 2,
     "output_txt": "그래도 가야 해요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2354,7 +2354,7 @@
   },
   {
     "page_id": 1135,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"저한테 말릴 자격이 있는 것도 아니니까 붙잡지는 않겠는데… 휴우.\"\n여자가 심란한 얼굴로 말을 잇다가 한숨을 푹 내쉽니다. 무슨 말을 해야 할지 모르겠다는 기색이네요.\n \"전 먼저 가 볼게요. 여기 계속 있다가 또 괴물이라도 만나면 안 되니까… 아, 구해 준 건 정말 감사해요. 그쪽도 행운을 빌게요.\"\n고개를 살짝 숙여 숙이며 인사를 건넨 여자는 빠르게 멀어졌습니다.\n여자에게 마주 인사를 건네던 당신도 곧 몸을 돌렸어요. 그리고 문득, 커다란 쇼핑몰 건물이 꽤 가깝게 보인다는 사실을 깨달았습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2367,7 +2367,7 @@
   },
   {
     "page_id": 1135,
-    "type": "button",
+    "type": 2,
     "output_txt": "금방 갈게요. 제발 무사히 있어 주세요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2380,7 +2380,7 @@
   },
   {
     "page_id": 114,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 드디어 쇼핑몰로 들어왔습니다. 그런데 사람이 보이지 않는군요. 안으로 들어오면 금방 사람을 만날 수 있을 줄 알았는데 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2393,7 +2393,7 @@
   },
   {
     "page_id": 114,
-    "type": "button",
+    "type": 2,
     "output_txt": "아직 초입이니까… 더 들어가 보자.",
     "relate_value": null,
     "occur_condition": null,
@@ -2406,7 +2406,7 @@
   },
   {
     "page_id": 115,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"이봐, 거기! 남의 구역에서 알짱거리지 말고 꺼져.\"\n쇼핑몰 최고층에 위치한 영화관 앞. 한 무리의 사람들이 당신을 위협하며 가로막습니다. 부모님이 무사하다면 이곳에 있을 가능성이 큰데… 문제는 저 사람들, 당신을 쉽게 들여보내 줄 기색이 아닙니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2419,7 +2419,7 @@
   },
   {
     "page_id": 115,
-    "type": "button",
+    "type": 2,
     "output_txt": "제가 몬스터를 잡을 수 있어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2432,7 +2432,7 @@
   },
   {
     "page_id": 1151,
-    "type": "text",
+    "type": 0,
     "output_txt": "그렇게 말하며 당신은 그동안 몬스터를 잡고 얻은 물건들을 꺼내 보였습니다.\n \"이걸 다 혼자서 잡은 거냐…?\"\n당신이 고개를 끄덕이자 무리의 사람들이 서로 시선을 주고받더니 다시 당신을 쳐다봅니다.\n \"따라와라.\"",
     "relate_value": null,
     "occur_condition": null,
@@ -2445,7 +2445,7 @@
   },
   {
     "page_id": 1151,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2458,7 +2458,7 @@
   },
   {
     "page_id": 1152,
-    "type": "text",
+    "type": 0,
     "output_txt": "무리의 리더로 보이는 남자를 따라 당신은 영화관 안으로 들어섰습니다. 남자는 영화관 로비를 지나 상영관 안까지 당신을 데리고 들어갔어요.\n그런데 상영관 안에 사람들이 무척이나 많습니다. 대체 사람들이 다 어디 있나 했더니, 여기에 있었나 봐요. 어쩌면 당신의 부모님도 저 사이에…\n \"대표님, 잠시 논의 드릴 사항이…\"\n당신이 모여 있는 사람들을 보며 부모님을 떠올리는 찰나, 당신을 안내하던 남자의 걸음이 멈췄습니다. 남자가 웬 중년의 남자에게 무언가 속닥거립니다. 무슨 말을 하는 건지, 대표라고 불린 중년 남자가 당신을 흘깃 쳐다보는군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2471,7 +2471,7 @@
   },
   {
     "page_id": 1152,
-    "type": "button",
+    "type": 2,
     "output_txt": "왜 그렇게 보세요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2484,7 +2484,7 @@
   },
   {
     "page_id": 1153,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"아, 불쾌했다면 미안하군. 자네가 혼자서 몬스터들을 잡았다고? 아주 대단한 솜씨야.\"\n대표가 당신에게 다가와 당신의 어깨를 두드립니다. 친근한 듯 구는 게 왠지 수상쩍지만 당신은 일단 잠자코 있었습니다.\n \"더는 인원을 받기 힘든 상황이지만 자네를 특별히 우리 그룹에 받아 주겠네. 이 쇼핑몰에서 우리만큼 규모가 크고 안정적인 그룹은 없어.\"\n대표가 선심 쓴다는 투로 말하는군요. 당신은 이 그룹에 들어오려고 여길 찾아온 게 아닌데 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2497,7 +2497,7 @@
   },
   {
     "page_id": 1153,
-    "type": "button",
+    "type": 2,
     "output_txt": "전 그룹에 들어갈 생각이 없어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2510,7 +2510,7 @@
   },
   {
     "page_id": 1154,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 대표에게 부모님을 찾으러 왔음을 밝혔습니다. 순간 대표의 얼굴이 살짝 굳는가 싶더니, 이내 다시 밝아집니다. 무슨 생각을 하길래 저렇게 화색을 띠는 걸까요?\n \"부모님을 찾으러 여기까지 오다니 대단하구만. 그래, 부모님이 영화를 보러 왔었다고? 그럼 분명 여기 계실 걸세. 영화관에 있던 사람들은 전부 여기에 모였거든. 어서 한번 둘러보게. 부모님 찾고, 우리랑 같이 여기에 머물면 되지 않겠나.\"\n대표는 당신이 부모님을 찾으면 여기에 계속 머물 거라고 생각하나 봅니다. 그래서 표정이 밝아졌던 거군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2523,7 +2523,7 @@
   },
   {
     "page_id": 1154,
-    "type": "button",
+    "type": 2,
     "output_txt": "그럼 잠깐만 둘러볼게요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2536,7 +2536,7 @@
   },
   {
     "page_id": 1155,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 넓은 상영관을 돌아다니며 사람들을 찬찬히 살폈습니다. 그런데… 어째서일까요? 아무리 살펴봐도 부모님의 얼굴이 보이지 않습니다.\n부모님이 오랜만에 둘이서만 오붓하게 영화를 보러 간다고 했으니까 별일이 없다면 여기에 계실 줄 알았는데요… 어째서 보이지 않는 걸까요?\n \"부모님 찾다 말고 왜 그렇게 서 있나?\"\n대표가 의아해하며 다가옵니다. 당신이 자기 그룹에 있어 주길 바라는 대표에겐 안 됐지만, 더는 여기 있을 이유가 없을 것 같네요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2549,7 +2549,7 @@
   },
   {
     "page_id": 1155,
-    "type": "button",
+    "type": 2,
     "output_txt": "부모님이 안 보여요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2562,7 +2562,7 @@
   },
   {
     "page_id": 1156,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"뭐? 그럴 리가…\"\n \"아, 대표님 혹시…\"\n대표가 난색을 표하는데, 당신을 상영관까지 안내해 줬던 남자가 갑자기 끼어듭니다. 남자가 당신의 눈치를 살피며 대표에게 소곤거리는군요. 왠지 불길한 느낌이 듭니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2575,7 +2575,7 @@
   },
   {
     "page_id": 1156,
-    "type": "button",
+    "type": 2,
     "output_txt": "짐작 가는 거라도 있으세요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2588,7 +2588,7 @@
   },
   {
     "page_id": 1157,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"크흠… 혹시 자네 부모님 연하늘색 셔츠랑 연분홍색 원피스 입고 나가셨나?\"\n대표가 대뜸 묻습니다. 늦잠 자는 바람에 부모님을 보진 못했지만, 연하늘색 셔츠와 연분홍색 원피스라면 부모님이 즐겨 입는 옷이긴 합니다.\n \"맞나 본데요, 그 사람들…\"\n고개를 끄덕이는 당신을 보며 대표 옆에서 남자가 얼굴을 찡그립니다. 아무래도, 이 사람들과 부모님 사이에 무슨 일이 있었나 봐요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2601,7 +2601,7 @@
   },
   {
     "page_id": 1157,
-    "type": "button",
+    "type": 2,
     "output_txt": "저희 부모님, 아시는 거죠?",
     "relate_value": null,
     "occur_condition": null,
@@ -2614,7 +2614,7 @@
   },
   {
     "page_id": 1158,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"안다기보다는… 이걸 어떻게 말해야 좋을지 모르겠군. 자네 부모님은… 우리 그룹을 나갔다네. 애를 잃어버린 젊은 부부랑 같이 나갔어. 그들을 돕겠다면서 말일세.\"\n대표가 주저하며 말했습니다. 드디어 부모님의 소식을 알게 된 건 다행이지만 이곳에 없다니… 대체 어떻게 하면 좋을까요?\n \"우린 나가지 말라고 말렸어. 마다하고 나간 건 자네 부모님이었네.\"\n \"맞아. 그리고 애 찾으면 돌아오겠다고 했는데 여태 소식 없는 거 보면…\"\n대표가 남자를 노려봅니다. 부모님을 만날 기대로 가득 찼던 당신은 마음이 무겁게 가라앉는 걸 느꼈습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2627,7 +2627,7 @@
   },
   {
     "page_id": 1158,
-    "type": "button",
+    "type": 2,
     "output_txt": "알려 주셔서 감사합니다. 전 다시 나가봐야겠어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2640,7 +2640,7 @@
   },
   {
     "page_id": 1159,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"부모님이 여기로 돌아올 수도 있는 거 아닌가. 괜히 나갔다가 엇갈리면 어쩌려고 그렇게 나가나.\"\n대표가 당신을 회유했지만 당신은 단호했습니다. 얘기를 들어보니 부모님이 나간 지 한참 된 것 같은데, 지금까지 돌아오지 않았다면 무슨 일이 생긴 게 틀림없어요. 가만히 앉아서 기다릴 수는 없습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2653,7 +2653,7 @@
   },
   {
     "page_id": 1159,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2666,7 +2666,7 @@
   },
   {
     "page_id": 116,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"콜록콜록…!\"\n주변을 경계하며 걷던 당신의 귀에 얕은 기침 소리가 들려옵니다. 이건 아무리 들어도 사람 소리가 분명해요.\n소리가 들려온 쪽으로 살며시 걸음을 옮기자, 한 무리의 사람들이 보입니다. 그런데 그 사람들 틈에 익숙한 연하늘색 셔츠와 연분홍색 원피스가 섞여 있어요. 저건 설마…",
     "relate_value": null,
     "occur_condition": null,
@@ -2679,7 +2679,7 @@
   },
   {
     "page_id": 116,
-    "type": "button",
+    "type": 2,
     "output_txt": "엄마, 아빠?",
     "relate_value": null,
     "occur_condition": null,
@@ -2692,7 +2692,7 @@
   },
   {
     "page_id": 1161,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"OO아…? 네가 어떻게 여기…?\"\n잔뜩 헝클어진 몰골의 부모님이 당신에게 달려옵니다. 당신을 끌어안는 부모님으로부터 온기가 전해져 옵니다. 이런 곳에서 만날 줄은 생각지 못해서일까요? 왠지 얼떨떨한 기분입니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2705,7 +2705,7 @@
   },
   {
     "page_id": 1161,
-    "type": "button",
+    "type": 2,
     "output_txt": "무사하셔서 다행이에요…",
     "relate_value": null,
     "occur_condition": null,
@@ -2718,7 +2718,7 @@
   },
   {
     "page_id": 1162,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"그건 우리가 할 말이야. 정말… 정말 다행이다, 무사해서.\"\n부모님이 울컥하는 얼굴로 당신을 바라봅니다. 당신의 손을 맞잡은 어머니의 손이 가늘게 떨리고 있네요. 부모님도 마음고생이 심하셨을 거예요.\n \"그런데 어떻게 여기까지 온 거야. 안전한 데 있지 않고 위험하게…!\"",
     "relate_value": null,
     "occur_condition": null,
@@ -2731,7 +2731,7 @@
   },
   {
     "page_id": 1162,
-    "type": "button",
+    "type": 2,
     "output_txt": "아, 그건…",
     "relate_value": null,
     "occur_condition": null,
@@ -2744,7 +2744,7 @@
   },
   {
     "page_id": 1163,
-    "type": "text",
+    "type": 0,
     "output_txt": "콰과광-\n부모님의 물음에 당신이 대답하려는 찰나, 굉음과 함께 바닥에서 진동이 느껴지기 시작합니다.\n \"으윽…!\"\n당신은 넘어지려는 어머니를 붙잡았습니다. 바닥에서 끊임없이 진동이 느껴지네요. 왠지 불길한 예감이 듭니다.\n쿵- 쿠궁-\n연이어 들려오는 폭발음들. 분위기가 심상치 않습니다. 건물이 계속해서 흔들리고 있어요. 마치… 언제 무너져도 이상하지 않을 것처럼요!",
     "relate_value": null,
     "occur_condition": null,
@@ -2757,7 +2757,7 @@
   },
   {
     "page_id": 1163,
-    "type": "button",
+    "type": 2,
     "output_txt": "도망쳐야 해요…!",
     "relate_value": null,
     "occur_condition": null,
@@ -2770,7 +2770,7 @@
   },
   {
     "page_id": 1164,
-    "type": "text",
+    "type": 0,
     "output_txt": "위험을 직감한 당신은 부모님을 데리고 도망치려 했습니다. 그런데…\n \"잠깐만, OO아…!\"\n어머니가 당신의 손을 놓더니 건물 구석으로 향하는군요.\n \"일어나요! 여기서 나가야 해요!\"\n구석에서 웬 남자, 여자, 그리고 아이가 걸어나옵니다. 그러고 보니 부모님이 아이를 잃어버린 부부를 따라 그룹을 나갔다고 했었던가요? 저 사람들이 그 부부와 아이인가 봐요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2783,7 +2783,7 @@
   },
   {
     "page_id": 1164,
-    "type": "button",
+    "type": 2,
     "output_txt": "같이 가요! 어서!",
     "relate_value": null,
     "occur_condition": null,
@@ -2796,7 +2796,7 @@
   },
   {
     "page_id": 1165,
-    "type": "text",
+    "type": 0,
     "output_txt": "젊은 부부가 눈치를 살피다 서둘러 당신 부모님 곁에 섭니다.\n당신은 곧 부모님, 그리고 젊은 부부와 아이를 데리고 나갈 길을 찾기 시작했어요.\n쿠르릉- 캬악-\n점점 심해지는 진동과 천장에서 떨어지는 부스러기, 그리고 그 틈에 섞여 들려오는 괴성까지… 불안이 밀려옵니다. 하지만 금방이라도 무너질 것 같은 건물 안에 가만히 머물고만 있을 수도 없는 노릇이니까요. 무사히 나가기만을 비는 수밖에 없겠군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2809,7 +2809,7 @@
   },
   {
     "page_id": 1165,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -2822,7 +2822,7 @@
   },
   {
     "page_id": 117,
-    "type": "text",
+    "type": 0,
     "output_txt": "쿠웅- 콰과과광-\n방금 전까지 당신이 있던 건물의 상층부가 산산조각으로 부서집니다.\n \"꺄악…!\"\n \"도, 도망쳐….!\"\n \"으으…\"\n당신과 마찬가지로 건물에서 나온 사람들이 겁에 질려 여기저기로 흩어지네요. 당신을 따라 도망쳐 나온 부모님과 젊은 부부도 어쩔 줄 몰라 하는 눈치입니다.\n건물을 나온 것까진 좋은데 앞으로 어떻게 해야 하는 걸까요? 집으로 돌아가 봤자, 이 건물처럼 무너지거나 망가졌을 게 뻔한데 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2835,7 +2835,7 @@
   },
   {
     "page_id": 117,
-    "type": "button",
+    "type": 2,
     "output_txt": "일단은… 대피소로 가야겠어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2848,7 +2848,7 @@
   },
   {
     "page_id": 1171,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"대피소? 대피소라고 안전할까요…?\"\n젊은 부부 중 남편이 의문을 표합니다. 사실 당신도 대피소가 그리 미덥지는 못하다고 생각하고 있어요. 하지만 그렇다고 해서 부모님을 모시고 떠돌아다닐 수도 없으니 어떡하겠어요?",
     "relate_value": null,
     "occur_condition": null,
@@ -2861,7 +2861,7 @@
   },
   {
     "page_id": 1171,
-    "type": "button",
+    "type": 2,
     "output_txt": "지금은 방법이 없어요. 싫다면 따라오지 않으셔도 됩니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2874,7 +2874,7 @@
   },
   {
     "page_id": 1172,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"그런 뜻은 아니었습니다… 그냥, 대피소라고 무사할까 싶어서…\"\n \"그래도 대피손데, 여기보다 낫지 않겠어요? 우리 같이 가요.\"\n어머니가 젊은 부부를 다독입니다. 젊은 부부가 서로를 보다가 고개를 끄덕이네요. 당신의 부모님은 무조건 당신 뜻에 따르겠다는 듯 다정한 눈으로 당신을 바라보고 있습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2887,7 +2887,7 @@
   },
   {
     "page_id": 1172,
-    "type": "button",
+    "type": 2,
     "output_txt": "제 곁에서 떨어지지 마세요. 이쪽이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2900,7 +2900,7 @@
   },
   {
     "page_id": 118,
-    "type": "text",
+    "type": 0,
     "output_txt": "드디어 대피소에 도착했습니다. 이 대피소는 그래도 비교적 상태가 양호해 보이네요. 군인들이 보초를 서고 있는 게, 아무래도 군에서도 이 대피소를 관리하는 모양이에요.\n \"정지해 주십시오. 검문부터 하겠습니다. 신분증 가지고 계십니까?\"\n대피소를 지키는 군인이 당신 일행을 가로막고 묻습니다. 당신과 부모님, 그리고 젊은 부부는 신분증을 꺼내 군인에게 보여 줬어요.\n군인이 태블릿을 만지작거리는 걸 보니 신분을 조회하는 모양인데… 그래도 아직 사회 기반 시스템이 완전히 무너지지는 않았나 봐요.\n \"조회 완료했습니다. 안으로 들어가십시오.\"",
     "relate_value": null,
     "occur_condition": null,
@@ -2913,7 +2913,7 @@
   },
   {
     "page_id": 118,
-    "type": "button",
+    "type": 2,
     "output_txt": "감사합니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2926,7 +2926,7 @@
   },
   {
     "page_id": 1181,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"저… 저흰 이만 저쪽으로 가 보겠습니다. 그동안 도와주셔서 정말 감사했어요.\"\n대피소로 들어서자, 젊은 부부가 당신과 부모님에게 인사를 건넵니다.\n \"그래요, 그동안 정말 고생 많았어요. 여기에서도 계속 볼 테니까 도움 필요하면 언제든 말하고. 알았죠?\"\n \"네… 정말 감사해요.\"\n부부는 당신의 부모님에게 몇 번이나 고개를 숙이며 인사한 뒤에야 자리를 떠났습니다. 부모님과 셋만 남으니 새삼스럽게 이 상황이 실감 나네요. 돌아갈 집은 없고, 남은 거라곤 오직 가족뿐인 이 상황이 말이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2939,7 +2939,7 @@
   },
   {
     "page_id": 1181,
-    "type": "button",
+    "type": 2,
     "output_txt": "저희도 머물 곳을 찾아봐요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2952,7 +2952,7 @@
   },
   {
     "page_id": 1182,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"그래, 그러자. 어디…\"\n탕- 탕탕-!\n부모님과 함께 머물 곳을 찾아보려는데 바깥에서 시끄러운 소리가 울리기 시작합니다. 이건 총 소리, 그리고…\n캬아아악-\n괴물의 소리군요…! 밖에서 싸움이 벌어졌나 봐요. 이런 게 한두 번이 아닌 듯, 대피소에 머무는 다른 사람들은 놀라지도 않는 모습이지만요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2965,7 +2965,7 @@
   },
   {
     "page_id": 1182,
-    "type": "button",
+    "type": 2,
     "output_txt": "저 잠깐 바깥 좀 보고 올게요.",
     "relate_value": null,
     "occur_condition": null,
@@ -2978,7 +2978,7 @@
   },
   {
     "page_id": 1183,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"뭐? 위험하게 왜…\"\n부모님이 만류했지만 당신은 바깥 상황을 보러 나갔습니다.\n대피소를 향해 달려오는 괴물들과 정신 없이 총을 쏘아 대는 군인들. 대피소 주변은 그야말로 난장판, 아니, 전쟁통이었습니다.\n아직까진 군인들이 건재하지만, 과연 얼마나 버틸 수 있을까요? 군인들의 지친 얼굴을 보고 있자니 마음이 착잡해져 옵니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -2991,7 +2991,7 @@
   },
   {
     "page_id": 1183,
-    "type": "button",
+    "type": 2,
     "output_txt": "역시… 대피소도 안전하지 않구나.",
     "relate_value": null,
     "occur_condition": null,
@@ -3004,7 +3004,7 @@
   },
   {
     "page_id": 1184,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 심란한 마음으로 부모님께 돌아갔습니다.\n \"괜히 나갔다가 다치기라도 하면 어쩌려고…! 우리가 머물 곳 찾아 놨다. 얼른 가서 쉬자.\"\n부모님이 당신을 데리고 대피소 한구석으로 향합니다. 천막으로 된 칸막이가 겹겹이 드리워진 공간, 그 중 비어 있는 한 곳이 당신과 부모님이 머물 자리였어요. 셋이서 누우면 남는 공간이 거의 없을 것 같군요.\n \"그나마 여기가 제일 나은 곳이야. 괜찮은 덴 이미 다른 사람들이 있어서…\"\n \"다들 고생을 많이 해서 그런가, 경계가 여간 심하게 아니더라. 여기도 겨우 찾은 거다.\"\n \"필요한 물품은 저-기 가서 받으면 된다고 하는데… 음… 좀 정신없어 보이더구나. 싸우는 사람들도 있고…\"\n부모님의 말에 당신은 주변을 살며시 둘러봤습니다. 다른 칸에 있는 사람들이 이쪽을 힐끔힐끔 하고 있네요. 그런데 사람들의 눈초리가 꽤나 사납습니다. 아마 당신과 부모님을 경쟁자라고 생각하는 게 아닐까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -3017,7 +3017,7 @@
   },
   {
     "page_id": 1184,
-    "type": "button",
+    "type": 2,
     "output_txt": "…여기에 머무는 게 맞을까?",
     "relate_value": null,
     "occur_condition": null,
@@ -3030,7 +3030,7 @@
   },
   {
     "page_id": 1185,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신의 머릿속에 문득 의문이 떠오릅니다.\n여기에만 있어서는 상황이 나아질 것 같지가 않아요. 얼마 간의 안전은 보장할 수 있겠지만 그것도 오래 갈 것 같지는 않습니다.\n근본적으로 이 상황에서 벗어나려면… 아무래도 여길 나가야겠어요. 나가서 바깥의 문제를 해결해야 여기도 안정을 찾을 겁니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3043,7 +3043,7 @@
   },
   {
     "page_id": 1185,
-    "type": "button",
+    "type": 2,
     "output_txt": "엄마, 아빠… 저 나갔다 올게요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3056,7 +3056,7 @@
   },
   {
     "page_id": 1186,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"나갔다 온다니…? 어딜 갔다 온다는 거야?\"\n부모님이 화들짝 놀라 당신을 붙잡습니다. 하지만 당신은 이미 결심을 마쳤어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3069,7 +3069,7 @@
   },
   {
     "page_id": 1186,
-    "type": "button",
+    "type": 2,
     "output_txt": "밖에 나가서 이 사태를 해결할 방법을 찾을래요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3082,7 +3082,7 @@
   },
   {
     "page_id": 1187,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 부모님에게 차분히 당신의 생각을 말했습니다. 당신이 말을 하면 할수록 부모님의 얼굴이 어두워지는군요.\n \"네가 뭘 할 수 있다고 나간다는 거야…\"\n \"우리가 말려도 갈 생각이지?\"\n아버지가 낮게 가라앉은 시선을 당신에게 보냅니다. 당신은 그 시선을 받아 내며 고개를 끄덕였어요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3095,7 +3095,7 @@
   },
   {
     "page_id": 1187,
-    "type": "button",
+    "type": 2,
     "output_txt": "저 이래 봬도 꽤 세요. 저 못 믿으세요?",
     "relate_value": null,
     "occur_condition": null,
@@ -3108,7 +3108,7 @@
   },
   {
     "page_id": 1188,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신이 일부러 유쾌하게 말했지만, 어머니는 고개를 푹 숙이고 맙니다. 당신을 잡을 수 없다는 걸 직감하신 거겠죠.\n \"…위험한 짓은 안 하겠다고 약속해라. 안 되겠다 싶으면 도망쳐.\"\n \"그래, 맞아. 꼭 무사히 돌아온다고 약속해. 그래야 보내 줄 거야.\"\n당신은 손을 내밀고 어머니의 새끼손가락에 당신의 새끼손가락을 걸었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3121,7 +3121,7 @@
   },
   {
     "page_id": 1188,
-    "type": "button",
+    "type": 2,
     "output_txt": "약속할게요. 금방 돌아올 거예요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3134,7 +3134,7 @@
   },
   {
     "page_id": 1189,
-    "type": "text",
+    "type": 0,
     "output_txt": "손가락을 걸고 약속한 당신은 부모님의 배웅을 받으며 대피소를 떠났습니다.\n솔직히 무엇을 해야 할지 아직은 막막하지만, 모험을 계속하다 보면 답이 나오겠죠?",
     "relate_value": null,
     "occur_condition": null,
@@ -3147,7 +3147,7 @@
   },
   {
     "page_id": 1189,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -3160,7 +3160,7 @@
   },
   {
     "page_id": 119,
-    "type": "text",
+    "type": 0,
     "output_txt": "저벅-\n근처에서 낯선 발걸음 소리가 들려옵니다. 소리를 들어보니 일정하게 울리는 게 다급한 상황에 처한 사람은 아닌 것 같아요. 그래서 당신은 일단 가만히 있기로 했습니다.\n \"찾았다! 혹시 OO 님 아니신가요?\"\n모퉁이를 돌아 나온 한 무리의 사람들이 당신을 보며 아는 체합니다. 분위기를 보아 하니 일부러 당신을 찾아온 것 같은데, 무슨 일인 걸까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -3173,7 +3173,7 @@
   },
   {
     "page_id": 119,
-    "type": "button",
+    "type": 2,
     "output_txt": "맞는데, 왜 그러시죠?",
     "relate_value": null,
     "occur_condition": null,
@@ -3186,7 +3186,7 @@
   },
   {
     "page_id": 1191,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"저희 길드원들 몇 명이 몬스터를 처치하러 갔는데… 한참이 지나도 돌아오지 않고 있어서요. 도움을 청하러 왔습니다. 저희를 도와주실 수 없을까요? 사례는 부족하지 않게 하겠습니다…!\"\n무리의 리더로 보이는 남자가 당신을 향해 허리를 깊게 숙여 보입니다. 남자를 비롯한 무리 사람들의 차림새를 보니 꽤 숙련된 헌터인 듯한데… 길드원들이 돌아오지 않고 있다니 심각한 상황이긴 하네요. 처치하려던 몬스터가 꽤 강한 모양이에요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3199,7 +3199,7 @@
   },
   {
     "page_id": 1191,
-    "type": "button",
+    "type": 2,
     "output_txt": "좋습니다, 도와드리죠.",
     "relate_value": null,
     "occur_condition": null,
@@ -3212,7 +3212,7 @@
   },
   {
     "page_id": 1192,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"정말입니까? 감사합니다! 정말 감사합니다!!\"\n남자를 비롯한 한 무리의 사람들이 안도의 한숨을 내쉬며 서로를 얼싸안습니다.\n \"길드원들이 돌아오지 않은 지 좀 돼서… 자세한 건 가면서 설명하겠습니다. 저희를 따라오시죠.\"",
     "relate_value": null,
     "occur_condition": null,
@@ -3225,7 +3225,7 @@
   },
   {
     "page_id": 1192,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -3238,7 +3238,7 @@
   },
   {
     "page_id": 120,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신과 길드원들을 몰아붙였던 몬스터가 마침내 쓰러졌습니다. 하지만 희생이 너무 크군요. 살아 있는 길드원을 손으로 꼽을 수 있을 정도니 말이에요.\n \"헉… 물리쳤… 물리쳤다… 진짜로…\"\n \"하지만 다들…\"\n살아남은 길드원들이 일어나지 않는 동료들을 보며 눈시울을 붉힙니다. 한참을 말없이 있던 그들은 어느 순간 하나둘 당신을 보기 시작했어요. 당신을 향한 신뢰가 가득한 눈빛으로 말이에요.\n당신은 비록 길드 소속은 아니지만, 저들에게 있어서 이미 리더나 다름없었습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3251,7 +3251,7 @@
   },
   {
     "page_id": 120,
-    "type": "button",
+    "type": 2,
     "output_txt": "…시신 수습하고, 돌아가죠.",
     "relate_value": null,
     "occur_condition": null,
@@ -3264,7 +3264,7 @@
   },
   {
     "page_id": 1201,
-    "type": "text",
+    "type": 0,
     "output_txt": "남은 길드원들이 당신의 말에 반색하며 동료들의 시신을 수습하기 시작합니다. 당신도 길드원들과 함게 시신을 수습하고 주변을 정리했어요. 전투의 흔적들이 조금씩 지워져 갔습니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3277,7 +3277,7 @@
   },
   {
     "page_id": 1201,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -3290,7 +3290,7 @@
   },
   {
     "page_id": 1202,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 길드원들과 함께 아지트로 돌아왔습니다.\n길드원들이 멍한 얼굴로 앉아 있는 모습을 보니 당신의 마음도 무거워집니다. 남은 길드원이 지금 여기 있는 이들뿐이라는 게 더욱 와 닿아요. 길드장까지 잃었으니, 누군가 중심을 잡아 주지 않으면 모두 뿔뿔이 흩어져 버릴지도 모르겠군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3303,7 +3303,7 @@
   },
   {
     "page_id": 1202,
-    "type": "button",
+    "type": 2,
     "output_txt": "앞으로 저도 여기 머물러도 될까요?",
     "relate_value": null,
     "occur_condition": null,
@@ -3316,7 +3316,7 @@
   },
   {
     "page_id": 1203,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신이 조심스럽게 묻자 남은 길드원들이 당신을 바라봅니다.\n \"우리 길드에 들어오겠단 거예요?\"\n \"저, 저는 좋아요! 아니, 아예 길드장이 돼 주세요!\"\n \"맞아요. 우리 중엔 길드장을 맡을 만한 사람이 없어요. 하지만 당신이라면… 믿고 따를 수 있을 것 같아요.\"\n길드원들이 기대에 찬 눈빛을 보냅니다. 모두들 동의하는 듯하니 이참에 길드장을 해 보는 것도 나쁘지는 않을 것 같군요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3329,7 +3329,7 @@
   },
   {
     "page_id": 1203,
-    "type": "button",
+    "type": 2,
     "output_txt": "정말 제가 해도 괜찮은 거라면… 알겠어요. 해 볼게요, 길드장.",
     "relate_value": null,
     "occur_condition": null,
@@ -3342,7 +3342,7 @@
   },
   {
     "page_id": 1204,
-    "type": "text",
+    "type": 0,
     "output_txt": "모두의 동의를 얻어, 당신은 길드장이 되었습니다. 책임져야 하는 사람들이 생긴 건 조금 부담스럽지만, 여럿인 만큼 더 많은 일을 할 수 있겠죠?\n이 길드가 당신의 모험에 부디 도움이 되었으면 좋겠네요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3355,7 +3355,7 @@
   },
   {
     "page_id": 1204,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -3368,7 +3368,7 @@
   },
   {
     "page_id": 121,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"마스터, 새로운 아지트가 완성됐어요. 같이 보러 가요!\"\n길드원 중 하나가 반가운 소식을 전해 옵니다.\n당신의 길드는 차근차근 성장해서 어느덧 꽤 이름을 날리는 길드가 되었어요. 들어오는 의뢰를 하나둘 처리하면서 자금 사정도 좋아지고, 아지트를 꽤 그럴싸한 곳으로 옮길 수 있게 되었죠. 오늘은 바로 그 새로운 아지트가 완성된 날이고요!",
     "relate_value": null,
     "occur_condition": null,
@@ -3381,7 +3381,7 @@
   },
   {
     "page_id": 121,
-    "type": "button",
+    "type": 2,
     "output_txt": "우리 부모님은?",
     "relate_value": null,
     "occur_condition": null,
@@ -3394,7 +3394,7 @@
   },
   {
     "page_id": 1211,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"당연히 모시러 갔죠. 저희가 도착할 때쯤이면 부모님도 도착하실 거예요.\"\n길드원이 싱글벙글한 얼굴로 대답합니다. 반가운 소식을 들으니 당신의 기분도 덩달아 들뜨는 것만 같아요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3407,7 +3407,7 @@
   },
   {
     "page_id": 1211,
-    "type": "button",
+    "type": 2,
     "output_txt": "좋아, 그럼 어서 가자.",
     "relate_value": null,
     "occur_condition": null,
@@ -3420,7 +3420,7 @@
   },
   {
     "page_id": 1212,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"OO아!!\"\n새로운 아지트에 도착하자, 부모님이 당신을 향해 달려옵니다. 부모님을 보는 게 얼마 만인지 모르겠어요. 무사한 부모님을 보니 안심이 되면서도, 많이 고생하신 것 같아서 마음이 쓰립니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3433,7 +3433,7 @@
   },
   {
     "page_id": 1212,
-    "type": "button",
+    "type": 2,
     "output_txt": "엄마, 아빠! 저 약속 지켰죠?",
     "relate_value": null,
     "occur_condition": null,
@@ -3446,7 +3446,7 @@
   },
   {
     "page_id": 1213,
-    "type": "text",
+    "type": 0,
     "output_txt": " \"그런 말이나 할 때니…! 우리가 얼마나 걱정했는데…!\"\n당신을 안고 있던 어머니가 당신의 등을 내리칩니다. 어머니 딴에는 나름 힘을 준다고 한 것 같은데, 지금의 당신에게는 아프기는커녕 간지럽기만 하네요. 조금은 그리운 것도 같고요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3459,7 +3459,7 @@
   },
   {
     "page_id": 1213,
-    "type": "button",
+    "type": 2,
     "output_txt": "앞으로는 여기서 지내시면 돼요.",
     "relate_value": null,
     "occur_condition": null,
@@ -3472,7 +3472,7 @@
   },
   {
     "page_id": 1214,
-    "type": "text",
+    "type": 0,
     "output_txt": "당신은 부모님에게 이곳이 어디인지 설명했습니다. 당신이 길드장이라는 것, 그리고 이곳이 당신 길드의 아지트라는 얘기에 부모님이 몹시 놀란 눈치네요.\n멍하니 아지트를 둘러보다가 당신을 보기를 반복하는 부모님. 그 모습을 보니 웃음이 나오면서 가슴이 따뜻해집니다.",
     "relate_value": null,
     "occur_condition": null,
@@ -3485,7 +3485,7 @@
   },
   {
     "page_id": 1214,
-    "type": "button",
+    "type": 2,
     "output_txt": "다음",
     "relate_value": null,
     "occur_condition": null,
@@ -3498,7 +3498,7 @@
   },
   {
     "page_id": 122,
-    "type": "text",
+    "type": 0,
     "output_txt": "세상은 아직 게이트를 닫는 법을 찾지 못했고, 여전히 몬스터와 괴현상들로 인해 혼란스럽습니다. 하지만 그 혼란 속에서도 새로운 질서는 세워졌어요.\n이제 사람들은 새로운 질서에 적응했고, 혼란스러운 세상을 살아 가는 법을 터득했습니다. 당신도 그중의 한 명이죠. 아니, 그중 한 명이란 말이 부족할 정도로 잘 적응했어요.\n당신의 길드는 대한민국에서 손꼽히는 길드로 거듭났습니다. 길드장인 당신을 모르는 사람도 거의 없을 정도죠. 위험한 몬스터가 출현하면 사람들은 이제 당신을 가장 먼저 찾습니다. 최고의 헌터라는 명예와 그에 걸맞은 부가 모두 당신의 것이에요.\n이 사태를 해결할 근본적인 방법을 찾지는 못했지만, 이 정도면 꽤 성공한 거 아닐까요? 계속 헌터 생활을 하다 보면 당신이 바랐던 목표를 이룰 수 있을지도 모르고요!\n당신은 세상의 혼란을 해결하기 위한 모험을 멈추지 않을 거예요. 비록 이야기는 여기에서 끝마치지만, 삶은 계속 이어질 테니까요.\n그럼… 계속해서 이어질 당신의 삶에 행운이 가득하길!",
     "relate_value": null,
     "occur_condition": null,

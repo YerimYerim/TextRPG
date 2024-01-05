@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using Script.UI.Story;
@@ -27,8 +26,8 @@ public class UIPopupBattle : UIBase
     private ActorBase _actorBase = new();
     private int _curPhaze = 0;
     private List<LTDescr> _leantweenList = new();
-    private List<PlayerActionGroup> _playerAction = new();
-    private List<MonsterActionGroup> _actionGroup = new();
+    private List<ActionGroupPlayerTableData> _playerAction = new();
+    private List<ActionGroupTableData> _actionGroup = new();
     private List<BattleAction> _battleActions = new();
     private int _curActionIndex; 
     private float _tweenTime  = 0.1f;
@@ -151,25 +150,23 @@ public class UIPopupBattle : UIBase
         
         if( _actionGroup[_curActionIndex]?.additional_selection?.Equals(string.Empty) == false)
         {
-            var occurCondition = _actionGroup[_curActionIndex].additional_selection_condition.to_OccurCondition_enum();
+            var occurCondition = _actionGroup[_curActionIndex].additional_selection_condition;
             bool isCanOccur = true;
             switch (occurCondition)
             {
-                case OccurCondition.OCCUR_CONDITION_OWN_ITEM:
+                case OCCUR_CONDITION.OCCUR_CONDITION_OWN_ITEM:
                     isCanOccur = GameItemManager.Instance.GetItem( _actionGroup[_curActionIndex].additional_selection_value[0]) >  _actionGroup[_curActionIndex].additional_selection_value[1];
                     break;
-                case OccurCondition.OCCUR_CONDITION_NONE:
-                    break;
-                case OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
+                case OCCUR_CONDITION.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
                     isCanOccur = GameItemManager.Instance.GetItem( _actionGroup[_curActionIndex].additional_selection_value[0]) <  _actionGroup[_curActionIndex].additional_selection_value[1];
                     break;
-                case OccurCondition.OCCUR_CONDITION_STATUS_HIGH:
+                case OCCUR_CONDITION.OCCUR_CONDITION_STATUS_HIGH:
                     isCanOccur = GamePlayerManager.Instance.myActor.playerStat.GetStat( _actionGroup[_curActionIndex].additional_selection_value[0]) >  _actionGroup[_curActionIndex].additional_selection_value[1];
                     break;
-                case OccurCondition.OCCUR_CONDITION_STATUS_LOW:
+                case OCCUR_CONDITION.OCCUR_CONDITION_STATUS_LOW:
                     isCanOccur = GamePlayerManager.Instance.myActor.playerStat.GetStat( _actionGroup[_curActionIndex].additional_selection_value[0]) <  _actionGroup[_curActionIndex].additional_selection_value[1];
                     break;
-                case OccurCondition.OCCUR_CONDITION_PAGE_VIEWED:
+                case OCCUR_CONDITION.OCCUR_CONDITION_PAGE_VIEWED:
                     break;
             }
             
@@ -203,7 +200,7 @@ public class UIPopupBattle : UIBase
         int hpKey = (int)GameDataManager.Instance.GetValueConfigData("status_hp");
         var hp = _actorBase.playerStat.GetStat(hpKey);
         
-        if ( _curPhaze < _monsterData.phaze_hp_condition.Count && hp <= _monsterData.phaze_hp_condition[_curPhaze])
+        if ( _curPhaze < _monsterData.phaze_hp_condition.Length && hp <= _monsterData.phaze_hp_condition[_curPhaze])
         {
             ++_curPhaze;
             _actionGroup.Clear();
@@ -276,8 +273,8 @@ public class UIPopupBattle : UIBase
         {
             switch (playerAction.action_type)
             {
-                case "normal_attack":
-                    if (monsterActionGroup.action_type.Equals("dodge"))
+                case ACTION_TYPE.ACTION_TYPE_NORMAL_ATTACK:
+                    if (monsterActionGroup.action_type == ACTION_TYPE.ACTION_TYPE_DODGE)
                     {
                         result = GameBattleManager.Instance.DoBattle(GamePlayerManager.Instance.myActor, _actorBase, playerAction.result_text, monsterActionGroup.result_text );
                         AddResultActions(result.isHit, result.message);
@@ -303,9 +300,9 @@ public class UIPopupBattle : UIBase
                         return;
                     };
                     break;
-                case "special_attack":
+                case ACTION_TYPE.ACTION_TYPE_SPECIAL_ATTACK:
                     break;
-                case "dodge":
+                case ACTION_TYPE.ACTION_TYPE_DODGE:
                     result = GameBattleManager.Instance.DoBattle(_actorBase, GamePlayerManager.Instance.myActor, monsterActionGroup.result_text, playerAction.result_text);
                     AddResultActions(result.isHit, result.message);
                     if (CheckMonsterWin())
@@ -313,7 +310,7 @@ public class UIPopupBattle : UIBase
                         return;
                     };
                     break;
-                case "action_cancel":
+                case ACTION_TYPE.ACTION_TYPE_ACTION_CANCEL:
                     break;
             }
         }
@@ -326,8 +323,8 @@ public class UIPopupBattle : UIBase
     private class BattleAction
     {
         public TYPE Type;
-        public MonsterActionGroup MonsterActionTable;
-        public PlayerActionGroup PlayerActionGroup;
+        public ActionGroupTableData MonsterActionTable;
+        public ActionGroupPlayerTableData PlayerActionGroup;
         public string Message;
     }
 }

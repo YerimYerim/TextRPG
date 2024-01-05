@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Script.DataClass;
 using Script.Manager;
 
 public class Stat 
@@ -13,7 +12,10 @@ public class Stat
         var statusData = GameDataManager.Instance._statusData;
         foreach (var data in statusData)
         {
-            AddStat(data.status_id, 0);
+            if (data.status_id != null)
+            {
+                AddStat(data?.status_id ?? 0, 0);
+            }
         }
     }
 
@@ -28,7 +30,7 @@ public class Stat
         {
             if ( status.ContainsKey(statusID))
             {
-                var functionType = statusTableData?.function_type?.to_Status_function_type_enum();
+                var functionType = statusTableData?.function_type;
                 switch (functionType)
                 {
                     case STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_MAX_STAT:
@@ -38,7 +40,7 @@ public class Stat
                         {
                             if (statusMaxData.stack_amount != -1)
                             {
-                                status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData.stack_amount);
+                                status[statusID] = Math.Min(status[statusID] + addValue, statusMaxData?.stack_amount ?? 0);
                             }
                             else
                             {
@@ -50,7 +52,7 @@ public class Stat
                     }
                     case STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT:
                     {
-                        for (int i = 0; i < statusTableData.function_value_2.Count; ++i)
+                        for (int i = 0; i < statusTableData.function_value_2.Length; ++i)
                         {
                             status[statusTableData.function_value_1[i]] += statusTableData.function_value_2[i] * addValue;
                             status[statusID] += addValue;
@@ -71,7 +73,7 @@ public class Stat
             {
                 if (GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4, out var ui))
                 {
-                    var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type.to_Content_type_enum() == CONTENT_TYPE.CONTENT_TYPE_STATUS);
+                    var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type == CONTENT_TYPE.CONTENT_TYPE_STATUS);
                     string desc = String.Format(toastMessageData.toast_message_desc, statusTableData.status_name);
                     GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_STATUS, toastMessageData.toast_message_icon, toastMessageData.toast_message_title, desc));
                 }

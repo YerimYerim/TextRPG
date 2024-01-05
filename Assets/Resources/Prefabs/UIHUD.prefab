@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1663163470415928797}
   - component: {fileID: 3365656130930876624}
   - component: {fileID: 8832853901968867753}
+  - component: {fileID: -6697989401181416280}
   m_Layer: 5
   m_Name: UIHUD
   m_TagString: Untagged
@@ -114,6 +115,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6697989401181416280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224389074858604669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8c57e4b4282dd468c239599d01fc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2953977628395183690
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +457,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 968cea5f25bd85345b4135e8912d8c91, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0

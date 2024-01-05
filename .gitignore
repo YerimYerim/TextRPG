@@ -71,3 +71,27 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /[Aa]ssets/[Ss]treamingAssets/build_info
+
+# SaveFiles
+Assets/Resources/Json/Player/a.json
+Assets/Resources/Json/Player/a.json.meta
+Assets/Resources/Json/Player/b.json
+Assets/Resources/Json/Player/b.json.meta
+Assets/Resources/Json/Player/c.json
+Assets/Resources/Json/Player/c.json.meta
+Assets/Resources/Json/Player/d.json
+Assets/Resources/Json/Player/d.json.meta
+Assets/Resources/Json/Player/e.json
+Assets/Resources/Json/Player/e.json.meta
+Assets/Resources/Json/Player/f.json
+Assets/Resources/Json/Player/f.json.meta
+Assets/Resources/Json/Player/g.json
+Assets/Resources/Json/Player/g.json.meta
+Assets/Resources/Json/Player/h.json
+Assets/Resources/Json/Player/h.json.meta
+Assets/Resources/Json/Player/i.json
+Assets/Resources/Json/Player/i.json.meta
+Assets/Resources/Json/Player/j.json
+Assets/Resources/Json/Player/j.json.meta
+Assets/Resources/Json/Player/k.json
+Assets/Resources/Json/Player/k.json.meta

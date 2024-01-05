@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Script.DataClass;
 using Script.Manager;
 using UnityEngine;
 
@@ -65,7 +64,7 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
         var tableData = GameDataManager.Instance._achievementTableData;
         for (int i = 0; i < tableData.Count; ++i)
         {
-            var achType = tableData[i].ach_type.to_Ach_type_enum();
+            var achType = tableData[i].ach_type;
             int achievementCount = 0;
             switch (achType)
             {
@@ -82,7 +81,7 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
                         {
                             var item = GameItemManager.Instance.GetItemByIndex(j);
                             var itemData = GameDataManager.Instance._itemData.Find(_ => _.item_id == item.itemKey);
-                            if (tableData[i].ach_value_item_type.Contains(itemData.item_type))
+                            if (tableData[i].ach_value_item_type.Contains(itemData.item_type.ToString().Replace("ITEM_TYPE",String.Empty).ToLower()))
                             {
                                 ++achievementCount;
                             }
@@ -90,13 +89,13 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
                     }
                     break;
                 case ACH_TYPE.ACH_TYPE_KILL_MONSTER:
-                    if (tableData[i].ach_value == null || tableData[i].ach_value.Count <= 0)
+                    if (tableData[i].ach_value == null || tableData[i].ach_value.Length <= 0)
                     {
                         achievementCount = GamePlayerManager.Instance._killMonsterDic?.Values?.Sum() ?? 0;
                     }
                     else
                     {
-                        for (int j = 0; j < tableData[i].ach_value.Count; ++i)
+                        for (int j = 0; j < tableData[i].ach_value.Length; ++i)
                         {
                             if (GamePlayerManager.Instance._killMonsterDic.TryGetValue(tableData[i].ach_value[j], out var count))
                             {
@@ -125,7 +124,7 @@ public class GameAchieveManager : Singleton<GameAchieveManager>
             {
                 if(GameUIManager.Instance.TryGetOrCreate<UIToastMsg>(true, UILayer.LEVEL_4,out var ui))
                 {
-                    var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type.to_Content_type_enum() == CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT);
+                    var toastMessageData = GameDataManager.Instance._toastMessageTableData.Find(_ => _.content_type == CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT);
                     string desc = String.Format(toastMessageData.toast_message_desc, tableData[i].ach_title);
                     GameUIManager.Instance.RegisterSequentialPopup(ui, () => ui.SetUI(CONTENT_TYPE.CONTENT_TYPE_ACHIEVEMENT,  toastMessageData.toast_message_icon,  toastMessageData.toast_message_title, desc));
                 }

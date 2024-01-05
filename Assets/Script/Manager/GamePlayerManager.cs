@@ -26,7 +26,7 @@ public class GamePlayerManager : Singleton<GamePlayerManager>
         myActor.playerStat = new Stat();
         foreach (var stat in statusList)
         {
-            myActor.playerStat.AddStat(stat.status_id, stat?.default_status ?? 0 , false );
+            myActor.playerStat.AddStat(stat?.status_id ?? 0, stat?.default_status ?? 0 , false );
         }
     }
     public void AddKillMonsterCount(int id, int addCount)

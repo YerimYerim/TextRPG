@@ -1,14 +1,10 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using Lofle.Tween;
-using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIGameStart : UIBase

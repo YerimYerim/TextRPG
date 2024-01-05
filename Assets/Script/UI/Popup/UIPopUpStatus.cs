@@ -57,7 +57,7 @@ public class UIPopUpStatus : UIBase
     GameObject OnUpdateScrollView(int index)
     {
         var item = _scrollView.GetItem( _scrollViewObj).GetOrAddComponent<UISpecialStat>();
-        item.SetUI(_specialStat[index].status_id);
+        item.SetUI(_specialStat[index]?.status_id ?? 0);
         return item.gameObject;
     }
 
@@ -66,7 +66,7 @@ public class UIPopUpStatus : UIBase
         base.OnShow(param);
         _uiStat = new UIStat[stats.Length];
 
-        _specialStat = GameDataManager.Instance._statusData.FindAll(_ => _ is {is_ui_show: true, function_type: "get_stat"} && GamePlayerManager.Instance.myActor.playerStat.GetStat(_.status_id ) > 0);
+        _specialStat = GameDataManager.Instance._statusData.FindAll(_ => _ is {is_ui_show: true, function_type: STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT} && GamePlayerManager.Instance.myActor.playerStat.GetStat(_.status_id ?? 0) > 0);
         _scrollView.MakeList(_specialStat.Count);
         _objSpecialStatEmpty.SetActive(_specialStat.Count <= 0);
                 
@@ -80,10 +80,11 @@ public class UIPopUpStatus : UIBase
         for (int i = 0; i < stats.Length; ++i)
         {
             _uiStat[i] = _goUIstat[i].AddComponent<UIStat>();
-            var statId = GameDataManager.Instance._configTableData.Find(_ => _.config_id.Equals(stats[i]));
-            var curAmount = GamePlayerManager.Instance.myActor.playerStat.GetStat((int) statId.GetValueConfigData());
-            var tableData = GamePlayerManager.Instance.myActor.playerStat.GetStatusData((int) statId.GetValueConfigData());
-            _uiStat[i].SetUI(tableData.status_rsc, tableData.status_name, curAmount, (int)statId.GetValueConfigData());
+            var statTableData = GameDataManager.Instance._configTableData.Find(_ => _.config_id.Equals(stats[i]));
+            var statID = (int) GameDataManager.Instance.GetValueConfigData(statTableData);
+            var curAmount = GamePlayerManager.Instance.myActor.playerStat.GetStat(statID);
+            var tableData = GamePlayerManager.Instance.myActor.playerStat.GetStatusData(statID);
+            _uiStat[i].SetUI(tableData.status_rsc, tableData.status_name, curAmount, statID);
         }
     }
 
@@ -105,11 +106,11 @@ public class UIPopUpStatus : UIBase
             
             for (int i = 0; i < _relatedStats.Length; ++i)
             {
-                if (statInfo.function_type is "get_stat" && i < statInfo.function_value_1.Count)
+                if (statInfo.function_type is STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT && i < statInfo.function_value_1.Length)
                 {
                     _relatedStats[i].gameObject.SetActive(true);
                     var subStatInfo = GameDataManager.Instance._statusData.Find(_ => _.status_id == statInfo.function_value_1[i]);
-                    _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, statInfo.function_value_2[i], subStatInfo.status_id);
+                    _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, statInfo.function_value_2[i], subStatInfo?.status_id ??0);
                 }
                 else
                 {
@@ -188,10 +189,10 @@ public class UIPopUpStatus : UIBase
             _txtStatName.text = statData.status_name;
             for (int i = 0; i < _relatedStats.Length; ++i)
             {
-                if (i < statData.function_value_1.Count)
+                if (i < statData.function_value_1.Length)
                 {
                     var statSubData = GamePlayerManager.Instance.myActor.playerStat.GetStatusData(statData.function_value_1[i]);
-                    _relatedStats[i].SetUI(statSubData.status_name, statAmount *  statData.function_value_2[i], statSubData.status_id);
+                    _relatedStats[i].SetUI(statSubData.status_name, statAmount *  statData.function_value_2[i], statSubData?.status_id ?? 0);
                 }
                 else
                 {

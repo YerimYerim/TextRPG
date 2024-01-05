@@ -13,7 +13,8 @@ public class ActorBase
     public int DoDamage(ActorBase enemy)
     {
         ConfigTableData configTableData = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_damage_factor");
-        var status = playerStat.GetStat((int)configTableData.GetValueConfigData());
+        var damageFactor = (int)GameDataManager.Instance.GetValueConfigData(configTableData);
+        var status = playerStat.GetStat((int)damageFactor);
         return status - enemy.ReduceDamage(this);
     }
 
@@ -24,10 +25,12 @@ public class ActorBase
     public int ReduceDamage(ActorBase enemy)
     {
         ConfigTableData enemyDefenseFactor = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_defense_factor");
-        var enemyDefenseValue  = enemy.playerStat.GetStat((int)enemyDefenseFactor.GetValueConfigData());
+        var statDefID = (int)GameDataManager.Instance.GetValueConfigData(enemyDefenseFactor);
+        var enemyDefenseValue  = enemy.playerStat.GetStat(statDefID);
         
         ConfigTableData statusReduceFactor  = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_reduce_defense_factor");
-        var myReduceStatValue = playerStat.GetStat((int)statusReduceFactor.GetValueConfigData());
+        var statReduceID = (int)GameDataManager.Instance.GetValueConfigData(statusReduceFactor);
+        var myReduceStatValue = playerStat.GetStat(statReduceID);
 
         return Math.Max(0, enemyDefenseValue - myReduceStatValue);
     }
@@ -35,10 +38,12 @@ public class ActorBase
     public bool IsHit(ActorBase enemy)
     {
         ConfigTableData enemyDefenseFactor = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_dodge_factor");
-        var enemyDodgeFactor  = enemy.playerStat.GetStat((int)enemyDefenseFactor.GetValueConfigData());
+        var statDefID = (int)GameDataManager.Instance.GetValueConfigData(enemyDefenseFactor);
+        var enemyDodgeFactor  = enemy.playerStat.GetStat((int)statDefID);
         
         ConfigTableData statusReduceFactor  = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_hit_factor");
-        var myHitFactor = playerStat.GetStat((int)statusReduceFactor.GetValueConfigData());
+        var statReduceID = (int)GameDataManager.Instance.GetValueConfigData(statusReduceFactor);
+        var myHitFactor = playerStat.GetStat((int)statReduceID);
         var hitRandFactor = Random.Range(0, myHitFactor + enemyDodgeFactor);
         
         return hitRandFactor < enemyDodgeFactor;

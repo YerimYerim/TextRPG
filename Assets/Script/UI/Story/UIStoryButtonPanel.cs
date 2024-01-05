@@ -1,6 +1,4 @@
 using System;
-using Script.DataClass;
-using Script.Manager;
 using UnityEngine;
 
 namespace Script.UI.Story
@@ -10,7 +8,7 @@ namespace Script.UI.Story
         [SerializeField] private UIStoryButton _ChoiceButton;
         [SerializeField] public CanvasGroup _canvas;
         private Action _onClickAction;
-        public void SetButton(ScenarioData scenarioDataBase, Action onClickAction)
+        public void SetButton(PageTableData scenarioDataBase, Action onClickAction)
         {
             _ChoiceButton.button.onClick.RemoveAllListeners();
             _onClickAction = onClickAction;

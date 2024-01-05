@@ -8,12 +8,12 @@
     "is_reset_able": true,
     "stack_amount": -1,
     "is_ui_show": true,
-    "function_type": "max_stat",
+    "function_type": 0,
     "function_value": [1],
     "function_value_1": [1],
     "function_value_2": [],
     "is_collection_check": true,
-    "default_status": 5
+    "default_status": 50
   },
   {
     "status_id": 2,
@@ -120,7 +120,7 @@
     "is_reset_able": true,
     "stack_amount": -1,
     "is_ui_show": true,
-    "function_type": "get_stat",
+    "function_type": 1,
     "function_value": [],
     "function_value_1": [4, 7],
     "function_value_2": [1, 2],

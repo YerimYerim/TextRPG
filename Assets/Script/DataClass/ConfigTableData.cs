@@ -1,31 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-public partial class ConfigTableData
+public class ConfigTableData
 {
-    public object GetValueConfigData()
-    {
-        switch (data_type)
-        {
-            case "string[]":
-            {
-                return GetStringList(this);
-            }
-            case "int":
-            {
-                int returnValue = (int)(long) value;
-                return returnValue;
-            }
-            default:
-                return string.Empty;
-        }
-    }
-
-    private string[] GetStringList(ConfigTableData tableData)
-    {
-        string values = (string) tableData.value;
-        string[] strings = values.Split(", ");
-        return strings;
-    }
+    public string config_id { get; set; }			//config_id
+    public string data_type { get; set; }			//value의 데이터 형식
+    public string value { get; set; }			//config로 사용할 값
 }

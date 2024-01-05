@@ -1,27 +1,27 @@
 [
   {
-    "action_type": "normal_attack",
+    "action_type": 0,
     "button_text": "공격하기",
     "result_text": "공격에 성공했습니다. {0}의 대미지를 입힙니다.",
     "text_priority": true,
     "default_action": true
   },
   {
-    "action_type": "special_attack",
+    "action_type": 1,
     "button_text": "빈틈 노리기",
     "result_text": "적의 빈틈을 파고듭니다. {0}의 대미지를 입힙니다.",
     "text_priority": true,
     "default_action": false
   },
   {
-    "action_type": "dodge",
+    "action_type": 2,
     "button_text": "공격 회피하기",
     "result_text": "적의 공격을 성공적으로 회피했습니다. 대미지를 받지 않았습니다.",
     "text_priority": false,
     "default_action": true
   },
   {
-    "action_type": "action_cancel",
+    "action_type": 5,
     "button_text": "저지하기",
     "result_text": "적의 행동을 저지합니다.",
     "text_priority": true,

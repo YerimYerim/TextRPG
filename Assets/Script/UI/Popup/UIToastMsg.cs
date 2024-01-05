@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using Lofle.Tween;
-using Script.DataClass;
 using Script.Manager;
 using Script.UI;
 using TMPro;

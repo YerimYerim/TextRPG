@@ -23,7 +23,8 @@ public class GameBattleManager : Singleton<GameBattleManager>
     {
         var damage = Math.Max(1, player.DoDamage(enemy) - enemy.ReduceDamage(player));
         var hp = GameDataManager.Instance._configTableData.Find(_ => _.config_id == "status_hp");
-        enemy.playerStat.AddStat((int) hp.GetValueConfigData(), -damage);
+        var hpID = (int)GameDataManager.Instance.GetValueConfigData(hp);
+        enemy.playerStat.AddStat(hpID, -damage);
         string formatString = string.Format(resultSuccess, damage.ToString());
         return (true, damage, formatString);
     }

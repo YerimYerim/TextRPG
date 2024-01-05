@@ -28,15 +28,15 @@ public class UIItemInteractButton : UIBase
         
         _button.onClick.RemoveAllListeners();
         
-        if (itemTableData.function_type.Equals("equip"))
+        if (itemTableData.function_type == ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_EQUIP)
         {
-            var itemID = GameItemManager.Instance.GetEquippedItem(itemTableData.item_type);
+            var itemID = GameItemManager.Instance.GetEquippedItem(itemTableData?.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL);
             if (itemID != null)
             {
                 _text.text = "해제";
                 _button.onClick.AddListener(()=>
                 {
-                    OnClickUnEquip(itemTableData.item_type);
+                    OnClickUnEquip(itemTableData?.item_type ?? ITEM_TYPE.ITEM_TYPE_NORMAL);
                     SetData(itemKey, position);
                 });
             }
@@ -75,7 +75,7 @@ public class UIItemInteractButton : UIBase
         _onclickEvent?.Invoke();
     }
 
-    void OnClickUnEquip(string equipType)
+    void OnClickUnEquip(ITEM_TYPE equipType)
     {
         GameItemManager.Instance.UnEquipItem(equipType);
         _onclickEvent?.Invoke();

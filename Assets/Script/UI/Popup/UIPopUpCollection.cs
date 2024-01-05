@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Script.Manager;
 using Script.UI;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,9 +58,9 @@ public class UIPopUpCollection : UIBase
             _tabButtons[i].onClick.AddListener(()=>OnSelectTab((Tab_Type)capturedIndex));
         }
         
-        _monsterData = GameDataManager.Instance._monsterTableData.FindAll(_ => _.is_collection_check);
-        _itemData = GameDataManager.Instance._itemData.FindAll(_ => _.is_collection_check);
-        _statusTable = GameDataManager.Instance._statusData.FindAll(_ => _.is_collection_check);
+        _monsterData = GameDataManager.Instance._monsterTableData.FindAll(_ => _.is_collection_check == true);
+        _itemData = GameDataManager.Instance._itemData.FindAll(_ => _.is_collection_check == true);
+        _statusTable = GameDataManager.Instance._statusData.FindAll(_ => _.is_collection_check == true);
 
         for (int i = 0; i < _relatedStats.Length; ++i)
         {
@@ -138,11 +136,11 @@ public class UIPopUpCollection : UIBase
             {
                 var item = _scrollView.GetItem( _itemThumbnail.GameObject());
                 var itemThumbnail = item.GetComponent<UIItemThumbnail>();
-                var itemInfo = GameItemManager.Instance.GetItem(_itemData[index].item_id);
+                var itemInfo = GameItemManager.Instance.GetItem(_itemData[index]?.item_id ??0);
                 
-                itemThumbnail.SetItemInfo(_itemData[index].item_id, false);
+                itemThumbnail.SetItemInfo(_itemData[index]?.item_id ?? 0, false);
                 itemThumbnail.SetEquipIcon(false);
-                itemThumbnail.SetOnClickEvent(()=>OnClickThumbnail(_itemData[index].item_id , itemInfo <= 0));
+                itemThumbnail.SetOnClickEvent(()=>OnClickThumbnail(_itemData[index]?.item_id?? 0 , itemInfo <= 0));
                 itemThumbnail.SetNull(itemInfo <= 0);
                 
                 return itemThumbnail.gameObject;
@@ -151,8 +149,8 @@ public class UIPopUpCollection : UIBase
             {
                 var item = _scrollView.GetItem( _status.GameObject());
                 var normalThumbnail = item.GetOrAddComponent<NormalThumbnail>();
-                var isHaveItem = GamePlayerManager.Instance.myActor?.playerStat?.GetStat(_statusTable[index].status_id) ?? 0;
-                var id = _statusTable[index].status_id;
+                var isHaveItem = GamePlayerManager.Instance.myActor?.playerStat?.GetStat(_statusTable[index]?.status_id?? 0) ?? 0;
+                var id = _statusTable[index].status_id ?? 0;
                 normalThumbnail.SetImage(_statusTable[index].status_rsc, isHaveItem <= 0, () => OnClickThumbnail(id, isHaveItem <=0));
                 return normalThumbnail.gameObject;
             } break;
@@ -209,11 +207,11 @@ public class UIPopUpCollection : UIBase
                 _textStatName.text = rarityString;
                 for (int i = 0; i < _relatedStats.Length; ++i)
                 {
-                    if (itemInfo.function_type is "change_status" or "equip" && i < itemInfo.function_value_1.Count)
+                    if (itemInfo.function_type is ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_CHAGE_STATUS or ITEM_FUNCTION_TYPE.ITEM_FUNCTION_TYPE_EQUIP && i < itemInfo.function_value_1.Length)
                     {
                         _relatedStats[i].gameObject.SetActive(true);
                         var subStatInfo = GameDataManager.Instance._statusData.Find(_ => _.status_id == itemInfo.function_value_1[i]);
-                        _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, itemInfo.function_value_2[i], subStatInfo.status_id);
+                        _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, itemInfo.function_value_2[i], subStatInfo?.status_id ??0);
                     }
                     else
                     {
@@ -264,11 +262,11 @@ public class UIPopUpCollection : UIBase
                 
                 for (int i = 0; i < _relatedStats.Length; ++i)
                 {
-                    if (statInfo.function_type is "get_stat" && i < statInfo.function_value_1.Count)
+                    if (statInfo.function_type is STATUS_FUNCTION_TYPE.STATUS_FUNCTION_TYPE_GET_STAT && i < statInfo.function_value_1.Length)
                     {
                         _relatedStats[i].gameObject.SetActive(true);
                         var subStatInfo = GameDataManager.Instance._statusData.Find(_ => _.status_id == statInfo.function_value_1[i]);
-                        _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, statInfo.function_value_2[i], subStatInfo.status_id);
+                        _relatedStatsUI[i].SetUI(subStatInfo.status_rsc, subStatInfo.status_name, statInfo.function_value_2[i], subStatInfo?.status_id ?? 0);
                     }
                     else
                     {

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Script.DataClass;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
@@ -10,12 +9,12 @@ namespace Script.Manager
 {
     public class GamePageManager : Singleton<GamePageManager>
     {
-        private Queue<ScenarioData> _curPageData = new();
+        private Queue<PageTableData> _curPageData = new();
         private HashSet<int> _pastReadPageID = new();
         private HashSet<int> _pastReadAllPageID = new();
         public int QueueCount => _curPageData.Count;
 
-        public ScenarioData GetScenarioData(int index)
+        public PageTableData GetScenarioData(int index)
         {
             if (index < GameDataManager.Instance._pageData.Count)
             {
@@ -53,19 +52,19 @@ namespace Script.Manager
             }
         }
 
-        public ScenarioData DequeueCurPageData()
+        public PageTableData DequeueCurPageData()
         {
             var returnData = _curPageData.Dequeue();
             return returnData;
         }
 
-        public void NextDataEnqueue(ScenarioData returnData)
+        public void NextDataEnqueue(PageTableData returnData)
         {
             if (returnData.result_value.Length <= 0 ||
-                returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_GET_ITEM ||
-                returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_STATUS)
+                returnData.type == PAGE_TYPE.PAGE_TYPE_GET_ITEM ||
+                returnData.type == PAGE_TYPE.PAGE_TYPE_STATUS)
                 return;
-            if (returnData.type.to_TemplateType_enum() == PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP)
+            if (returnData.type == PAGE_TYPE.PAGE_TYPE_RECURSIVE_GROUP)
             {
                 for (int i = 0; i < returnData.result_count;)
                 {
@@ -92,9 +91,9 @@ namespace Script.Manager
         /// </summary>
         /// <param name="scenarioData"></param>
         /// <returns></returns>
-        public int GetNextPageID(ScenarioData scenarioData)
+        public int GetNextPageID(PageTableData scenarioData)
         {
-            var pageType = scenarioData.type.to_TemplateType_enum();
+            var pageType = scenarioData.type;
             int resultValueCount = scenarioData.result_value.Length;
 
             List<int> prob = new List<int>();
@@ -170,21 +169,21 @@ namespace Script.Manager
             return false;
         }
 
-        private bool IsCanOccur(ScenarioData scenarioData)
+        private bool IsCanOccur(PageTableData scenarioData)
         {
-            var occurCondition = scenarioData.occur_condition.to_OccurCondition_enum();
+            var occurCondition = scenarioData.occur_condition;
             var occurValue = scenarioData.occur_value;
             switch (occurCondition)
             {
-                case OccurCondition.OCCUR_CONDITION_OWN_ITEM:
+                case OCCUR_CONDITION.OCCUR_CONDITION_OWN_ITEM:
                     return GameItemManager.Instance.GetItem(occurValue[0]) > occurValue[1];
-                case OccurCondition.OCCUR_CONDITION_STATUS_HIGH:
+                case OCCUR_CONDITION.OCCUR_CONDITION_STATUS_HIGH:
                     break;
-                case OccurCondition.OCCUR_CONDITION_STATUS_LOW:
+                case OCCUR_CONDITION.OCCUR_CONDITION_STATUS_LOW:
                     break;
-                case OccurCondition.OCCUR_CONDITION_PAGE_VIEWED:
+                case OCCUR_CONDITION.OCCUR_CONDITION_PAGE_VIEWED:
                     return _pastReadPageID.Contains(occurValue[0]) && IsNotRead(scenarioData);
-                case OccurCondition.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
+                case OCCUR_CONDITION.OCCUR_CONDITION_NOT_ENOUGH_OWN_ITEM:
                     return GameItemManager.Instance.GetItem(occurValue[0]) < occurValue[1] &&
                            _curPageData.Contains(scenarioData) == false && IsNotRead(scenarioData);
                 default:
@@ -195,7 +194,7 @@ namespace Script.Manager
 
         }
 
-        private bool IsNotRead(ScenarioData scenarioData)
+        private bool IsNotRead(PageTableData scenarioData)
         {
             var isCanNextMove = true;
 
@@ -233,8 +232,8 @@ namespace Script.Manager
             if (pageData.Length <= 0)
             {
                 var data = GetScenarioData(0);
-                pageData = new ScenarioData[1];
-                pageData[0] = new ScenarioData();
+                pageData = new PageTableData[1];
+                pageData[0] = new PageTableData();
                 pageData[0] =  data;
             }
             
